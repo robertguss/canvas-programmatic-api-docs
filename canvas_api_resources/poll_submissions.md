@@ -65,6 +65,6 @@ Create a new poll submission for this poll session
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

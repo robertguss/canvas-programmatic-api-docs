@@ -116,7 +116,7 @@ Returns a list of [ePortfolioPage](#eportfoliopage) objects.
 
 **Scope:** `url:PUT|/api/v1/eportfolios/:eportfolio_id/moderate`
 
-Update the spam\_status of an eportfolio. Only available to admins who can moderate\_user\_content.
+Update the spam_status of an eportfolio. Only available to admins who can moderate_user_content.
 
 **Request Parameters:**
 
@@ -128,13 +128,13 @@ Returns an [ePortfolio](#eportfolio) object.
 
 ### [Moderate all ePortfolios for a User](#method.eportfolios_api.moderate_all) <a href="#method.eportfolios_api.moderate_all" id="method.eportfolios_api.moderate_all"></a>
 
-[EportfoliosApiController#moderate\_all](https://github.com/instructure/canvas-lms/blob/master/app/controllers/eportfolios_api_controller.rb)
+[EportfoliosApiController#moderate_all](https://github.com/instructure/canvas-lms/blob/master/app/controllers/eportfolios_api_controller.rb)
 
 **`PUT /api/v1/users/:user_id/eportfolios`**
 
 **Scope:** `url:PUT|/api/v1/users/:user_id/eportfolios`
 
-Update the spam\_status for all active eportfolios of a user. Only available to admins who can moderate\_user\_content.
+Update the spam_status for all active eportfolios of a user. Only available to admins who can moderate_user_content.
 
 **Request Parameters:**
 
@@ -150,10 +150,10 @@ Update the spam\_status for all active eportfolios of a user. Only available to 
 
 **Scope:** `url:PUT|/api/v1/eportfolios/:eportfolio_id/restore`
 
-Restore an ePortfolio back to active that was previously deleted. Only available to admins who can moderate\_user\_content.
+Restore an ePortfolio back to active that was previously deleted. Only available to admins who can moderate_user_content.
 
 Returns an [ePortfolio](#eportfolio) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

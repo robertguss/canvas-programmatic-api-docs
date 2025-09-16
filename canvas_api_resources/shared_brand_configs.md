@@ -36,14 +36,14 @@ This is how you can share Themes with other people in your account or so you can
 
 **Scope:** `url:POST|/api/v1/accounts/:account_id/shared_brand_configs`
 
-Create a SharedBrandConfig, which will give the given brand\_config a name and make it available to other users of this account.
+Create a SharedBrandConfig, which will give the given brand_config a name and make it available to other users of this account.
 
 **Request Parameters:**
 
 | Parameter                               | Type              | Description                                |
 | --------------------------------------- | ----------------- | ------------------------------------------ |
 | `shared_brand_config[name]`             | Required `string` | Name to share this BrandConfig (theme) as. |
-| `shared_brand_config[brand_config_md5]` | Required `string` | MD5 of brand\_config to share              |
+| `shared_brand_config[brand_config_md5]` | Required `string` | MD5 of brand_config to share               |
 
 **Example Request:**
 
@@ -65,7 +65,7 @@ Returns a [SharedBrandConfig](#sharedbrandconfig) object.
 
 **Scope:** `url:PUT|/api/v1/accounts/:account_id/shared_brand_configs/:id`
 
-Update the specified shared\_brand\_config with a new name or to point to a new brand\_config. Uses same parameters as create.
+Update the specified shared_brand_config with a new name or to point to a new brand_config. Uses same parameters as create.
 
 **Example Request:**
 
@@ -97,6 +97,6 @@ curl -X DELETE https://<canvas>/api/v1/shared_brand_configs/<id> \
 
 Returns a [SharedBrandConfig](#sharedbrandconfig) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

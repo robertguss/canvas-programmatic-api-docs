@@ -20,7 +20,7 @@
 
 ### [List favorite courses](#method.favorites.list_favorite_courses) <a href="#method.favorites.list_favorite_courses" id="method.favorites.list_favorite_courses"></a>
 
-[FavoritesController#list\_favorite\_courses](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#list_favorite_courses](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`GET /api/v1/users/self/favorites/courses`**
 
@@ -47,7 +47,7 @@ Returns a list of [Course](../courses#course) objects.
 
 ### [List favorite groups](#method.favorites.list_favorite_groups) <a href="#method.favorites.list_favorite_groups" id="method.favorites.list_favorite_groups"></a>
 
-[FavoritesController#list\_favorite\_groups](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#list_favorite_groups](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`GET /api/v1/users/self/favorites/groups`**
 
@@ -66,7 +66,7 @@ Returns a list of [Group](../groups#group) objects.
 
 ### [Add course to favorites](#method.favorites.add_favorite_course) <a href="#method.favorites.add_favorite_course" id="method.favorites.add_favorite_course"></a>
 
-[FavoritesController#add\_favorite\_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#add_favorite_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`POST /api/v1/users/self/favorites/courses/:id`**
 
@@ -93,7 +93,7 @@ Returns a [Favorite](#favorite) object.
 
 ### [Add group to favorites](#method.favorites.add_favorite_groups) <a href="#method.favorites.add_favorite_groups" id="method.favorites.add_favorite_groups"></a>
 
-[FavoritesController#add\_favorite\_groups](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#add_favorite_groups](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`POST /api/v1/users/self/favorites/groups/:id`**
 
@@ -120,7 +120,7 @@ Returns a [Favorite](#favorite) object.
 
 ### [Remove course from favorites](#method.favorites.remove_favorite_course) <a href="#method.favorites.remove_favorite_course" id="method.favorites.remove_favorite_course"></a>
 
-[FavoritesController#remove\_favorite\_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#remove_favorite_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`DELETE /api/v1/users/self/favorites/courses/:id`**
 
@@ -146,7 +146,7 @@ Returns a [Favorite](#favorite) object.
 
 ### [Remove group from favorites](#method.favorites.remove_favorite_groups) <a href="#method.favorites.remove_favorite_groups" id="method.favorites.remove_favorite_groups"></a>
 
-[FavoritesController#remove\_favorite\_groups](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#remove_favorite_groups](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`DELETE /api/v1/users/self/favorites/groups/:id`**
 
@@ -172,7 +172,7 @@ Returns a [Favorite](#favorite) object.
 
 ### [Reset course favorites](#method.favorites.reset_course_favorites) <a href="#method.favorites.reset_course_favorites" id="method.favorites.reset_course_favorites"></a>
 
-[FavoritesController#reset\_course\_favorites](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#reset_course_favorites](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`DELETE /api/v1/users/self/favorites/courses`**
 
@@ -190,7 +190,7 @@ curl https://<canvas>/api/v1/users/self/favorites/courses \
 
 ### [Reset group favorites](#method.favorites.reset_groups_favorites) <a href="#method.favorites.reset_groups_favorites" id="method.favorites.reset_groups_favorites"></a>
 
-[FavoritesController#reset\_groups\_favorites](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
+[FavoritesController#reset_groups_favorites](https://github.com/instructure/canvas-lms/blob/master/app/controllers/favorites_controller.rb)
 
 **`DELETE /api/v1/users/self/favorites/groups`**
 
@@ -206,6 +206,6 @@ curl https://<canvas>/api/v1/users/self/favorites/group \
   -H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

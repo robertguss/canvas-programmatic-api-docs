@@ -128,7 +128,7 @@ Returns a list of [Account](../accounts_-lti#account) objects.
 
 ### [Get accounts that admins can manage](#method.accounts.manageable_accounts) <a href="#method.accounts.manageable_accounts" id="method.accounts.manageable_accounts"></a>
 
-[AccountsController#manageable\_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#manageable_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/manageable_accounts`**
 
@@ -140,7 +140,7 @@ Returns a list of [Account](../accounts_-lti#account) objects.
 
 ### [Get accounts that users can create courses in](#method.accounts.course_creation_accounts) <a href="#method.accounts.course_creation_accounts" id="method.accounts.course_creation_accounts"></a>
 
-[AccountsController#course\_creation\_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#course_creation_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/course_creation_accounts`**
 
@@ -152,13 +152,13 @@ Returns a list of [Account](../accounts_-lti#account) objects.
 
 ### [List accounts for course admins](#method.accounts.course_accounts) <a href="#method.accounts.course_accounts" id="method.accounts.course_accounts"></a>
 
-[AccountsController#course\_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#course_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/course_accounts`**
 
 **Scope:** `url:GET|/api/v1/course_accounts`
 
-A paginated list of accounts that the current user can view through their admin course enrollments. (Teacher, TA, or designer enrollments). Only returns “id”, “name”, “workflow\_state”, “root\_account\_id” and “parent\_account\_id”
+A paginated list of accounts that the current user can view through their admin course enrollments. (Teacher, TA, or designer enrollments). Only returns “id”, “name”, “workflow_state”, “root_account_id” and “parent_account_id”
 
 Returns a list of [Account](../accounts_-lti#account) objects.
 
@@ -170,19 +170,19 @@ Returns a list of [Account](../accounts_-lti#account) objects.
 
 **Scope:** `url:GET|/api/v1/accounts/:id`
 
-Retrieve information on an individual account, given by id or sis sis\_account\_id.
+Retrieve information on an individual account, given by id or sis sis_account_id.
 
 Returns an [Account](../accounts_-lti#account) object.
 
 ### [Settings](#method.accounts.show_settings) <a href="#method.accounts.show_settings" id="method.accounts.show_settings"></a>
 
-[AccountsController#show\_settings](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#show_settings](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/settings`**
 
 **Scope:** `url:GET|/api/v1/accounts/:account_id/settings`
 
-Returns a JSON object containing a subset of settings for the specified account. It’s possible an empty set will be returned if no settings are applicable. The caller must be an Account admin with the manage\_account\_settings permission.
+Returns a JSON object containing a subset of settings for the specified account. It’s possible an empty set will be returned if no settings are applicable. The caller must be an Account admin with the manage_account_settings permission.
 
 **Example Request:**
 
@@ -255,7 +255,7 @@ curl https://<canvas>/api/v1/accounts/self/permissions \
 
 ### [Get the sub-accounts of an account](#method.accounts.sub_accounts) <a href="#method.accounts.sub_accounts" id="method.accounts.sub_accounts"></a>
 
-[AccountsController#sub\_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#sub_accounts](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/sub_accounts`**
 
@@ -282,7 +282,7 @@ Returns a list of [Account](../accounts_-lti#account) objects.
 
 ### [Get the Terms of Service](#method.accounts.terms_of_service) <a href="#method.accounts.terms_of_service" id="method.accounts.terms_of_service"></a>
 
-[AccountsController#terms\_of\_service](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#terms_of_service](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/terms_of_service`**
 
@@ -294,7 +294,7 @@ Returns a [TermsOfService](#termsofservice) object.
 
 ### [Get help links](#method.accounts.help_links) <a href="#method.accounts.help_links" id="method.accounts.help_links"></a>
 
-[AccountsController#help\_links](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#help_links](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/help_links`**
 
@@ -306,7 +306,7 @@ Returns a [HelpLinks](#helplinks) object.
 
 ### [Get the manually-created courses sub-account for the domain root account](#method.accounts.manually_created_courses_account) <a href="#method.accounts.manually_created_courses_account" id="method.accounts.manually_created_courses_account"></a>
 
-[AccountsController#manually\_created\_courses\_account](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#manually_created_courses_account](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/manually_created_courses_account`**
 
@@ -318,7 +318,7 @@ Returns an [Account](../accounts_-lti#account) object.
 
 ### [List active courses in an account](#method.accounts.courses_api) <a href="#method.accounts.courses_api" id="method.accounts.courses_api"></a>
 
-[AccountsController#courses\_api](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#courses_api](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/courses`**
 
@@ -340,7 +340,7 @@ Retrieve a paginated list of courses in this account.
 | `public`                      | `boolean` | If true, include only public courses. If false, exclude them. If not present, do not filter on this basis.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `by_teachers[]`               | `integer` | List of User IDs of teachers; if supplied, include only courses taught by one of the referenced users.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `by_subaccounts[]`            | `integer` | List of Account IDs; if supplied, include only courses associated with one of the referenced subaccounts.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `hide_enrollmentless_courses` | `boolean` | If present, only return courses that have at least one enrollment. Equivalent to ‘with\_enrollments=true’; retained for compatibility.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `hide_enrollmentless_courses` | `boolean` | If present, only return courses that have at least one enrollment. Equivalent to ‘with_enrollments=true’; retained for compatibility.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `state[]`                     | `string`  | <p>If set, only return courses that are in the given state(s). By default, all states but “deleted” are returned.</p><p>Allowed values: <code>created</code>, <code>claimed</code>, <code>available</code>, <code>completed</code>, <code>deleted</code>, <code>all</code></p>                                                                                                                                                                                                                                                                                                |
 | `enrollment_term_id`          | `integer` | If set, only includes courses from the specified term.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `search_term`                 | `string`  | The partial course name, code, or full ID to match and return in the results list. Must be at least 3 characters.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -348,8 +348,8 @@ Retrieve a paginated list of courses in this account.
 | `sort`                        | `string`  | <p>The column to sort results by.</p><p>Allowed values: <code>course_status</code>, <code>course_name</code>, <code>sis_course_id</code>, <code>teacher</code>, <code>account_name</code></p>                                                                                                                                                                                                                                                                                                                                                                                 |
 | `order`                       | `string`  | <p>The order to sort the given column by.</p><p>Allowed values: <code>asc</code>, <code>desc</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `search_by`                   | `string`  | <p>The filter to search by. “course” searches for course names, course codes, and SIS IDs. “teacher” searches for teacher names</p><p>Allowed values: <code>course</code>, <code>teacher</code></p>                                                                                                                                                                                                                                                                                                                                                                           |
-| `starts_before`               | `Date`    | If set, only return courses that start before the value (inclusive) or their enrollment term starts before the value (inclusive) or both the course’s start\_at and the enrollment term’s start\_at are set to null. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                                           |
-| `ends_after`                  | `Date`    | If set, only return courses that end after the value (inclusive) or their enrollment term ends after the value (inclusive) or both the course’s end\_at and the enrollment term’s end\_at are set to null. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                                                     |
+| `starts_before`               | `Date`    | If set, only return courses that start before the value (inclusive) or their enrollment term starts before the value (inclusive) or both the course’s start_at and the enrollment term’s start_at are set to null. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                                             |
+| `ends_after`                  | `Date`    | If set, only return courses that end after the value (inclusive) or their enrollment term ends after the value (inclusive) or both the course’s end_at and the enrollment term’s end_at are set to null. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                                                       |
 | `homeroom`                    | `boolean` | If set, only return homeroom courses.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 Returns a list of [Course](../courses#course) objects.
@@ -384,7 +384,7 @@ Returns an [Account](../accounts_-lti#account) object.
 
 ### [Delete a user from the root account](#method.accounts.remove_user) <a href="#method.accounts.remove_user" id="method.accounts.remove_user"></a>
 
-[AccountsController#remove\_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#remove_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`DELETE /api/v1/accounts/:account_id/users/:user_id`**
 
@@ -406,7 +406,7 @@ Returns an [User](../users#user) object.
 
 ### [Delete multiple users from the root account](#method.accounts.remove_users) <a href="#method.accounts.remove_users" id="method.accounts.remove_users"></a>
 
-[AccountsController#remove\_users](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#remove_users](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`DELETE /api/v1/accounts/:account_id/users`**
 
@@ -430,7 +430,7 @@ Returns a [Progress](../progress#progress) object.
 
 ### [Update multiple users](#method.accounts.update_users) <a href="#method.accounts.update_users" id="method.accounts.update_users"></a>
 
-[AccountsController#update\_users](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#update_users](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`PUT /api/v1/accounts/:account_id/users/bulk_update`**
 
@@ -460,7 +460,7 @@ Returns a [Progress](../progress#progress) object.
 
 ### [Restore a deleted user from a root account](#method.accounts.restore_user) <a href="#method.accounts.restore_user" id="method.accounts.restore_user"></a>
 
-[AccountsController#restore\_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
+[AccountsController#restore_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/accounts_controller.rb)
 
 **`PUT /api/v1/accounts/:account_id/users/:user_id/restore`**
 
@@ -508,10 +508,10 @@ Returns an [Account](../accounts_-lti#account) object.
 
 **Scope:** `url:DELETE|/api/v1/accounts/:account_id/sub_accounts/:id`
 
-Cannot delete an account with active courses or active sub\_accounts. Cannot delete a root\_account
+Cannot delete an account with active courses or active sub_accounts. Cannot delete a root_account
 
 Returns an [Account](../accounts_-lti#account) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

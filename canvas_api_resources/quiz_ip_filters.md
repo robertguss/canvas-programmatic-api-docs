@@ -41,6 +41,6 @@ Get a list of available IP filters for this Quiz.
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

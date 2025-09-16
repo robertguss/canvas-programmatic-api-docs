@@ -129,7 +129,7 @@ Returns a list of [Day](#day) objects.
 
 ### [Details for a given date in gradebook history for this course](#method.gradebook_history_api.day_details) <a href="#method.gradebook_history_api.day_details" id="method.gradebook_history_api.day_details"></a>
 
-[GradebookHistoryApiController#day\_details](https://github.com/instructure/canvas-lms/blob/master/app/controllers/gradebook_history_api_controller.rb)
+[GradebookHistoryApiController#day_details](https://github.com/instructure/canvas-lms/blob/master/app/controllers/gradebook_history_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/gradebook_history/:date`**
 
@@ -188,6 +188,6 @@ Gives a paginated, uncollated list of submission versions for all matching submi
 
 Returns a list of [SubmissionVersion](#submissionversion) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -81,9 +81,9 @@ Create a peer review for the assignment
 
 **Request Parameters:**
 
-| Parameter | Type               | Description                                       |
-| --------- | ------------------ | ------------------------------------------------- |
-| `user_id` | Required `integer` | user\_id to assign as reviewer on this assignment |
+| Parameter | Type               | Description                                      |
+| --------- | ------------------ | ------------------------------------------------ |
+| `user_id` | Required `integer` | user_id to assign as reviewer on this assignment |
 
 Returns a [PeerReview](#peerreview) object.
 
@@ -103,12 +103,12 @@ Delete a peer review for the assignment
 
 **Request Parameters:**
 
-| Parameter | Type               | Description                                       |
-| --------- | ------------------ | ------------------------------------------------- |
-| `user_id` | Required `integer` | user\_id to delete as reviewer on this assignment |
+| Parameter | Type               | Description                                      |
+| --------- | ------------------ | ------------------------------------------------ |
+| `user_id` | Required `integer` | user_id to delete as reviewer on this assignment |
 
 Returns a [PeerReview](#peerreview) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -42,7 +42,7 @@ Returns a list of [NotificationPreference](#notificationpreference) objects.
 
 ### [List of preference categories](#method.notification_preferences.category_index) <a href="#method.notification_preferences.category_index" id="method.notification_preferences.category_index"></a>
 
-[NotificationPreferencesController#category\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/notification_preferences_controller.rb)
+[NotificationPreferencesController#category_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/notification_preferences_controller.rb)
 
 **`GET /api/v1/users/:user_id/communication_channels/:communication_channel_id/notification_preference_categories`**
 
@@ -88,7 +88,7 @@ Change the preference for a single notification for a single communication chann
 
 ### [Update preferences by category](#method.notification_preferences.update_preferences_by_category) <a href="#method.notification_preferences.update_preferences_by_category" id="method.notification_preferences.update_preferences_by_category"></a>
 
-[NotificationPreferencesController#update\_preferences\_by\_category](https://github.com/instructure/canvas-lms/blob/master/app/controllers/notification_preferences_controller.rb)
+[NotificationPreferencesController#update_preferences_by_category](https://github.com/instructure/canvas-lms/blob/master/app/controllers/notification_preferences_controller.rb)
 
 **`PUT /api/v1/users/self/communication_channels/:communication_channel_id/notification_preference_categories/:category`**
 
@@ -98,14 +98,14 @@ Change the preferences for multiple notifications based on the category for a si
 
 **Request Parameters:**
 
-| Parameter                             | Type              | Description                                                                                                      |
-| ------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `category`                            | `string`          | The name of the category. Must be parameterized (e.g. The category “Course Content” should be “course\_content”) |
-| `notification_preferences[frequency]` | Required `string` | The desired frequency for each notification in the category                                                      |
+| Parameter                             | Type              | Description                                                                                                     |
+| ------------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| `category`                            | `string`          | The name of the category. Must be parameterized (e.g. The category “Course Content” should be “course_content”) |
+| `notification_preferences[frequency]` | Required `string` | The desired frequency for each notification in the category                                                     |
 
 ### [Update multiple preferences](#method.notification_preferences.update_all) <a href="#method.notification_preferences.update_all" id="method.notification_preferences.update_all"></a>
 
-[NotificationPreferencesController#update\_all](https://github.com/instructure/canvas-lms/blob/master/app/controllers/notification_preferences_controller.rb)
+[NotificationPreferencesController#update_all](https://github.com/instructure/canvas-lms/blob/master/app/controllers/notification_preferences_controller.rb)
 
 **`PUT /api/v1/users/self/communication_channels/:communication_channel_id/notification_preferences`**
 
@@ -123,6 +123,6 @@ Change the preferences for multiple notifications for a single communication cha
 | ------------------------------------------ | ----------------- | ------------------------------------------- |
 | `notification_preferences[<X>][frequency]` | Required `string` | The desired frequency for \<X> notification |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

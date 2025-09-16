@@ -56,14 +56,14 @@ Create a new enrollment term for the specified account.
 
 **Request Parameters:**
 
-| Parameter                                               | Type       | Description                                                                                                                                                                          |
-| ------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `enrollment_term[name]`                                 | `string`   | The name of the term.                                                                                                                                                                |
-| `enrollment_term[start_at]`                             | `DateTime` | The day/time the term starts. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                           |
-| `enrollment_term[end_at]`                               | `DateTime` | The day/time the term ends. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                             |
-| `enrollment_term[sis_term_id]`                          | `string`   | The unique SIS identifier for the term.                                                                                                                                              |
-| `enrollment_term[overrides][enrollment_type][start_at]` | `DateTime` | The day/time the term starts, overridden for the given enrollment type. **enrollment\_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment |
-| `enrollment_term[overrides][enrollment_type][end_at]`   | `DateTime` | The day/time the term ends, overridden for the given enrollment type. **enrollment\_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment   |
+| Parameter                                               | Type       | Description                                                                                                                                                                         |
+| ------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enrollment_term[name]`                                 | `string`   | The name of the term.                                                                                                                                                               |
+| `enrollment_term[start_at]`                             | `DateTime` | The day/time the term starts. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                          |
+| `enrollment_term[end_at]`                               | `DateTime` | The day/time the term ends. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                            |
+| `enrollment_term[sis_term_id]`                          | `string`   | The unique SIS identifier for the term.                                                                                                                                             |
+| `enrollment_term[overrides][enrollment_type][start_at]` | `DateTime` | The day/time the term starts, overridden for the given enrollment type. **enrollment_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment |
+| `enrollment_term[overrides][enrollment_type][end_at]`   | `DateTime` | The day/time the term ends, overridden for the given enrollment type. **enrollment_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment   |
 
 Returns an [EnrollmentTerm](#enrollmentterm) object.
 
@@ -79,15 +79,15 @@ Update an existing enrollment term for the specified account.
 
 **Request Parameters:**
 
-| Parameter                                               | Type       | Description                                                                                                                                                                          |
-| ------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `enrollment_term[name]`                                 | `string`   | The name of the term.                                                                                                                                                                |
-| `enrollment_term[start_at]`                             | `DateTime` | The day/time the term starts. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                           |
-| `enrollment_term[end_at]`                               | `DateTime` | The day/time the term ends. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                             |
-| `enrollment_term[sis_term_id]`                          | `string`   | The unique SIS identifier for the term.                                                                                                                                              |
-| `enrollment_term[overrides][enrollment_type][start_at]` | `DateTime` | The day/time the term starts, overridden for the given enrollment type. **enrollment\_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment |
-| `enrollment_term[overrides][enrollment_type][end_at]`   | `DateTime` | The day/time the term ends, overridden for the given enrollment type. **enrollment\_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment   |
-| `override_sis_stickiness`                               | `boolean`  | Default is true. If false, any fields containing “sticky” changes will not be updated. See SIS CSV Format documentation for information on which fields can have SIS stickiness      |
+| Parameter                                               | Type       | Description                                                                                                                                                                         |
+| ------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enrollment_term[name]`                                 | `string`   | The name of the term.                                                                                                                                                               |
+| `enrollment_term[start_at]`                             | `DateTime` | The day/time the term starts. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                          |
+| `enrollment_term[end_at]`                               | `DateTime` | The day/time the term ends. Accepts times in ISO 8601 format, e.g. 2015-01-10T18:48:00Z.                                                                                            |
+| `enrollment_term[sis_term_id]`                          | `string`   | The unique SIS identifier for the term.                                                                                                                                             |
+| `enrollment_term[overrides][enrollment_type][start_at]` | `DateTime` | The day/time the term starts, overridden for the given enrollment type. **enrollment_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment |
+| `enrollment_term[overrides][enrollment_type][end_at]`   | `DateTime` | The day/time the term ends, overridden for the given enrollment type. **enrollment_type** can be one of StudentEnrollment, TeacherEnrollment, TaEnrollment, or DesignerEnrollment   |
+| `override_sis_stickiness`                               | `boolean`  | Default is true. If false, any fields containing “sticky” changes will not be updated. See SIS CSV Format documentation for information on which fields can have SIS stickiness     |
 
 Returns an [EnrollmentTerm](#enrollmentterm) object.
 
@@ -178,6 +178,6 @@ https://<canvas>/api/v1/accounts/1/terms/2
 
 Returns an [EnrollmentTerm](#enrollmentterm) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

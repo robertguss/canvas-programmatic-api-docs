@@ -350,7 +350,7 @@ Returns a list of [ContextExternalTool](#contextexternaltool) objects.
 
 ### [Get a sessionless launch url for an external tool.](#method.external_tools.generate_sessionless_launch) <a href="#method.external_tools.generate_sessionless_launch" id="method.external_tools.generate_sessionless_launch"></a>
 
-[ExternalToolsController#generate\_sessionless\_launch](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
+[ExternalToolsController#generate_sessionless_launch](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
 
 **`GET /api/v1/courses/:course_id/external_tools/sessionless_launch`**
 
@@ -360,13 +360,13 @@ Returns a list of [ContextExternalTool](#contextexternaltool) objects.
 
 **Scope:** `url:GET|/api/v1/accounts/:account_id/external_tools/sessionless_launch`
 
-Returns a sessionless launch url for an external tool. Prefers the resource\_link\_lookup\_uuid, but defaults to the other passed
+Returns a sessionless launch url for an external tool. Prefers the resource_link_lookup_uuid, but defaults to the other passed
 
 ```
 parameters id, url, and launch_type
 ```
 
-NOTE: Either the resource\_link\_lookup\_uuid, id, or url must be provided unless launch\_type is assessment or module\_item.
+NOTE: Either the resource_link_lookup_uuid, id, or url must be provided unless launch_type is assessment or module_item.
 
 **Request Parameters:**
 
@@ -374,22 +374,22 @@ NOTE: Either the resource\_link\_lookup\_uuid, id, or url must be provided unles
 | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `id`                        | `string` | The external id of the tool to launch.                                                                                                                                                                                                                                                     |
 | `url`                       | `string` | The LTI launch url for the external tool.                                                                                                                                                                                                                                                  |
-| `assignment_id`             | `string` | The assignment id for an assignment launch. Required if launch\_type is set to “assessment”.                                                                                                                                                                                               |
-| `module_item_id`            | `string` | The assignment id for a module item launch. Required if launch\_type is set to “module\_item”.                                                                                                                                                                                             |
+| `assignment_id`             | `string` | The assignment id for an assignment launch. Required if launch_type is set to “assessment”.                                                                                                                                                                                                |
+| `module_item_id`            | `string` | The assignment id for a module item launch. Required if launch_type is set to “module_item”.                                                                                                                                                                                               |
 | `launch_type`               | `string` | <p>The type of launch to perform on the external tool. Placement names (eg. “course_navigation”) can also be specified to use the custom launch url for that placement; if done, the tool id must be provided.</p><p>Allowed values: <code>assessment</code>, <code>module_item</code></p> |
 | `resource_link_lookup_uuid` | `string` | The identifier to lookup a resource link.                                                                                                                                                                                                                                                  |
 
 **API response field:**
 
-* id
+- id
 
 The id for the external tool to be launched.
 
-* name
+- name
 
 The name of the external tool to be launched.
 
-* url
+- url
 
 The url to load to launch the external tool for the user.
 
@@ -463,7 +463,7 @@ Returns a [ContextExternalTool](#contextexternaltool) object.
 
 Create an external tool in the specified course/account. The created tool will be returned, see the “show” endpoint for an example. If a client ID is supplied canvas will attempt to create a context external tool using the LTI 1.3 standard.
 
-See the \<a href=“file.lti\_dev\_key\_config.html#placements-params”>Placements Documentation\</a> for more information on what placements are available, the possible fields, and their accepted values.
+See the \<a href=“file.lti_dev_key_config.html#placements-params”>Placements Documentation\</a> for more information on what placements are available, the possible fields, and their accepted values.
 
 **Request Parameters:**
 
@@ -481,11 +481,11 @@ See the \<a href=“file.lti\_dev\_key\_config.html#placements-params”>Placeme
 | `text`                                            | `string`          | The default text to show for this tool                                                                                                                                                                                                                                                                                                                                           |
 | `custom_fields[field_name]`                       | `string`          | Custom fields that will be sent to the tool consumer; can be used multiple times                                                                                                                                                                                                                                                                                                 |
 | `is_rce_favorite`                                 | `boolean`         | (Deprecated in favor of [Mark tool to RCE Favorites](#method.external_tools.mark_rce_favorite) and [Unmark tool from RCE Favorites](#method.external_tools.unmark_rce_favorite)) Whether this tool should appear in a preferred location in the RCE. This only applies to tools in root account contexts that have an editor button placement.                                   |
-| `<placement_name>[<placement_configuration_key>]` | `variable`        | Set the \<placement\_configuration\_key> value for a specific placement.                                                                                                                                                                                                                                                                                                         |
+| `<placement_name>[<placement_configuration_key>]` | `variable`        | Set the \<placement_configuration_key> value for a specific placement.                                                                                                                                                                                                                                                                                                           |
 | `config_type`                                     | `string`          | <p>Configuration can be passed in as Common Cartridge XML instead of using query parameters. If this value is “by_url” or “by_xml” then an XML configuration will be expected in either the “config_xml” or “config_url” parameter. Note that the name parameter overrides the tool name provided in the XML.</p><p>Allowed values: <code>by_url</code>, <code>by_xml</code></p> |
-| `config_xml`                                      | `string`          | XML tool configuration, as specified in the Common Cartridge XML specification. This is required if “config\_type” is set to “by\_xml”                                                                                                                                                                                                                                           |
-| `config_url`                                      | `string`          | URL where the server can retrieve an XML tool configuration, as specified in the Common Cartridge XML specification. This is required if “config\_type” is set to “by\_url”                                                                                                                                                                                                      |
-| `not_selectable`                                  | `boolean`         | Default: false. If set to true, and if resource\_selection is set to false, the tool won’t show up in the external tool selection UI in modules and assignments                                                                                                                                                                                                                  |
+| `config_xml`                                      | `string`          | XML tool configuration, as specified in the Common Cartridge XML specification. This is required if “config_type” is set to “by_xml”                                                                                                                                                                                                                                             |
+| `config_url`                                      | `string`          | URL where the server can retrieve an XML tool configuration, as specified in the Common Cartridge XML specification. This is required if “config_type” is set to “by_url”                                                                                                                                                                                                        |
+| `not_selectable`                                  | `boolean`         | Default: false. If set to true, and if resource_selection is set to false, the tool won’t show up in the external tool selection UI in modules and assignments                                                                                                                                                                                                                   |
 | `oauth_compliant`                                 | `boolean`         | Default: false, if set to true LTI query params will not be copied to the post body.                                                                                                                                                                                                                                                                                             |
 | `unified_tool_id`                                 | `string`          | The unique identifier for the tool in LearnPlatform                                                                                                                                                                                                                                                                                                                              |
 
@@ -587,13 +587,13 @@ Returns a [ContextExternalTool](#contextexternaltool) object.
 
 ### [Mark tool as RCE Favorite](#method.external_tools.mark_rce_favorite) <a href="#method.external_tools.mark_rce_favorite" id="method.external_tools.mark_rce_favorite"></a>
 
-[ExternalToolsController#mark\_rce\_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
+[ExternalToolsController#mark_rce_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
 
 **`POST /api/v1/accounts/:account_id/external_tools/rce_favorites/:id`**
 
 **Scope:** `url:POST|/api/v1/accounts/:account_id/external_tools/rce_favorites/:id`
 
-Mark the specified editor\_button external tool as a favorite in the RCE editor for courses in the given account and its subaccounts (if the subaccounts haven’t set their own RCE Favorites). This places the tool in a preferred location in the RCE. Cannot mark more than 2 tools as RCE Favorites.
+Mark the specified editor_button external tool as a favorite in the RCE editor for courses in the given account and its subaccounts (if the subaccounts haven’t set their own RCE Favorites). This places the tool in a preferred location in the RCE. Cannot mark more than 2 tools as RCE Favorites.
 
 **Example Request:**
 
@@ -604,7 +604,7 @@ curl -X POST 'https://<canvas>/api/v1/accounts/<account_id>/external_tools/rce_f
 
 ### [Unmark tool as RCE Favorite](#method.external_tools.unmark_rce_favorite) <a href="#method.external_tools.unmark_rce_favorite" id="method.external_tools.unmark_rce_favorite"></a>
 
-[ExternalToolsController#unmark\_rce\_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
+[ExternalToolsController#unmark_rce_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
 
 **`DELETE /api/v1/accounts/:account_id/external_tools/rce_favorites/:id`**
 
@@ -621,13 +621,13 @@ curl -X DELETE 'https://<canvas>/api/v1/accounts/<account_id>/external_tools/rce
 
 ### [Add tool to Top Navigation Favorites](#method.external_tools.add_top_nav_favorite) <a href="#method.external_tools.add_top_nav_favorite" id="method.external_tools.add_top_nav_favorite"></a>
 
-[ExternalToolsController#add\_top\_nav\_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
+[ExternalToolsController#add_top_nav_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
 
 **`POST /api/v1/accounts/:account_id/external_tools/top_nav_favorites/:id`**
 
 **Scope:** `url:POST|/api/v1/accounts/:account_id/external_tools/top_nav_favorites/:id`
 
-Adds a dedicated button in Top Navigation for the specified tool for the given account. Cannot set more than 2 top\_navigation Favorites.
+Adds a dedicated button in Top Navigation for the specified tool for the given account. Cannot set more than 2 top_navigation Favorites.
 
 **Example Request:**
 
@@ -638,7 +638,7 @@ curl -X POST 'https://<canvas>/api/v1/accounts/<account_id>/external_tools/top_n
 
 ### [Remove tool from Top Navigation Favorites](#method.external_tools.remove_top_nav_favorite) <a href="#method.external_tools.remove_top_nav_favorite" id="method.external_tools.remove_top_nav_favorite"></a>
 
-[ExternalToolsController#remove\_top\_nav\_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
+[ExternalToolsController#remove_top_nav_favorite](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
 
 **`DELETE /api/v1/accounts/:account_id/external_tools/top_nav_favorites/:id`**
 
@@ -655,29 +655,29 @@ curl -X DELETE 'https://<canvas>/api/v1/accounts/<account_id>/external_tools/top
 
 ### [Get visible course navigation tools](#method.external_tools.all_visible_nav_tools) <a href="#method.external_tools.all_visible_nav_tools" id="method.external_tools.all_visible_nav_tools"></a>
 
-[ExternalToolsController#all\_visible\_nav\_tools](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
+[ExternalToolsController#all_visible_nav_tools](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
 
 **`GET /api/v1/external_tools/visible_course_nav_tools`**
 
 **Scope:** `url:GET|/api/v1/external_tools/visible_course_nav_tools`
 
-Get a list of external tools with the course\_navigation placement that have not been hidden in course settings and whose visibility settings apply to the requesting user. These tools are the same that appear in the course navigation.
+Get a list of external tools with the course_navigation placement that have not been hidden in course settings and whose visibility settings apply to the requesting user. These tools are the same that appear in the course navigation.
 
-The response format is the same as for List external tools, but with additional context\_id and context\_name fields on each element in the array.
+The response format is the same as for List external tools, but with additional context_id and context_name fields on each element in the array.
 
 **Request Parameters:**
 
-| Parameter         | Type              | Description                                                                                                                        |
-| ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `context_codes[]` | Required `string` | List of context\_codes to retrieve visible course nav tools for (for example, `course_123`). Only courses are presently supported. |
+| Parameter         | Type              | Description                                                                                                                       |
+| ----------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `context_codes[]` | Required `string` | List of context_codes to retrieve visible course nav tools for (for example, `course_123`). Only courses are presently supported. |
 
 **API response field:**
 
-* context\_id
+- context_id
 
 The unique identifier of the associated context
 
-* context\_name
+- context_name
 
 The name of the associated context
 
@@ -704,13 +704,13 @@ curl 'https://<canvas>/api/v1/external_tools/visible_course_nav_tools?context_co
 
 ### [Get visible course navigation tools for a single course](#method.external_tools.visible_course_nav_tools) <a href="#method.external_tools.visible_course_nav_tools" id="method.external_tools.visible_course_nav_tools"></a>
 
-[ExternalToolsController#visible\_course\_nav\_tools](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
+[ExternalToolsController#visible_course_nav_tools](https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb)
 
 **`GET /api/v1/courses/:course_id/external_tools/visible_course_nav_tools`**
 
 **Scope:** `url:GET|/api/v1/courses/:course_id/external_tools/visible_course_nav_tools`
 
-Get a list of external tools with the course\_navigation placement that have not been hidden in course settings and whose visibility settings apply to the requesting user. These tools are the same that appear in the course navigation.
+Get a list of external tools with the course_navigation placement that have not been hidden in course settings and whose visibility settings apply to the requesting user. These tools are the same that appear in the course navigation.
 
 The response format is the same as Get visible course navigation tools.
 
@@ -721,6 +721,6 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/external_tools/visible_course_
      -H "Authorization: Bearer <token>"
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

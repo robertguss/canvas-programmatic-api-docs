@@ -429,7 +429,7 @@ Create and return a new module item
 | `module_item[external_url]`                      | `string`          | External url that the item points to. \[Required for ‘ExternalUrl’ and ‘ExternalTool’ types.                                                                                                                                                                                                                                                                                                                                                                                            |
 | `module_item[new_tab]`                           | `boolean`         | Whether the external tool opens in a new tab. Only applies to ‘ExternalTool’ type.                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `module_item[completion_requirement][type]`      | `string`          | <p>Completion requirement for this module item. “must_view”: Applies to all item types “must_contribute”: Only applies to “Assignment”, “Discussion”, and “Page” types “must_submit”, “min_score”: Only apply to “Assignment” and “Quiz” types “must_mark_done”: Only applies to “Assignment” and “Page” types Inapplicable types will be ignored</p><p>Allowed values: <code>must_view</code>, <code>must_contribute</code>, <code>must_submit</code>, <code>must_mark_done</code></p> |
-| `module_item[completion_requirement][min_score]` | `integer`         | Minimum score required to complete. Required for completion\_requirement type ‘min\_score’.                                                                                                                                                                                                                                                                                                                                                                                             |
+| `module_item[completion_requirement][min_score]` | `integer`         | Minimum score required to complete. Required for completion_requirement type ‘min_score’.                                                                                                                                                                                                                                                                                                                                                                                               |
 | `module_item[iframe][width]`                     | `integer`         | Width of the ExternalTool on launch                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `module_item[iframe][height]`                    | `integer`         | Height of the ExternalTool on launch                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
@@ -471,7 +471,7 @@ Update and return an existing module item
 | `module_item[external_url]`                      | `string`  | External url that the item points to. Only applies to ‘ExternalUrl’ type.                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `module_item[new_tab]`                           | `boolean` | Whether the external tool opens in a new tab. Only applies to ‘ExternalTool’ type.                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `module_item[completion_requirement][type]`      | `string`  | <p>Completion requirement for this module item. “must_view”: Applies to all item types “must_contribute”: Only applies to “Assignment”, “Discussion”, and “Page” types “must_submit”, “min_score”: Only apply to “Assignment” and “Quiz” types “must_mark_done”: Only applies to “Assignment” and “Page” types Inapplicable types will be ignored</p><p>Allowed values: <code>must_view</code>, <code>must_contribute</code>, <code>must_submit</code>, <code>must_mark_done</code></p> |
-| `module_item[completion_requirement][min_score]` | `integer` | Minimum score required to complete, Required for completion\_requirement type ‘min\_score’.                                                                                                                                                                                                                                                                                                                                                                                             |
+| `module_item[completion_requirement][min_score]` | `integer` | Minimum score required to complete, Required for completion_requirement type ‘min_score’.                                                                                                                                                                                                                                                                                                                                                                                               |
 | `module_item[published]`                         | `boolean` | Whether the module item is published and visible to students.                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `module_item[module_id]`                         | `string`  | Move this item to another module by specifying the target module id here. The target module must be in the same course.                                                                                                                                                                                                                                                                                                                                                                 |
 
@@ -490,7 +490,7 @@ Returns a [ModuleItem](#moduleitem) object.
 
 ### [Select a mastery path](#method.context_module_items_api.select_mastery_path) <a href="#method.context_module_items_api.select_mastery_path" id="method.context_module_items_api.select_mastery_path"></a>
 
-[ContextModuleItemsApiController#select\_mastery\_path](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
+[ContextModuleItemsApiController#select_mastery_path](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
 
 **`POST /api/v1/courses/:course_id/modules/:module_id/items/:id/select_mastery_path`**
 
@@ -500,10 +500,10 @@ Select a mastery path when module item includes several possible paths. Requires
 
 **Request Parameters:**
 
-| Parameter           | Type     | Description                                                                                           |
-| ------------------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| `assignment_set_id` | `string` | Assignment set chosen, as specified in the mastery\_paths portion of the context module item response |
-| `student_id`        | `string` | Which student the selection applies to. If not specified, current user is implied.                    |
+| Parameter           | Type     | Description                                                                                          |
+| ------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `assignment_set_id` | `string` | Assignment set chosen, as specified in the mastery_paths portion of the context module item response |
+| `student_id`        | `string` | Which student the selection applies to. If not specified, current user is implied.                   |
 
 **Example Request:**
 
@@ -536,7 +536,7 @@ Returns a [ModuleItem](#moduleitem) object.
 
 ### [Mark module item as done/not done](#method.context_module_items_api.mark_as_done) <a href="#method.context_module_items_api.mark_as_done" id="method.context_module_items_api.mark_as_done"></a>
 
-[ContextModuleItemsApiController#mark\_as\_done](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
+[ContextModuleItemsApiController#mark_as_done](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/modules/:module_id/items/:id/done`**
 
@@ -554,7 +554,7 @@ curl https://<canvas>/api/v1/courses/<course_id>/modules/<module_id>/items/<item
 
 ### [Get module item sequence](#method.context_module_items_api.item_sequence) <a href="#method.context_module_items_api.item_sequence" id="method.context_module_items_api.item_sequence"></a>
 
-[ContextModuleItemsApiController#item\_sequence](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
+[ContextModuleItemsApiController#item_sequence](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/module_item_sequence`**
 
@@ -580,13 +580,13 @@ Returns a [ModuleItemSequence](#moduleitemsequence) object.
 
 ### [Mark module item read](#method.context_module_items_api.mark_item_read) <a href="#method.context_module_items_api.mark_item_read" id="method.context_module_items_api.mark_item_read"></a>
 
-[ContextModuleItemsApiController#mark\_item\_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
+[ContextModuleItemsApiController#mark_item_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb)
 
 **`POST /api/v1/courses/:course_id/modules/:module_id/items/:id/mark_read`**
 
 **Scope:** `url:POST|/api/v1/courses/:course_id/modules/:module_id/items/:id/mark_read`
 
-Fulfills “must view” requirement for a module item. It is generally not necessary to do this explicitly, but it is provided for applications that need to access external content directly (bypassing the html\_url redirect that normally allows Canvas to fulfill “must view” requirements).
+Fulfills “must view” requirement for a module item. It is generally not necessary to do this explicitly, but it is provided for applications that need to access external content directly (bypassing the html_url redirect that normally allows Canvas to fulfill “must view” requirements).
 
 This endpoint cannot be used to complete requirements on locked or unpublished module items.
 
@@ -619,7 +619,7 @@ Returns a list of [ModuleAssignmentOverride](#moduleassignmentoverride) objects.
 
 ### [Update a module's overrides](#method.module_assignment_overrides.bulk_update) <a href="#method.module_assignment_overrides.bulk_update" id="method.module_assignment_overrides.bulk_update"></a>
 
-[ModuleAssignmentOverridesController#bulk\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/module_assignment_overrides_controller.rb)
+[ModuleAssignmentOverridesController#bulk_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/module_assignment_overrides_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/modules/:context_module_id/assignment_overrides`**
 
@@ -629,9 +629,9 @@ Accepts a list of overrides and applies them to the ContextModule. Returns 204 N
 
 **Request Parameters:**
 
-| Parameter     | Type             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `overrides[]` | Required `Array` | List of overrides to apply to the module. Overrides that already exist should include an ID and will be updated if needed. New overrides will be created for overrides in the list without an ID. Overrides not included in the list will be deleted. Providing an empty list will delete all of the module’s overrides. Keys for each override object can include: ‘id’, ‘title’, ‘student\_ids’, and ‘course\_section\_id’. ‘group\_id’ is accepted if the Differentiation Tags account setting is enabled. |
+| Parameter     | Type             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `overrides[]` | Required `Array` | List of overrides to apply to the module. Overrides that already exist should include an ID and will be updated if needed. New overrides will be created for overrides in the list without an ID. Overrides not included in the list will be deleted. Providing an empty list will delete all of the module’s overrides. Keys for each override object can include: ‘id’, ‘title’, ‘student_ids’, and ‘course_section_id’. ‘group_id’ is accepted if the Differentiation Tags account setting is enabled. |
 
 **Example Request:**
 
@@ -658,6 +658,6 @@ curl https://<canvas>/api/v1/courses/:course_id/modules/:context_module_id/assig
       }'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -23,7 +23,7 @@
   "email": "name@example.com",
   // URL of the page on which the error was reported
   "url": "https://canvas.instructure.com/courses/1",
-  // string describing the asset being interacted with at the time of error. 
+  // string describing the asset being interacted with at the time of error.
   // Formatted '[type]_[id]'
   "context_asset_string": "user_1",
   // comma seperated list of roles the reporting user holds.  Can be one
@@ -66,6 +66,6 @@ curl 'https://<canvas>/api/v1/error_reports' \
       -H 'Authorization: Bearer <token>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

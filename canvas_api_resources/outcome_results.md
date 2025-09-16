@@ -128,24 +128,24 @@ used in sLMGB
 
 **Request Parameters:**
 
-| Parameter        | Type      | Description                                                                                                                                                                                                          |
-| ---------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `user_ids[]`     | `integer` | If specified, only the users whose ids are given will be included in the results. SIS ids can be used, prefixed by “sis\_user\_id:”. It is an error to specify an id for a user who is not a student in the context. |
-| `outcome_ids[]`  | `integer` | If specified, only the outcomes whose ids are given will be included in the results. it is an error to specify an id for an outcome which is not linked to the context.                                              |
-| `include[]`      | `string`  | <ul><li>String, “alignments”</li></ul>                                                                                                                                                                               |
-| `include_hidden` | `boolean` | If true, results that are hidden from the learning mastery gradebook and student rollup scores will be included                                                                                                      |
+| Parameter        | Type      | Description                                                                                                                                                                                                        |
+| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `user_ids[]`     | `integer` | If specified, only the users whose ids are given will be included in the results. SIS ids can be used, prefixed by “sis_user_id:”. It is an error to specify an id for a user who is not a student in the context. |
+| `outcome_ids[]`  | `integer` | If specified, only the outcomes whose ids are given will be included in the results. it is an error to specify an id for an outcome which is not linked to the context.                                            |
+| `include[]`      | `string`  | <ul><li>String, “alignments”</li></ul>                                                                                                                                                                             |
+| `include_hidden` | `boolean` | If true, results that are hidden from the learning mastery gradebook and student rollup scores will be included                                                                                                    |
 
 **Example Response:**
 
 ```js
 {
-  outcome_results: [OutcomeResult]
+  outcome_results: [OutcomeResult];
 }
 ```
 
 ### [Set outcome ordering for LMGB](#method.outcome_results.outcome_order) <a href="#method.outcome_results.outcome_order" id="method.outcome_results.outcome_order"></a>
 
-[OutcomeResultsController#outcome\_order](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcome_results_controller.rb)
+[OutcomeResultsController#outcome_order](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcome_results_controller.rb)
 
 **`POST /api/v1/courses/:course_id/assign_outcome_order`**
 
@@ -209,6 +209,6 @@ Gets the outcome rollups for the users and outcomes in the specified context.
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

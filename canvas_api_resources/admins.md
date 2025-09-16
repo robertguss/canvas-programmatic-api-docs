@@ -86,7 +86,7 @@ Returns an [Admin](#admin) object.
 
 ### [List my admin roles](#method.admins.self_roles) <a href="#method.admins.self_roles" id="method.admins.self_roles"></a>
 
-[AdminsController#self\_roles](https://github.com/instructure/canvas-lms/blob/master/app/controllers/admins_controller.rb)
+[AdminsController#self_roles](https://github.com/instructure/canvas-lms/blob/master/app/controllers/admins_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/admins/self`**
 
@@ -96,6 +96,6 @@ A paginated list of the current user’s roles in the account. The results are t
 
 Returns a list of [Admin](#admin) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

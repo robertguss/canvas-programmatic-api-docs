@@ -35,13 +35,13 @@ API for account notifications.
 
 ### [Index of active global notification for the user](#method.account_notifications.user_index) <a href="#method.account_notifications.user_index" id="method.account_notifications.user_index"></a>
 
-[AccountNotificationsController#user\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_notifications_controller.rb)
+[AccountNotificationsController#user_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_notifications_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/account_notifications`**
 
 **Scope:** `url:GET|/api/v1/accounts/:account_id/account_notifications`
 
-Returns a list of all global notifications in the account for the current user Any notifications that have been closed by the user will not be returned, unless a include\_past parameter is passed in as true. Admins can request all global notifications for the account by passing in an include\_all parameter.
+Returns a list of all global notifications in the account for the current user Any notifications that have been closed by the user will not be returned, unless a include_past parameter is passed in as true. Admins can request all global notifications for the account by passing in an include_all parameter.
 
 **Request Parameters:**
 
@@ -155,7 +155,7 @@ https://<canvas>/api/v1/accounts/2/account_notifications/1 \
 
 ### [Close notification for user. Destroy notification for admin](#method.account_notifications.user_close_notification) <a href="#method.account_notifications.user_close_notification" id="method.account_notifications.user_close_notification"></a>
 
-[AccountNotificationsController#user\_close\_notification](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_notifications_controller.rb)
+[AccountNotificationsController#user_close_notification](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_notifications_controller.rb)
 
 **`DELETE /api/v1/accounts/:account_id/account_notifications/:id`**
 
@@ -180,6 +180,6 @@ https://<canvas>/api/v1/accounts/2/account_notifications/4
 
 Returns an [AccountNotification](#accountnotification) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

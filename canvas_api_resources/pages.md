@@ -89,7 +89,7 @@ For example, if you have a page whose ID is 7 and another whose ID is 8 and whos
 
 ### [Show front page](#method.wiki_pages_api.show_front_page) <a href="#method.wiki_pages_api.show_front_page" id="method.wiki_pages_api.show_front_page"></a>
 
-[WikiPagesApiController#show\_front\_page](https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb)
+[WikiPagesApiController#show_front_page](https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/front_page`**
 
@@ -131,7 +131,7 @@ Returns a [Page](#page) object.
 
 ### [Update/create front page](#method.wiki_pages_api.update_front_page) <a href="#method.wiki_pages_api.update_front_page" id="method.wiki_pages_api.update_front_page"></a>
 
-[WikiPagesApiController#update\_front\_page](https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb)
+[WikiPagesApiController#update_front_page](https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/front_page`**
 
@@ -342,7 +342,7 @@ Returns a list of [PageRevision](#pagerevision) objects.
 
 ### [Show revision](#method.wiki_pages_api.show_revision) <a href="#method.wiki_pages_api.show_revision" id="method.wiki_pages_api.show_revision"></a>
 
-[WikiPagesApiController#show\_revision](https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb)
+[WikiPagesApiController#show_revision](https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/pages/:url_or_id/revisions/latest`**
 
@@ -411,6 +411,6 @@ https://<canvas>/api/v1/courses/123/pages/the-page-identifier/revisions/6
 
 Returns a [PageRevision](#pagerevision) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

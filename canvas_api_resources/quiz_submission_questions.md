@@ -91,7 +91,7 @@ Returns a list of [QuizSubmissionQuestion](#quizsubmissionquestion) objects.
 
 ### [Get a formatted student numerical answer.](#method.quizzes/quiz_submission_questions.formatted_answer) <a href="#method.quizzes-quiz_submission_questions.formatted_answer" id="method.quizzes-quiz_submission_questions.formatted_answer"></a>
 
-[Quizzes::QuizSubmissionQuestionsController#formatted\_answer](https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submission_questions_controller.rb)
+[Quizzes::QuizSubmissionQuestionsController#formatted_answer](https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submission_questions_controller.rb)
 
 **`GET /api/v1/quiz_submissions/:quiz_submission_id/questions/:id/formatted_answer`**
 
@@ -173,15 +173,15 @@ Remove the flag that you previously set on a quiz question after you’ve return
 
 #### Appendix: Question Answer Formats <a href="#questionanswerformats-appendix" id="questionanswerformats-appendix"></a>
 
-.appendix\_entry div.syntaxhighlighter table { width: 100%; }
+.appendix_entry div.syntaxhighlighter table { width: 100%; }
 
-.appendix\_entry h4 { color: green; }
+.appendix_entry h4 { color: green; }
 
 **Essay Questions**
 
-* Question parametric type: `essay_question`
-* Parameter type: **`Text`**
-* Parameter synopsis: `{ "answer": "Answer text." }`
+- Question parametric type: `essay_question`
+- Parameter type: **`Text`**
+- Parameter synopsis: `{ "answer": "Answer text." }`
 
 **Example request**
 
@@ -199,9 +199,9 @@ Remove the flag that you previously set on a quiz question after you’ve return
 
 **Fill In Multiple Blanks Questions**
 
-* Question parametric type: `fill_in_multiple_blanks_question`
-* Parameter type: **`Hash{String => String}`**
-* Parameter synopsis: `{ "answer": { "variable": "Answer string." } }`
+- Question parametric type: `fill_in_multiple_blanks_question`
+- Parameter type: **`Hash{String => String}`**
+- Parameter synopsis: `{ "answer": { "variable": "Answer string." } }`
 
 **Example request**
 
@@ -225,9 +225,9 @@ Given that the question accepts answers to two variables, `color1` and `color2`:
 
 **Fill In The Blank Questions**
 
-* Question parametric type: `short_answer_question`
-* Parameter type: **`String`**
-* Parameter synopsis: `{ "answer": "Some sentence." }`
+- Question parametric type: `short_answer_question`
+- Parameter type: **`String`**
+- Parameter synopsis: `{ "answer": "Some sentence." }`
 
 **Example request**
 
@@ -243,9 +243,9 @@ Similar to the errors produced by [Essay Questions](#essay-questions).
 
 **Formula Questions**
 
-* Question parametric type: `calculated_question`
-* Parameter type: **`Decimal`**
-* Parameter synopsis: `{ "answer": decimal }` where `decimal` is either a rational number, or a literal version of it (String)
+- Question parametric type: `calculated_question`
+- Parameter type: **`Decimal`**
+- Parameter synopsis: `{ "answer": decimal }` where `decimal` is either a rational number, or a literal version of it (String)
 
 **Example request**
 
@@ -273,9 +273,9 @@ With a string for a number:
 
 **Matching Questions**
 
-* Question parametric type: `matching_question`
-* Parameter type: **`Array<Hash>`**
-* Parameter synopsis: `{ "answer": [{ "answer_id": id, "match_id": id }] }` where the IDs must identify answers and matches accepted by the question.
+- Question parametric type: `matching_question`
+- Parameter type: **`Array<Hash>`**
+- Parameter synopsis: `{ "answer": [{ "answer_id": id, "match_id": id }] }` where the IDs must identify answers and matches accepted by the question.
 
 **Example request**
 
@@ -295,9 +295,9 @@ Given that the question accepts 3 answers with IDs `[ 3, 6, 9 ]` and 6 matches w
 
 The above request:
 
-* pairs `answer#6` with `match#10`
-* pairs `answer#3` with `match#14`
-* leaves `answer#9` _un-matched_
+- pairs `answer#6` with `match#10`
+- pairs `answer#3` with `match#14`
+- leaves `answer#9` _un-matched_
 
 **Possible errors**
 
@@ -351,9 +351,9 @@ The above request:
 
 **Multiple Choice Questions**
 
-* Question parametric type: `multiple_choice_question`
-* Parameter type: **`Integer`**
-* Parameter synopsis: `{ "answer": answer_id }` where `answer_id` is an ID of one of the question's answers.
+- Question parametric type: `multiple_choice_question`
+- Parameter type: **`Integer`**
+- Parameter synopsis: `{ "answer": answer_id }` where `answer_id` is an ID of one of the question's answers.
 
 **Example request**
 
@@ -367,16 +367,16 @@ Given an answer with an ID of 5:
 
 **Possible errors**
 
-| HTTP RC         | Error Message                        | Cause                                               |
-| --------------- | ------------------------------------ | --------------------------------------------------- |
-| 400 Bad Request | `Parameter must be of type Integer.` | The specified \`answer\_id\` is not an integer.     |
-| 400 Bad Request | `Unknown answer '123'`               | The specified \`answer\_id\` is not a valid answer. |
+| HTTP RC         | Error Message                        | Cause                                              |
+| --------------- | ------------------------------------ | -------------------------------------------------- |
+| 400 Bad Request | `Parameter must be of type Integer.` | The specified \`answer_id\` is not an integer.     |
+| 400 Bad Request | `Unknown answer '123'`               | The specified \`answer_id\` is not a valid answer. |
 
 **Multiple Dropdowns Questions**
 
-* Question parametric type: `multiple_dropdowns_question`
-* Parameter type: **`Hash{String => Integer}`**
-* Parameter synopsis: `{ "answer": { "variable": answer_id } }` where the keys are variables accepted by the question, and their values are IDs of answers provided by the question.
+- Question parametric type: `multiple_dropdowns_question`
+- Parameter type: **`Hash{String => Integer}`**
+- Parameter synopsis: `{ "answer": { "variable": answer_id } }` where the keys are variables accepted by the question, and their values are IDs of answers provided by the question.
 
 **Example request**
 
@@ -399,9 +399,9 @@ Given that the question accepts 3 answers to a variable named `color` with the i
 
 **Multiple Answers Questions**
 
-* Question parametric type: `multiple_answers_question`
-* Parameter type: **`Array<Integer>`**
-* Parameter synopsis: `{ "answer": [ answer_id ] }` where the array items are IDs of answers accepted by the question.
+- Question parametric type: `multiple_answers_question`
+- Parameter type: **`Array<Integer>`**
+- Parameter synopsis: `{ "answer": [ answer_id ] }` where the array items are IDs of answers accepted by the question.
 
 **Example request**
 
@@ -431,16 +431,16 @@ Given that the question accepts 3 answers with the ids `[ 3, 6, 9 ]` and we want
 
 **Numerical Questions**
 
-* Question parametric type: `numerical_question`
+- Question parametric type: `numerical_question`
 
 This is similar to [Formula Questions](#formula-questions).
 
 **True/False Questions**
 
-* Question parametric type: `true_false_question`
+- Question parametric type: `true_false_question`
 
 The rest is similar to [Multiple Choice questions](#multiple-choice-questions).
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

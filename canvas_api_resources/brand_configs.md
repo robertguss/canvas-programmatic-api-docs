@@ -24,7 +24,7 @@ curl 'https://<canvas>/api/v1/brand_variables'
 
 ### [Get the brand config variables for a sub-account or course](#method.brand_configs_api.show_context) <a href="#method.brand_configs_api.show_context" id="method.brand_configs_api.show_context"></a>
 
-[BrandConfigsApiController#show\_context](https://github.com/instructure/canvas-lms/blob/master/app/controllers/brand_configs_api_controller.rb)
+[BrandConfigsApiController#show_context](https://github.com/instructure/canvas-lms/blob/master/app/controllers/brand_configs_api_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/brand_variables`**
 
@@ -43,6 +43,6 @@ curl 'https://<canvas>/api/v1/accounts/123/brand_variables'
   -H 'Authorization: Bearer <token>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -77,7 +77,7 @@ API for importing data from Student Information Systems
   "GroupMembership": null,
   // This contains that statistics for pseudonyms. Pseudonyms are logins for
   // users, and are the object that ties an enrollment to a user. This would be
-  // impacted from the user importer. 
+  // impacted from the user importer.
   "Pseudonym": null,
   // This contains that statistics for user observers.
   "UserObserver": null,
@@ -276,15 +276,15 @@ Examples:
 
 Returns a [SisImport](#sisimport) object.
 
-### [Restore workflow\_states of SIS imported items](#method.sis_imports_api.restore_states) <a href="#method.sis_imports_api.restore_states" id="method.sis_imports_api.restore_states"></a>
+### [Restore workflow_states of SIS imported items](#method.sis_imports_api.restore_states) <a href="#method.sis_imports_api.restore_states" id="method.sis_imports_api.restore_states"></a>
 
-[SisImportsApiController#restore\_states](https://github.com/instructure/canvas-lms/blob/master/app/controllers/sis_imports_api_controller.rb)
+[SisImportsApiController#restore_states](https://github.com/instructure/canvas-lms/blob/master/app/controllers/sis_imports_api_controller.rb)
 
 **`PUT /api/v1/accounts/:account_id/sis_imports/:id/restore_states`**
 
 **Scope:** `url:PUT|/api/v1/accounts/:account_id/sis_imports/:id/restore_states`
 
-This will restore the the workflow\_state for all the items that changed their workflow\_state during the import being restored. This will restore states for items imported with the following importers: accounts.csv terms.csv courses.csv sections.csv group\_categories.csv groups.csv users.csv admins.csv This also restores states for other items that changed during the import. An example would be if an enrollment was deleted from a sis import and the group\_membership was also deleted as a result of the enrollment deletion, both items would be restored when the sis batch is restored.
+This will restore the the workflow_state for all the items that changed their workflow_state during the import being restored. This will restore states for items imported with the following importers: accounts.csv terms.csv courses.csv sections.csv group_categories.csv groups.csv users.csv admins.csv This also restores states for other items that changed during the import. An example would be if an enrollment was deleted from a sis import and the group_membership was also deleted as a result of the enrollment deletion, both items would be restored when the sis batch is restored.
 
 Restore data is retained for 30 days post-import. This endpoint is unavailable after that time.
 
@@ -292,7 +292,7 @@ Restore data is retained for 30 days post-import. This endpoint is unavailable a
 
 | Parameter         | Type      | Description                                                                                                         |
 | ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------- |
-| `batch_mode`      | `boolean` | If set, will only restore items that were deleted from batch\_mode.                                                 |
+| `batch_mode`      | `boolean` | If set, will only restore items that were deleted from batch_mode.                                                  |
 | `undelete_only`   | `boolean` | If set, will only restore items that were deleted. This will ignore any items that were created or modified.        |
 | `unconclude_only` | `boolean` | If set, will only restore enrollments that were concluded. This will ignore any items that were created or deleted. |
 
@@ -328,7 +328,7 @@ Returns a [SisImport](#sisimport) object.
 
 ### [Abort all pending SIS imports](#method.sis_imports_api.abort_all_pending) <a href="#method.sis_imports_api.abort_all_pending" id="method.sis_imports_api.abort_all_pending"></a>
 
-[SisImportsApiController#abort\_all\_pending](https://github.com/instructure/canvas-lms/blob/master/app/controllers/sis_imports_api_controller.rb)
+[SisImportsApiController#abort_all_pending](https://github.com/instructure/canvas-lms/blob/master/app/controllers/sis_imports_api_controller.rb)
 
 **`PUT /api/v1/accounts/:account_id/sis_imports/abort_all_pending`**
 
@@ -343,6 +343,6 @@ curl https://<canvas>/api/v1/accounts/<account_id>/sis_imports/abort_all_pending
   -H 'Authorization: Bearer <token>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

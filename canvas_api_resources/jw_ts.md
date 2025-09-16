@@ -31,13 +31,13 @@ Generates a different JWT each time it’s called. Each JWT expires after a shor
 
 **Request Parameters:**
 
-| Parameter         | Type      | Description                                                                                                                                                                                         |
-| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `workflows[]`     | `string`  | Adds additional data to the JWT to be used by the consuming service workflow                                                                                                                        |
-| `context_type`    | `string`  | <p>The type of the context to generate the JWT for, in case the workflow requires it. Case insensitive.</p><p>Allowed values: <code>Course</code>, <code>User</code>, <code>Account</code></p>      |
-| `context_id`      | `integer` | The id of the context to generate the JWT for, in case the workflow requires it.                                                                                                                    |
-| `context_uuid`    | `string`  | The uuid of the context to generate the JWT for, in case the workflow requires it. Note that context\_id and context\_uuid are mutually exclusive. If both are provided, an error will be returned. |
-| `canvas_audience` | `boolean` | Defaults to true. If false, the JWT will be signed, but not encrypted, for use in downstream services. The default encrypted behaviour can be used to talk to Canvas itself.                        |
+| Parameter         | Type      | Description                                                                                                                                                                                       |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `workflows[]`     | `string`  | Adds additional data to the JWT to be used by the consuming service workflow                                                                                                                      |
+| `context_type`    | `string`  | <p>The type of the context to generate the JWT for, in case the workflow requires it. Case insensitive.</p><p>Allowed values: <code>Course</code>, <code>User</code>, <code>Account</code></p>    |
+| `context_id`      | `integer` | The id of the context to generate the JWT for, in case the workflow requires it.                                                                                                                  |
+| `context_uuid`    | `string`  | The uuid of the context to generate the JWT for, in case the workflow requires it. Note that context_id and context_uuid are mutually exclusive. If both are provided, an error will be returned. |
+| `canvas_audience` | `boolean` | Defaults to true. If false, the JWT will be signed, but not encrypted, for use in downstream services. The default encrypted behaviour can be used to talk to Canvas itself.                      |
 
 **Example Request:**
 
@@ -80,6 +80,6 @@ curl 'https://<canvas>/api/v1/jwts/refresh' \
 
 Returns a [JWT](#jwt) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

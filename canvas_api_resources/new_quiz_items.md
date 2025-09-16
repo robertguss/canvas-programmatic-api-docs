@@ -334,7 +334,7 @@ curl 'https://<canvas>/api/quiz/v1/courses/1/quizzes/12/items/123' \
 
 Returns a [QuizItem](#quizitem) object.
 
-### [Get items media\_upload\_url](#method.new_quizzes/quiz_items_api.media_upload_url) <a href="#method.new_quizzes-quiz_items_api.media_upload_url" id="method.new_quizzes-quiz_items_api.media_upload_url"></a>
+### [Get items media_upload_url](#method.new_quizzes/quiz_items_api.media_upload_url) <a href="#method.new_quizzes-quiz_items_api.media_upload_url" id="method.new_quizzes-quiz_items_api.media_upload_url"></a>
 
 **`GET /api/quiz/v1/courses/:course_id/quizzes/:assignment_id/items/media_upload_url`**
 
@@ -487,9 +487,9 @@ Categorization Interaction Data includes categories, distractors, and a category
   "categories": {
       // UUID generated or set for a category.  Also the id value
       "6c33f1dd-1d28-413f-bba1-80fcdc96f36e": {
-          // the UUID id of this category 
+          // the UUID id of this category
           "id": "6c33f1dd-1d28-413f-bba1-80fcdc96f36e",
-          // the text provided for this category   
+          // the text provided for this category
           "item_body": "fish"
       },
       "730a9fc7-1960-4318-a615-aa45a48890f8": {
@@ -507,9 +507,9 @@ Categorization Interaction Data includes categories, distractors, and a category
   "distractors": {
       // the UUID id of this category
       "1cb5ec30-3c40-4450-92f2-d1d82699df77": {
-          // same UUID 
+          // same UUID
           "id": "1cb5ec30-3c40-4450-92f2-d1d82699df77",
-          // the text provided for a right OR wrong answer.  
+          // the text provided for a right OR wrong answer.
           "item_body": "trout"
       },
       "60c98d76-7eea-4d05-92cf-9f9fa4383a41": {
@@ -1054,7 +1054,7 @@ Scoring data is essentially nil with this data structure
 ```
 "properties": {
     "shuffle_rules": {
-        // blanks indicate places where quiz taker must answer in some way, listed from 0-n 
+        // blanks indicate places where quiz taker must answer in some way, listed from 0-n
         "blanks": {
             "children": {
                 "0": {
@@ -1180,26 +1180,27 @@ Scoring data is essentially nil with this data structure
 
 **Hot Spot**
 
-To create a hotspot question, first upload the image to the url obtained with the media\_upload\_url endpoint. Then create the question item, including the image's url in the item's `interaction_data`. The requests look like this:
+To create a hotspot question, first upload the image to the url obtained with the media_upload_url endpoint. Then create the question item, including the image's url in the item's `interaction_data`. The requests look like this:
 
 1. `GET /api/quiz/v1/courses/:course_id/quizzes/:assignment_id/items/media_upload_url`. This returns a presigned url for uploading the image.
-2.  `PUT <media_upload_url>` with the image included in the request as a data attribute. For example, in cURL:
+2. `PUT <media_upload_url>` with the image included in the request as a data attribute. For example, in cURL:
 
-    ```
-    curl --X PUT 'http://quiz.minio.docker/dev-uploads/item_media/1e6f97fc-f56c-4b29-96ac-08474b9bf969/6e5ad29e-119d-4a08-8504-daf088928612?X-Amz-Signature=2c8f37219...' \
-    --header 'Content-Type: image/png' \
-    --data '@/Documents/"panda".png'
-    ```
-3.  `POST /api/quiz/v1/courses/:course_id/quizzes/:assignment_id/items`, including the _unsigned_ media\_upload\_url in the request's interaction\_data param, like this:
+   ```
+   curl --X PUT 'http://quiz.minio.docker/dev-uploads/item_media/1e6f97fc-f56c-4b29-96ac-08474b9bf969/6e5ad29e-119d-4a08-8504-daf088928612?X-Amz-Signature=2c8f37219...' \
+   --header 'Content-Type: image/png' \
+   --data '@/Documents/"panda".png'
+   ```
 
-    ```
-    {
-       "interaction_data": {
-           // note: the query params present on the signed url are not included here
-           "image_url": "http://quiz.minio.docker/dev-uploads/item_media/1e6f97fc-f56c-4b29-96ac-08474b9bf969/6e5ad29e-119d-4a08-8504-daf088928612"
-       }
-    }
-    ```
+3. `POST /api/quiz/v1/courses/:course_id/quizzes/:assignment_id/items`, including the _unsigned_ media_upload_url in the request's interaction_data param, like this:
+
+   ```
+   {
+      "interaction_data": {
+          // note: the query params present on the signed url are not included here
+          "image_url": "http://quiz.minio.docker/dev-uploads/item_media/1e6f97fc-f56c-4b29-96ac-08474b9bf969/6e5ad29e-119d-4a08-8504-daf088928612"
+      }
+   }
+   ```
 
 **Interaction Data**
 
@@ -1223,9 +1224,9 @@ To create a hotspot question, first upload the image to the url obtained with th
     "value": {
         // Type of Hotspot selection (oval, square, polygon)
         "type": "oval",
-        // List of coordinates (based on proportion of size) 
+        // List of coordinates (based on proportion of size)
         // oval: first set is the center coordinates.  The second set is the width and height
-        // square: first set of coordinates is the top left corner, and the second set 
+        // square: first set of coordinates is the top left corner, and the second set
         // is the bottom right corner
         // polygon: coordinates are the vertices of the closed polygon
         "coordinates": [
@@ -1529,6 +1530,6 @@ This data is similar to rich fill in the blank. It is deprecated, so this is onl
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

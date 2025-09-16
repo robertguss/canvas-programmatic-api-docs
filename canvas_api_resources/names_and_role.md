@@ -101,7 +101,7 @@ See [External Tools - LTI - Provisioning](../external-tools/lti/file.provisionin
 
 ### [List Course Memberships](#method.lti/ims/names_and_roles.course_index) <a href="#method.lti-ims-names_and_roles.course_index" id="method.lti-ims-names_and_roles.course_index"></a>
 
-[Lti::Ims::NamesAndRolesController#course\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/ims/names_and_roles_controller.rb)
+[Lti::Ims::NamesAndRolesController#course_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/ims/names_and_roles_controller.rb)
 
 **`GET /api/lti/courses/:course_id/names_and_roles`**
 
@@ -121,7 +121,7 @@ Returns a [NamesAndRoleMemberships](#namesandrolememberships) object.
 
 ### [List Group Memberships](#method.lti/ims/names_and_roles.group_index) <a href="#method.lti-ims-names_and_roles.group_index" id="method.lti-ims-names_and_roles.group_index"></a>
 
-[Lti::Ims::NamesAndRolesController#group\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/ims/names_and_roles_controller.rb)
+[Lti::Ims::NamesAndRolesController#group_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/ims/names_and_roles_controller.rb)
 
 **`GET /api/lti/groups/:group_id/names_and_roles`**
 
@@ -139,6 +139,6 @@ Return active NamesAndRoleMemberships in the given group.
 
 Returns a [NamesAndRoleMemberships](#namesandrolememberships) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

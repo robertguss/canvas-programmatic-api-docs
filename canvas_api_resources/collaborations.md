@@ -56,7 +56,7 @@ API for accessing course and group collaboration information.
 
 ### [List collaborations](#method.collaborations.api_index) <a href="#method.collaborations.api_index" id="method.collaborations.api_index"></a>
 
-[CollaborationsController#api\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/collaborations_controller.rb)
+[CollaborationsController#api_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/collaborations_controller.rb)
 
 **`GET /api/v1/courses/:course_id/collaborations`**
 
@@ -100,7 +100,7 @@ Returns a list of [Collaborator](#collaborator) objects.
 
 ### [List potential members](#method.collaborations.potential_collaborators) <a href="#method.collaborations.potential_collaborators" id="method.collaborations.potential_collaborators"></a>
 
-[CollaborationsController#potential\_collaborators](https://github.com/instructure/canvas-lms/blob/master/app/controllers/collaborations_controller.rb)
+[CollaborationsController#potential_collaborators](https://github.com/instructure/canvas-lms/blob/master/app/controllers/collaborations_controller.rb)
 
 **`GET /api/v1/courses/:course_id/potential_collaborators`**
 
@@ -116,6 +116,6 @@ For courses, this consists of all enrolled users. For groups, it is comprised of
 
 Returns a list of [User](../users#user) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

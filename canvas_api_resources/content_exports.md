@@ -88,7 +88,7 @@ Returns a [ContentExport](#contentexport) object.
 
 Begin a content export job for a course, group, or user.
 
-You can use the [Progress API](../progress#method.progress.show) to track the progress of the export. The migration’s progress is linked to with the _progress\_url_ value.
+You can use the [Progress API](../progress#method.progress.show) to track the progress of the export. The migration’s progress is linked to with the _progress_url_ value.
 
 When the export completes, use the [Show content export](#method.content_exports_api.show) endpoint to retrieve a download URL for the exported content.
 
@@ -102,6 +102,6 @@ When the export completes, use the [Show content export](#method.content_exports
 
 Returns a [ContentExport](#contentexport) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -113,7 +113,7 @@ Returns a [CommunicationChannel](#communicationchannel) object.
 
 ### [Delete a push notification endpoint](#method.communication_channels.delete_push_token) <a href="#method.communication_channels.delete_push_token" id="method.communication_channels.delete_push_token"></a>
 
-[CommunicationChannelsController#delete\_push\_token](https://github.com/instructure/canvas-lms/blob/master/app/controllers/communication_channels_controller.rb)
+[CommunicationChannelsController#delete_push_token](https://github.com/instructure/canvas-lms/blob/master/app/controllers/communication_channels_controller.rb)
 
 **`DELETE /api/v1/users/self/communication_channels/push`**
 
@@ -128,6 +128,6 @@ curl https://<canvas>/api/v1/users/self/communication_channels/push
      -d 'push_token=<push_token>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

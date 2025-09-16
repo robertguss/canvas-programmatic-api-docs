@@ -68,13 +68,13 @@ Create a custom gradebook column
 
 **Request Parameters:**
 
-| Parameter               | Type              | Description                                                                                            |
-| ----------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ |
-| `column[title]`         | Required `string` | no description                                                                                         |
-| `column[position]`      | `integer`         | The position of the column relative to other custom columns                                            |
-| `column[hidden]`        | `boolean`         | Hidden columns are not displayed in the gradebook                                                      |
-| `column[teacher_notes]` | `boolean`         | Set this if the column is created by a teacher. The gradebook only supports one teacher\_notes column. |
-| `column[read_only]`     | `boolean`         | Set this to prevent the column from being editable in the gradebook ui                                 |
+| Parameter               | Type              | Description                                                                                           |
+| ----------------------- | ----------------- | ----------------------------------------------------------------------------------------------------- |
+| `column[title]`         | Required `string` | no description                                                                                        |
+| `column[position]`      | `integer`         | The position of the column relative to other custom columns                                           |
+| `column[hidden]`        | `boolean`         | Hidden columns are not displayed in the gradebook                                                     |
+| `column[teacher_notes]` | `boolean`         | Set this if the column is created by a teacher. The gradebook only supports one teacher_notes column. |
+| `column[read_only]`     | `boolean`         | Set this to prevent the column from being editable in the gradebook ui                                |
 
 Returns a [CustomColumn](#customcolumn) object.
 
@@ -158,7 +158,7 @@ Returns a [ColumnDatum](#columndatum) object.
 
 ### [Bulk update column data](#method.custom_gradebook_column_data_api.bulk_update) <a href="#method.custom_gradebook_column_data_api.bulk_update" id="method.custom_gradebook_column_data_api.bulk_update"></a>
 
-[CustomGradebookColumnDataApiController#bulk\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_gradebook_column_data_api_controller.rb)
+[CustomGradebookColumnDataApiController#bulk_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_gradebook_column_data_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/custom_gradebook_column_data`**
 
@@ -194,10 +194,11 @@ Set the content of custom columns
 **Example Request:**
 
 ```bash
+
 ```
 
 Returns a [Progress](../progress#progress) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

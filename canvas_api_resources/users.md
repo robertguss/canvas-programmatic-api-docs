@@ -262,7 +262,7 @@ Course nicknames are alternate names for courses that are unique to each user. T
 
 ### [List users in account](#method.users.api_index) <a href="#method.users.api_index" id="method.users.api_index"></a>
 
-[UsersController#api\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#api_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/users`**
 
@@ -292,7 +292,7 @@ Returns a list of [User](#user) objects.
 
 ### [List the activity stream](#method.users.activity_stream) <a href="#method.users.activity_stream" id="method.users.activity_stream"></a>
 
-[UsersController#activity\_stream](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#activity_stream](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/self/activity_stream`**
 
@@ -418,7 +418,7 @@ AssessmentRequest:
 
 ### [Activity stream summary](#method.users.activity_stream_summary) <a href="#method.users.activity_stream_summary" id="method.users.activity_stream_summary"></a>
 
-[UsersController#activity\_stream\_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#activity_stream_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/self/activity_stream/summary`**
 
@@ -437,21 +437,21 @@ Returns a summary of the current user’s global activity stream.
 ```js
 [
   {
-    "type": "DiscussionTopic",
-    "unread_count": 2,
-    "count": 7
+    type: "DiscussionTopic",
+    unread_count: 2,
+    count: 7,
   },
   {
-    "type": "Conversation",
-    "unread_count": 0,
-    "count": 3
-  }
-]
+    type: "Conversation",
+    unread_count: 0,
+    count: 3,
+  },
+];
 ```
 
 ### [List the TODO items](#method.users.todo_items) <a href="#method.users.todo_items" id="method.users.todo_items"></a>
 
-[UsersController#todo\_items](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#todo_items](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/self/todo`**
 
@@ -461,7 +461,7 @@ A paginated list of the current user’s list of todo items.
 
 There is a limit to the number of items returned.
 
-The ‘ignore\` and \`ignore\_permanently\` URLs can be used to update the user’s preferences on what items will be displayed. Performing a DELETE request against the ‘ignore\` URL will hide that item from future todo item requests, until the item changes. Performing a DELETE request against the \`ignore\_permanently\` URL will hide that item forever.
+The ‘ignore\` and \`ignore_permanently\` URLs can be used to update the user’s preferences on what items will be displayed. Performing a DELETE request against the ‘ignore\` URL will hide that item from future todo item requests, until the item changes. Performing a DELETE request against the \`ignore_permanently\` URL will hide that item forever.
 
 **Request Parameters:**
 
@@ -507,7 +507,7 @@ The ‘ignore\` and \`ignore\_permanently\` URLs can be used to update the user�
 
 ### [List counts for todo items](#method.users.todo_item_count) <a href="#method.users.todo_item_count" id="method.users.todo_item_count"></a>
 
-[UsersController#todo\_item\_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#todo_item_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/self/todo_item_count`**
 
@@ -534,7 +534,7 @@ There is a limit to the number of todo items this endpoint will count. It will o
 
 ### [List upcoming assignments, calendar events](#method.users.upcoming_events) <a href="#method.users.upcoming_events" id="method.users.upcoming_events"></a>
 
-[UsersController#upcoming\_events](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#upcoming_events](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/self/upcoming_events`**
 
@@ -608,7 +608,7 @@ A paginated list of the current user’s upcoming events.
 
 ### [List Missing Submissions](#method.users.missing_submissions) <a href="#method.users.missing_submissions" id="method.users.missing_submissions"></a>
 
-[UsersController#missing\_submissions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#missing_submissions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/:user_id/missing_submissions`**
 
@@ -621,16 +621,16 @@ A paginated list of past-due assignments for which the student does not have a s
 | Parameter          | Type     | Description                                                                                                                                                                                                                                                                                                                                                     |
 | ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `user_id`          | `string` | the student’s ID                                                                                                                                                                                                                                                                                                                                                |
-| `observed_user_id` | `string` | Return missing submissions for the given observed user. Must be accompanied by course\_ids\[]. The user making the request must be observing the observed user in all the courses specified by course\_ids\[].                                                                                                                                                  |
+| `observed_user_id` | `string` | Return missing submissions for the given observed user. Must be accompanied by course_ids\[]. The user making the request must be observing the observed user in all the courses specified by course_ids\[].                                                                                                                                                    |
 | `include[]`        | `string` | <ul><li><p>“planner_overrides”</p><p>Optionally include the assignment’s associated planner override, if it exists, for the current user. These will be returned under a planner_override key</p></li><li><p>“course”</p><p>Optionally include the assignments’ courses</p></li></ul><p>Allowed values: <code>planner_overrides</code>, <code>course</code></p> |
 | `filter[]`         | `string` | <ul><li><p>“submittable”</p><p>Only return assignments that the current user can submit (i.e. filter out locked assignments)</p></li><li><p>“current_grading_period”</p><p>Only return missing assignments that are in the current grading period</p></li></ul><p>Allowed values: <code>submittable</code>, <code>current_grading_period</code></p>             |
-| `course_ids[]`     | `string` | Optionally restricts the list of past-due assignments to only those associated with the specified course IDs. Required if observed\_user\_id is passed.                                                                                                                                                                                                         |
+| `course_ids[]`     | `string` | Optionally restricts the list of past-due assignments to only those associated with the specified course IDs. Required if observed_user_id is passed.                                                                                                                                                                                                           |
 
 Returns a list of [Assignment](../assignments#assignment) objects.
 
 ### [Hide a stream item](#method.users.ignore_stream_item) <a href="#method.users.ignore_stream_item" id="method.users.ignore_stream_item"></a>
 
-[UsersController#ignore\_stream\_item](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#ignore_stream_item](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`DELETE /api/v1/users/self/activity_stream/:id`**
 
@@ -656,7 +656,7 @@ curl https://<canvas>/api/v1/users/self/activity_stream/<stream_item_id> \
 
 ### [Hide all stream items](#method.users.ignore_all_stream_items) <a href="#method.users.ignore_all_stream_items" id="method.users.ignore_all_stream_items"></a>
 
-[UsersController#ignore\_all\_stream\_items](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#ignore_all_stream_items](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`DELETE /api/v1/users/self/activity_stream`**
 
@@ -682,7 +682,7 @@ curl https://<canvas>/api/v1/users/self/activity_stream \
 
 ### [Upload a file](#method.users.create_file) <a href="#method.users.create_file" id="method.users.create_file"></a>
 
-[UsersController#create\_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#create_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`POST /api/v1/users/:user_id/files`**
 
@@ -692,11 +692,11 @@ Upload a file to the user’s personal files section.
 
 This API endpoint is the first step in uploading a file to a user’s files. See the [File Upload Documentation](../basics/file.file_uploads) for details on the file upload workflow.
 
-Note that typically users will only be able to upload files to their own files section. Passing a user\_id of `self` is an easy shortcut to specify the current user.
+Note that typically users will only be able to upload files to their own files section. Passing a user_id of `self` is an easy shortcut to specify the current user.
 
 ### [Show user details](#method.users.api_show) <a href="#method.users.api_show" id="method.users.api_show"></a>
 
-[UsersController#api\_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#api_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/:id`**
 
@@ -740,45 +740,45 @@ Returns an [User](#user) object.
 
 Create and return a new user and pseudonym for an account.
 
-*   DEPRECATED (for self-registration only)
+- DEPRECATED (for self-registration only)
 
-    If you don’t have the “Modify
+  If you don’t have the “Modify
 
 login details for users“ permission, but self-registration is enabled on the account, you can still use this endpoint to register new users. Certain fields will be required, and others will be ignored (see below).
 
 **Request Parameters:**
 
-| Parameter                                  | Type              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `user[name]`                               | `string`          | The full name of the user. This name will be used by teacher for grading. Required if this is a self-registration.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `user[short_name]`                         | `string`          | User’s name as it will be displayed in discussions, messages, and comments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `user[sortable_name]`                      | `string`          | User’s name as used to sort alphabetically in lists.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `user[time_zone]`                          | `string`          | The time zone for the user. Allowed time zones are [IANA time zones](http://www.iana.org/time-zones) or friendlier [Ruby on Rails time zones](http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html).                                                                                                                                                                                                                                                                                                                                                                        |
-| `user[locale]`                             | `string`          | The user’s preferred language, from the list of languages Canvas supports. This is in RFC-5646 format.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `user[terms_of_use]`                       | `boolean`         | <p>Whether the user accepts the terms of use. Required if this is a self-registration and this canvas instance requires users to accept the terms (on by default).</p><p><br></p><p>If this is true, it will mark the user as having accepted the terms of use.</p>                                                                                                                                                                                                                                                                                                                   |
-| `user[skip_registration]`                  | `boolean`         | <p>Automatically mark the user as registered.</p><p><br></p><p>If this is true, it is recommended to set <code>"pseudonym[send_confirmation]"</code> to true as well. Otherwise, the user will not receive any messages about their account creation.</p><p><br></p><p>The users communication channel confirmation can be skipped by setting <code>"communication_channel[skip_confirmation]"</code> to true as well.</p>                                                                                                                                                            |
-| `pseudonym[unique_id]`                     | Required `string` | User’s login ID. If this is a self-registration, it must be a valid email address.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `pseudonym[password]`                      | `string`          | User’s password. Cannot be set during self-registration.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `pseudonym[sis_user_id]`                   | `string`          | SIS ID for the user’s account. To set this parameter, the caller must be able to manage SIS permissions.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `pseudonym[integration_id]`                | `string`          | Integration ID for the login. To set this parameter, the caller must be able to manage SIS permissions. The Integration ID is a secondary identifier useful for more complex SIS integrations.                                                                                                                                                                                                                                                                                                                                                                                        |
-| `pseudonym[send_confirmation]`             | `boolean`         | Send user notification of account creation if true. Automatically set to true during self-registration.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `pseudonym[force_self_registration]`       | `boolean`         | Send user a self-registration style email if true. Setting it means the users will get a notification asking them to “complete the registration process” by clicking it, setting a password, and letting them in. Will only be executed on if the user does not need admin approval. Defaults to false unless explicitly provided.                                                                                                                                                                                                                                                    |
-| `pseudonym[authentication_provider_id]`    | `string`          | The authentication provider this login is associated with. Logins associated with a specific provider can only be used with that provider. Legacy providers (LDAP, CAS, SAML) will search for logins associated with them, or unassociated logins. New providers will only search for logins explicitly associated with them. This can be the integer ID of the provider, or the type of the provider (in which case, it will find the first matching provider).                                                                                                                      |
-| `communication_channel[type]`              | `string`          | The communication channel type, e.g. ‘email’ or ‘sms’.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `communication_channel[address]`           | `string`          | The communication channel address, e.g. the user’s email address.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `communication_channel[confirmation_url]`  | `boolean`         | Only valid for account admins. If true, returns the new user account confirmation URL in the response.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `communication_channel[skip_confirmation]` | `boolean`         | <p>Only valid for site admins and account admins making requests; If true, the channel is automatically validated and no confirmation email or SMS is sent. Otherwise, the user must respond to a confirmation message to confirm the channel.</p><p><br></p><p>If this is true, it is recommended to set <code>"pseudonym[send_confirmation]"</code> to true as well. Otherwise, the user will not receive any messages about their account creation.</p>                                                                                                                            |
-| `force_validations`                        | `boolean`         | If true, validations are performed on the newly created user (and their associated pseudonym) even if the request is made by a privileged user like an admin. When set to false, or not included in the request parameters, any newly created users are subject to validations unless the request is made by a user with a ‘manage\_user\_logins’ right. In which case, certain validations such as ‘require\_acceptance\_of\_terms’ and ‘require\_presence\_of\_name’ are not enforced. Use this parameter to return helpful json errors while building users with an admin request. |
-| `enable_sis_reactivation`                  | `boolean`         | When true, will first try to re-activate a deleted user with matching sis\_user\_id if possible. This is commonly done with `user[skip_registration]` and `communication_channel[skip_confirmation]` so that the default communication\_channel is also restored.                                                                                                                                                                                                                                                                                                                     |
-| `destination`                              | `URL`             | If you’re setting the password for the newly created user, you can provide this param with a valid URL pointing into this Canvas installation, and the response will include a destination field that’s a URL that you can redirect a browser to and have the newly created user automatically logged in. The URL is only valid for a short time, and must match the domain this request is directed to, and be for a well-formed path that Canvas can recognize.                                                                                                                     |
-| `initial_enrollment_type`                  | `string`          | ‘observer\` if doing a self-registration with a pairing code. This allows setting the password during user creation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `pairing_code[code]`                       | `string`          | If provided and valid, will link the new user as an observer to the student’s whose pairing code is given.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Parameter                                  | Type              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ------------------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `user[name]`                               | `string`          | The full name of the user. This name will be used by teacher for grading. Required if this is a self-registration.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `user[short_name]`                         | `string`          | User’s name as it will be displayed in discussions, messages, and comments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `user[sortable_name]`                      | `string`          | User’s name as used to sort alphabetically in lists.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `user[time_zone]`                          | `string`          | The time zone for the user. Allowed time zones are [IANA time zones](http://www.iana.org/time-zones) or friendlier [Ruby on Rails time zones](http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html).                                                                                                                                                                                                                                                                                                                                                                |
+| `user[locale]`                             | `string`          | The user’s preferred language, from the list of languages Canvas supports. This is in RFC-5646 format.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `user[terms_of_use]`                       | `boolean`         | <p>Whether the user accepts the terms of use. Required if this is a self-registration and this canvas instance requires users to accept the terms (on by default).</p><p><br></p><p>If this is true, it will mark the user as having accepted the terms of use.</p>                                                                                                                                                                                                                                                                                                           |
+| `user[skip_registration]`                  | `boolean`         | <p>Automatically mark the user as registered.</p><p><br></p><p>If this is true, it is recommended to set <code>"pseudonym[send_confirmation]"</code> to true as well. Otherwise, the user will not receive any messages about their account creation.</p><p><br></p><p>The users communication channel confirmation can be skipped by setting <code>"communication_channel[skip_confirmation]"</code> to true as well.</p>                                                                                                                                                    |
+| `pseudonym[unique_id]`                     | Required `string` | User’s login ID. If this is a self-registration, it must be a valid email address.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `pseudonym[password]`                      | `string`          | User’s password. Cannot be set during self-registration.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `pseudonym[sis_user_id]`                   | `string`          | SIS ID for the user’s account. To set this parameter, the caller must be able to manage SIS permissions.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `pseudonym[integration_id]`                | `string`          | Integration ID for the login. To set this parameter, the caller must be able to manage SIS permissions. The Integration ID is a secondary identifier useful for more complex SIS integrations.                                                                                                                                                                                                                                                                                                                                                                                |
+| `pseudonym[send_confirmation]`             | `boolean`         | Send user notification of account creation if true. Automatically set to true during self-registration.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `pseudonym[force_self_registration]`       | `boolean`         | Send user a self-registration style email if true. Setting it means the users will get a notification asking them to “complete the registration process” by clicking it, setting a password, and letting them in. Will only be executed on if the user does not need admin approval. Defaults to false unless explicitly provided.                                                                                                                                                                                                                                            |
+| `pseudonym[authentication_provider_id]`    | `string`          | The authentication provider this login is associated with. Logins associated with a specific provider can only be used with that provider. Legacy providers (LDAP, CAS, SAML) will search for logins associated with them, or unassociated logins. New providers will only search for logins explicitly associated with them. This can be the integer ID of the provider, or the type of the provider (in which case, it will find the first matching provider).                                                                                                              |
+| `communication_channel[type]`              | `string`          | The communication channel type, e.g. ‘email’ or ‘sms’.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `communication_channel[address]`           | `string`          | The communication channel address, e.g. the user’s email address.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `communication_channel[confirmation_url]`  | `boolean`         | Only valid for account admins. If true, returns the new user account confirmation URL in the response.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `communication_channel[skip_confirmation]` | `boolean`         | <p>Only valid for site admins and account admins making requests; If true, the channel is automatically validated and no confirmation email or SMS is sent. Otherwise, the user must respond to a confirmation message to confirm the channel.</p><p><br></p><p>If this is true, it is recommended to set <code>"pseudonym[send_confirmation]"</code> to true as well. Otherwise, the user will not receive any messages about their account creation.</p>                                                                                                                    |
+| `force_validations`                        | `boolean`         | If true, validations are performed on the newly created user (and their associated pseudonym) even if the request is made by a privileged user like an admin. When set to false, or not included in the request parameters, any newly created users are subject to validations unless the request is made by a user with a ‘manage_user_logins’ right. In which case, certain validations such as ‘require_acceptance_of_terms’ and ‘require_presence_of_name’ are not enforced. Use this parameter to return helpful json errors while building users with an admin request. |
+| `enable_sis_reactivation`                  | `boolean`         | When true, will first try to re-activate a deleted user with matching sis_user_id if possible. This is commonly done with `user[skip_registration]` and `communication_channel[skip_confirmation]` so that the default communication_channel is also restored.                                                                                                                                                                                                                                                                                                                |
+| `destination`                              | `URL`             | If you’re setting the password for the newly created user, you can provide this param with a valid URL pointing into this Canvas installation, and the response will include a destination field that’s a URL that you can redirect a browser to and have the newly created user automatically logged in. The URL is only valid for a short time, and must match the domain this request is directed to, and be for a well-formed path that Canvas can recognize.                                                                                                             |
+| `initial_enrollment_type`                  | `string`          | ‘observer\` if doing a self-registration with a pairing code. This allows setting the password during user creation.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `pairing_code[code]`                       | `string`          | If provided and valid, will link the new user as an observer to the student’s whose pairing code is given.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 Returns an [User](#user) object.
 
 ### [\[DEPRECATED\] Self register a user](#method.users.create_self_registered_user) <a href="#method.users.create_self_registered_user" id="method.users.create_self_registered_user"></a>
 
-[UsersController#create\_self\_registered\_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#create_self_registered_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`POST /api/v1/accounts/:account_id/self_registration`**
 
@@ -841,7 +841,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/settings \
 
 ### [Get custom colors](#method.users.get_custom_colors) <a href="#method.users.get_custom_colors" id="method.users.get_custom_colors"></a>
 
-[UsersController#get\_custom\_colors](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#get_custom_colors](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/:id/colors`**
 
@@ -870,7 +870,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/colors/ \
 
 ### [Get custom color](#method.users.get_custom_color) <a href="#method.users.get_custom_color" id="method.users.get_custom_color"></a>
 
-[UsersController#get\_custom\_color](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#get_custom_color](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/:id/colors/:asset_string`**
 
@@ -878,7 +878,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/colors/ \
 
 Returns the custom colors that have been saved for a user for a given context.
 
-The asset\_string parameter should be in the format ‘context\_id’, for example ‘course\_42’.
+The asset_string parameter should be in the format ‘context_id’, for example ‘course_42’.
 
 **Example Request:**
 
@@ -898,7 +898,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/colors/<asset_string> \
 
 ### [Update custom color](#method.users.set_custom_color) <a href="#method.users.set_custom_color" id="method.users.set_custom_color"></a>
 
-[UsersController#set\_custom\_color](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#set_custom_color](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`PUT /api/v1/users/:id/colors/:asset_string`**
 
@@ -906,7 +906,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/colors/<asset_string> \
 
 Updates a custom color for a user for a given context. This allows colors for the calendar and elsewhere to be customized on a user basis.
 
-The asset string parameter should be in the format ‘context\_id’, for example ‘course\_42’
+The asset string parameter should be in the format ‘context_id’, for example ‘course_42’
 
 **Request Parameters:**
 
@@ -933,7 +933,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/colors/<asset_string> \
 
 ### [Update text editor preference](#method.users.set_text_editor_preference) <a href="#method.users.set_text_editor_preference" id="method.users.set_text_editor_preference"></a>
 
-[UsersController#set\_text\_editor\_preference](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#set_text_editor_preference](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`PUT /api/v1/users/:id/text_editor_preference`**
 
@@ -966,7 +966,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/prefered_editor \
 
 ### [Update files UI version preference](#method.users.set_files_ui_version_preference) <a href="#method.users.set_files_ui_version_preference" id="method.users.set_files_ui_version_preference"></a>
 
-[UsersController#set\_files\_ui\_version\_preference](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#set_files_ui_version_preference](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`PUT /api/v1/users/:id/files_ui_version_preference`**
 
@@ -999,7 +999,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/files_ui_version_preference \
 
 ### [Get dashboard positions](#method.users.get_dashboard_positions) <a href="#method.users.get_dashboard_positions" id="method.users.get_dashboard_positions"></a>
 
-[UsersController#get\_dashboard\_positions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#get_dashboard_positions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/:id/dashboard_positions`**
 
@@ -1028,7 +1028,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/dashboard_positions/ \
 
 ### [Update dashboard positions](#method.users.set_dashboard_positions) <a href="#method.users.set_dashboard_positions" id="method.users.set_dashboard_positions"></a>
 
-[UsersController#set\_dashboard\_positions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#set_dashboard_positions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`PUT /api/v1/users/:id/dashboard_positions`**
 
@@ -1036,7 +1036,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/dashboard_positions/ \
 
 Updates the dashboard positions for a user for a given context. This allows positions for the dashboard cards and elsewhere to be customized on a per user basis.
 
-The asset string parameter should be in the format ‘context\_id’, for example ‘course\_42’
+The asset string parameter should be in the format ‘context_id’, for example ‘course_42’
 
 **Example Request:**
 
@@ -1107,7 +1107,7 @@ Returns an [User](#user) object.
 
 ### [Terminate all user sessions](#method.users.terminate_sessions) <a href="#method.users.terminate_sessions" id="method.users.terminate_sessions"></a>
 
-[UsersController#terminate\_sessions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#terminate_sessions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`DELETE /api/v1/users/:id/sessions`**
 
@@ -1117,7 +1117,7 @@ Terminates all sessions for a user. This includes all browser-based sessions and
 
 ### [Log users out of all mobile apps](#method.users.expire_mobile_sessions) <a href="#method.users.expire_mobile_sessions" id="method.users.expire_mobile_sessions"></a>
 
-[UsersController#expire\_mobile\_sessions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#expire_mobile_sessions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`DELETE /api/v1/users/mobile_sessions`**
 
@@ -1133,7 +1133,7 @@ The route that takes a user id will expire mobile sessions for that user. The ro
 
 ### [Merge user into another user](#method.users.merge_into) <a href="#method.users.merge_into" id="method.users.merge_into"></a>
 
-[UsersController#merge\_into](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#merge_into](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`PUT /api/v1/users/:id/merge_into/:destination_user_id`**
 
@@ -1145,23 +1145,23 @@ The route that takes a user id will expire mobile sessions for that user. The ro
 
 Merge a user into another user. To merge users, the caller must have permissions to manage both users. This should be considered irreversible. This will delete the user and move all the data into the destination user.
 
-User merge details and caveats: The from\_user is the user that was deleted in the user\_merge process. The destination\_user is the user that remains, that is being split.
+User merge details and caveats: The from_user is the user that was deleted in the user_merge process. The destination_user is the user that remains, that is being split.
 
-Avatars: When both users have avatars, only the destination\_users avatar will remain. When one user has an avatar, it will end up on the destination\_user.
+Avatars: When both users have avatars, only the destination_users avatar will remain. When one user has an avatar, it will end up on the destination_user.
 
 Terms of Use: If either user has accepted terms of use, it will be be left as accepted.
 
-Communication Channels: All unique communication channels moved to the destination\_user. All notification preferences are moved to the destination\_user.
+Communication Channels: All unique communication channels moved to the destination_user. All notification preferences are moved to the destination_user.
 
-Enrollments: All unique enrollments are moved to the destination\_user. When there is an enrollment that would end up making it so that a user would be observing themselves, the enrollment is not moved over. Everything that is tied to the from\_user at the course level relating to the enrollment is also moved to the destination\_user.
+Enrollments: All unique enrollments are moved to the destination_user. When there is an enrollment that would end up making it so that a user would be observing themselves, the enrollment is not moved over. Everything that is tied to the from_user at the course level relating to the enrollment is also moved to the destination_user.
 
-Submissions: All submissions are moved to the destination\_user. If there are enrollments for both users in the same course, we prefer submissions that have grades then submissions that have work in them, and if there are no grades or no work, they are not moved.
+Submissions: All submissions are moved to the destination_user. If there are enrollments for both users in the same course, we prefer submissions that have grades then submissions that have work in them, and if there are no grades or no work, they are not moved.
 
-Other notes: Access Tokens are moved on merge. Conversations are moved on merge. Favorites are moved on merge. Courses will commonly use LTI tools. LTI tools reference the user with IDs that are stored on a user object. Merging users deletes one user and moves all records from the deleted user to the destination\_user. These IDs are kept for all enrollments, group\_membership, and account\_users for the from\_user at the time of the merge. When the destination\_user launches an LTI tool from a course that used to be the from\_user’s, it doesn’t appear as a new user to the tool provider. Instead it will send the stored ids. The destination\_user’s LTI IDs remain as they were for the courses that they originally had. Future enrollments for the destination\_user will use the IDs that are on the destination\_user object. LTI IDs that are kept and tracked per context include lti\_context\_id, lti\_id and uuid. APIs that return the LTI ids will return the one for the context that it is called for, except for the user uuid. The user UUID will display the destination\_users uuid, and when getting the uuid from an api that is in a context that was recorded from a merge event, an additional attribute is added as past\_uuid.
+Other notes: Access Tokens are moved on merge. Conversations are moved on merge. Favorites are moved on merge. Courses will commonly use LTI tools. LTI tools reference the user with IDs that are stored on a user object. Merging users deletes one user and moves all records from the deleted user to the destination_user. These IDs are kept for all enrollments, group_membership, and account_users for the from_user at the time of the merge. When the destination_user launches an LTI tool from a course that used to be the from_user’s, it doesn’t appear as a new user to the tool provider. Instead it will send the stored ids. The destination_user’s LTI IDs remain as they were for the courses that they originally had. Future enrollments for the destination_user will use the IDs that are on the destination_user object. LTI IDs that are kept and tracked per context include lti_context_id, lti_id and uuid. APIs that return the LTI ids will return the one for the context that it is called for, except for the user uuid. The user UUID will display the destination_users uuid, and when getting the uuid from an api that is in a context that was recorded from a merge event, an additional attribute is added as past_uuid.
 
-When finding users by SIS ids in different accounts the destination\_account\_id is required.
+When finding users by SIS ids in different accounts the destination_account_id is required.
 
-The account can also be identified by passing the domain in destination\_account\_id.
+The account can also be identified by passing the domain in destination_account_id.
 
 **Example Request:**
 
@@ -1187,21 +1187,21 @@ Returns an [User](#user) object.
 
 **Scope:** `url:POST|/api/v1/users/:id/split`
 
-Merged users cannot be fully restored to their previous state, but this will attempt to split as much as possible to the previous state. To split a merged user, the caller must have permissions to manage all of the users logins. If there are multiple users that have been merged into one user it will split each merge into a separate user. A split can only happen within 180 days of a user merge. A user merge deletes the previous user and may be permanently deleted. In this scenario we create a new user object and proceed to move as much as possible to the new user. The user object will not have preserved the name or settings from the previous user. Some items may have been deleted during a user\_merge that cannot be restored, and/or the data has become stale because of other changes to the objects since the time of the user\_merge.
+Merged users cannot be fully restored to their previous state, but this will attempt to split as much as possible to the previous state. To split a merged user, the caller must have permissions to manage all of the users logins. If there are multiple users that have been merged into one user it will split each merge into a separate user. A split can only happen within 180 days of a user merge. A user merge deletes the previous user and may be permanently deleted. In this scenario we create a new user object and proceed to move as much as possible to the new user. The user object will not have preserved the name or settings from the previous user. Some items may have been deleted during a user_merge that cannot be restored, and/or the data has become stale because of other changes to the objects since the time of the user_merge.
 
 Split users details and caveats:
 
-The from\_user is the user that was deleted in the user\_merge process. The destination\_user is the user that remains, that is being split.
+The from_user is the user that was deleted in the user_merge process. The destination_user is the user that remains, that is being split.
 
-Avatars: When both users had avatars, both will be remain. When from\_user had an avatar and destination\_user did not have an avatar, the destination\_user’s avatar will be deleted if it still matches what was there are the time of the merge. If the destination\_user’s avatar was changed at anytime after the merge, it will remain on the destination user. If the from\_user had an avatar it will be there after split.
+Avatars: When both users had avatars, both will be remain. When from_user had an avatar and destination_user did not have an avatar, the destination_user’s avatar will be deleted if it still matches what was there are the time of the merge. If the destination_user’s avatar was changed at anytime after the merge, it will remain on the destination user. If the from_user had an avatar it will be there after split.
 
-Terms of Use: If from\_user had not accepted terms of use, they will be prompted again to accept terms of use after the split. If the destination\_user had not accepted terms of use, hey will be prompted again to accept terms of use after the split. If neither user had accepted the terms of use, but since the time of the merge had accepted, both will be prompted to accept terms of use. If both had accepted terms of use, this will remain.
+Terms of Use: If from_user had not accepted terms of use, they will be prompted again to accept terms of use after the split. If the destination_user had not accepted terms of use, hey will be prompted again to accept terms of use after the split. If neither user had accepted the terms of use, but since the time of the merge had accepted, both will be prompted to accept terms of use. If both had accepted terms of use, this will remain.
 
-Communication Channels: All communication channels are restored to what they were prior to the merge. If a communication channel was added after the merge, it will remain on the destination\_user. Notification preferences remain with the communication channels.
+Communication Channels: All communication channels are restored to what they were prior to the merge. If a communication channel was added after the merge, it will remain on the destination_user. Notification preferences remain with the communication channels.
 
-Enrollments: All enrollments from the time of the merge will be moved back to where they were. Enrollments created since the time of the merge that were created by sis\_import will go to the user that owns that sis\_id used for the import. Other new enrollments will remain on the destination\_user. Everything that is tied to the destination\_user at the course level relating to an enrollment is moved to the from\_user. When both users are in the same course prior to merge this can cause some unexpected items to move.
+Enrollments: All enrollments from the time of the merge will be moved back to where they were. Enrollments created since the time of the merge that were created by sis_import will go to the user that owns that sis_id used for the import. Other new enrollments will remain on the destination_user. Everything that is tied to the destination_user at the course level relating to an enrollment is moved to the from_user. When both users are in the same course prior to merge this can cause some unexpected items to move.
 
-Submissions: Unlike other items tied to a course, submissions are explicitly recorded to avoid problems with grades. All submissions were moved are restored to the spot prior to merge. All submission that were created in a course that was moved in enrollments are moved over to the from\_user.
+Submissions: Unlike other items tied to a course, submissions are explicitly recorded to avoid problems with grades. All submissions were moved are restored to the spot prior to merge. All submission that were created in a course that was moved in enrollments are moved over to the from_user.
 
 Other notes: Access Tokens are moved back on split. Conversations are moved back on split. Favorites that existing at the time of merge are moved back on split. LTI ids are restored to how they were prior to merge.
 
@@ -1217,7 +1217,7 @@ Returns a list of [User](#user) objects.
 
 ### [Get a Pandata Events jwt token and its expiration date](#method.users.pandata_events_token) <a href="#method.users.pandata_events_token" id="method.users.pandata_events_token"></a>
 
-[UsersController#pandata\_events\_token](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#pandata_events_token](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`POST /api/v1/users/self/pandata_events_token`**
 
@@ -1255,7 +1255,7 @@ curl https://<canvas>/api/v1/users/self/pandata_events_token \
 
 ### [Get a users most recently graded submissions](#method.users.user_graded_submissions) <a href="#method.users.user_graded_submissions" id="method.users.user_graded_submissions"></a>
 
-[UsersController#user\_graded\_submissions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
+[UsersController#user_graded_submissions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/users_controller.rb)
 
 **`GET /api/v1/users/:id/graded_submissions`**
 
@@ -1297,25 +1297,27 @@ Returns a [Profile](#profile) object.
 
 ### [List avatar options](#method.profile.profile_pics) <a href="#method.profile.profile_pics" id="method.profile.profile_pics"></a>
 
-[ProfileController#profile\_pics](https://github.com/instructure/canvas-lms/blob/master/app/controllers/profile_controller.rb)
+[ProfileController#profile_pics](https://github.com/instructure/canvas-lms/blob/master/app/controllers/profile_controller.rb)
 
 **`GET /api/v1/users/:user_id/avatars`**
 
 **Scope:** `url:GET|/api/v1/users/:user_id/avatars`
 
-A paginated list of the possible user avatar options that can be set with the user update endpoint. The response will be an array of avatar records. If the ‘type’ field is ‘attachment’, the record will include all the normal attachment json fields; otherwise it will include only the ‘url’ and ‘display\_name’ fields. Additionally, all records will include a ‘type’ field and a ‘token’ field. The following explains each field in more detail
+A paginated list of the possible user avatar options that can be set with the user update endpoint. The response will be an array of avatar records. If the ‘type’ field is ‘attachment’, the record will include all the normal attachment json fields; otherwise it will include only the ‘url’ and ‘display_name’ fields. Additionally, all records will include a ‘type’ field and a ‘token’ field. The following explains each field in more detail
 
-*   type
+- type
 
-    “gravatar”|“attachment”|“no\_pic”
+  “gravatar”|“attachment”|“no_pic”
 
-    The type of avatar record, for categorization purposes.
-*   “gravatar”|“attachment”|“no\_pic”
+  The type of avatar record, for categorization purposes.
 
-    The type of avatar record, for categorization purposes.
-*   “gravatar”|“attachment”|“no\_pic”
+- “gravatar”|“attachment”|“no_pic”
 
-    The type of avatar record, for categorization purposes.
+  The type of avatar record, for categorization purposes.
+
+- “gravatar”|“attachment”|“no_pic”
+
+  The type of avatar record, for categorization purposes.
 
 url
 
@@ -1325,33 +1327,33 @@ token
 
 A unique representation of the avatar record which can be used to set the avatar with the user update endpoint. Note: this is an internal representation and is subject to change without notice. It should be consumed with this api endpoint and used in the user update endpoint, and should not be constructed by the client.
 
-display\_name
+display_name
 
 A textual description of the avatar record
 
 id
 
-*   ‘attachment’ type only
+- ‘attachment’ type only
 
-    the internal id of the attachment
+  the internal id of the attachment
 
 content-type
 
-*   ‘attachment’ type only
+- ‘attachment’ type only
 
-    the content-type of the attachment
+  the content-type of the attachment
 
 filename
 
-*   ‘attachment’ type only
+- ‘attachment’ type only
 
-    the filename of the attachment
+  the filename of the attachment
 
 size
 
-*   ‘attachment’ type only
+- ‘attachment’ type only
 
-    the size of the attachment
+  the size of the attachment
 
 **Example Request:**
 
@@ -1414,7 +1416,7 @@ Returns a list of [PageView](#pageview) objects.
 
 ### [Store custom data](#method.custom_data.set_data) <a href="#method.custom_data.set_data" id="method.custom_data.set_data"></a>
 
-[CustomDataController#set\_data](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_data_controller.rb)
+[CustomDataController#set_data](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_data_controller.rb)
 
 **`PUT /api/v1/users/:user_id/custom_data(/*scope)`**
 
@@ -1426,7 +1428,7 @@ Arbitrary JSON data can be stored for a User. A typical scenario would be an ext
 
 The value `self` may be used for `user_id` to store data associated with the calling user. In order to access another user’s custom data, you must be an account administrator with permission to manage users.
 
-A namespace parameter, `ns`, is used to prevent custom\_data collisions between different apps. This parameter is required for all custom\_data requests.
+A namespace parameter, `ns`, is used to prevent custom_data collisions between different apps. This parameter is required for all custom_data requests.
 
 A request with Content-Type multipart/form-data or Content-Type application/x-www-form-urlencoded can only be used to store strings.
 
@@ -1559,7 +1561,7 @@ Responds with status code 201 if the scope was previously empty, and the data sp
 
 Responds with status code 400 if the namespace parameter, `ns`, is missing or invalid, or if the `data` parameter is missing.
 
-Responds with status code 409 if the requested scope caused a conflict and data was not stored. This happens when storing data at the requested scope would cause data at an outer scope to be lost. e.g., if `/custom_data` was {“fashion\_app”: {“hair”: “blonde”\}}, but you tried to ‘PUT /custom\_data/fashion\_app/hair/style -F data=buzz\`, then for the request to succeed,the value of `/custom_data/fashion_app/hair` would have to become a hash, and its old string value would be lost. In this situation, an error object is returned with the following format:
+Responds with status code 409 if the requested scope caused a conflict and data was not stored. This happens when storing data at the requested scope would cause data at an outer scope to be lost. e.g., if `/custom_data` was {“fashion_app”: {“hair”: “blonde”\}}, but you tried to ‘PUT /custom_data/fashion_app/hair/style -F data=buzz\`, then for the request to succeed,the value of `/custom_data/fashion_app/hair` would have to become a hash, and its old string value would be lost. In this situation, an error object is returned with the following format:
 
 ```
 {
@@ -1605,7 +1607,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/custom_data/food_app' \
 
 ### [Load custom data](#method.custom_data.get_data) <a href="#method.custom_data.get_data" id="method.custom_data.get_data"></a>
 
-[CustomDataController#get\_data](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_data_controller.rb)
+[CustomDataController#get_data](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_data_controller.rb)
 
 **`GET /api/v1/users/:user_id/custom_data(/*scope)`**
 
@@ -1644,7 +1646,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/custom_data/food_app/favorites/des
 
 ### [Delete custom data](#method.custom_data.delete_data) <a href="#method.custom_data.delete_data" id="method.custom_data.delete_data"></a>
 
-[CustomDataController#delete\_data](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_data_controller.rb)
+[CustomDataController#delete_data](https://github.com/instructure/canvas-lms/blob/master/app/controllers/custom_data_controller.rb)
 
 **`DELETE /api/v1/users/:user_id/custom_data(/*scope)`**
 
@@ -1652,7 +1654,7 @@ curl 'https://<canvas>/api/v1/users/<user_id>/custom_data/food_app/favorites/des
 
 Delete custom user data.
 
-Arbitrary JSON data can be stored for a User. This API call deletes that data for a given scope. Without a scope, all custom\_data is deleted. See [Store Custom Data](#method.users.set_custom_data) for details and examples of storage and retrieval.
+Arbitrary JSON data can be stored for a User. This API call deletes that data for a given scope. Without a scope, all custom_data is deleted. See [Store Custom Data](#method.users.set_custom_data) for details and examples of storage and retrieval.
 
 As an example, we’ll store some data, then delete a subset of it.
 
@@ -1729,7 +1731,7 @@ Response:
 }
 ```
 
-Note that hashes left empty after a DELETE will get removed from the custom\_data store. For example, following the previous commands, if we delete /custom\_data/veggies/root/onion, then the entire /custom\_data/veggies scope will be removed.
+Note that hashes left empty after a DELETE will get removed from the custom_data store. For example, following the previous commands, if we delete /custom_data/veggies/root/onion, then the entire /custom_data/veggies scope will be removed.
 
 Example DELETE that empties a parent scope:
 
@@ -1900,6 +1902,6 @@ curl 'https://<canvas>/api/v1/users/self/course_nicknames \
   -H 'Authorization: Bearer <token>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

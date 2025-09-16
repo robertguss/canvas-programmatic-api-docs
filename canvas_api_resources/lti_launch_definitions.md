@@ -44,7 +44,7 @@
 
 ### [List LTI Launch Definitions](#method.lti/lti_apps.launch_definitions) <a href="#method.lti-lti_apps.launch_definitions" id="method.lti-lti_apps.launch_definitions"></a>
 
-[Lti::LtiAppsController#launch\_definitions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/lti_apps_controller.rb)
+[Lti::LtiAppsController#launch_definitions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/lti_apps_controller.rb)
 
 **`GET /api/v1/courses/:course_id/lti_apps/launch_definitions`**
 
@@ -63,6 +63,6 @@ List all tools available in this context for the given placements, in the form o
 | `placements[Array]`     | `string` | The placements to return launch definitions for. If not provided, an empty list will be returned. |
 | `only_visible[Boolean]` | `string` | If true, only return launch definitions that are visible to the current user. Defaults to true.   |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

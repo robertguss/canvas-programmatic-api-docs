@@ -159,7 +159,7 @@ Returns a list of [Grades](#grades) objects.
 
 ### [Reset the what-if scores for the current user for an entire course and recalculate grades](#method.what_if_grades_api.reset_for_student_course) <a href="#method.what_if_grades_api.reset_for_student_course" id="method.what_if_grades_api.reset_for_student_course"></a>
 
-[WhatIfGradesApiController#reset\_for\_student\_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/what_if_grades_api_controller.rb)
+[WhatIfGradesApiController#reset_for_student_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/what_if_grades_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/what_if_grades/reset`**
 
@@ -169,6 +169,6 @@ Resets all what-if scores for a student in a course and recalculates grades.
 
 Returns a list of [Grades](#grades) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

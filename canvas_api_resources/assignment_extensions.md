@@ -31,9 +31,9 @@ API for setting extensions on student assignment submissions. These cannot be se
 
 **Responses**
 
-* **200 OK** if the request was successful
-* **403 Forbidden** if you are not allowed to extend assignments for this course
-* **400 Bad Request** if any of the extensions are invalid
+- **200 OK** if the request was successful
+- **403 Forbidden** if you are not allowed to extend assignments for this course
+- **400 Bad Request** if any of the extensions are invalid
 
 **Request Parameters:**
 
@@ -64,6 +64,6 @@ API for setting extensions on student assignment submissions. These cannot be se
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

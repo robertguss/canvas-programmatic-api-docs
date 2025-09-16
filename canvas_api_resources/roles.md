@@ -88,7 +88,7 @@ API for managing account- and course-level roles, and their associated permissio
 
 ### [List roles](#method.role_overrides.api_index) <a href="#method.role_overrides.api_index" id="method.role_overrides.api_index"></a>
 
-[RoleOverridesController#api\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
+[RoleOverridesController#api_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/roles`**
 
@@ -128,7 +128,7 @@ Returns a [Role](#role) object.
 
 ### [Create a new role](#method.role_overrides.add_role) <a href="#method.role_overrides.add_role" id="method.role_overrides.add_role"></a>
 
-[RoleOverridesController#add\_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
+[RoleOverridesController#add_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
 
 **`POST /api/v1/accounts/:account_id/roles`**
 
@@ -146,8 +146,8 @@ Create a new course-level or account-level role.
 | `permissions[<X>][explicit]`               | `boolean`         | no description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `permissions[<X>][enabled]`                | `boolean`         | <p>If explicit is 1 and enabled is 1, permission &#x3C;X> will be explicitly granted to this role. If explicit is 1 and enabled has any other value (typically 0), permission &#x3C;X> will be explicitly denied to this role. If explicit is any other value (typically 0) or absent, or if enabled is absent, the value for permission &#x3C;X> will be inherited from upstream. Ignored if permission &#x3C;X> is locked upstream (in an ancestor account).</p><p><br></p><p>May occur multiple times with unique values for &#x3C;X>. Recognized permission names for &#x3C;X> can be found on the <a href="../basics/file.permissions">Permissions list page</a>.</p><p><br></p><p>Some of these permissions are applicable only for roles on the site admin account, on a root account, or for course-level roles with a particular base role type; if a specified permission is inapplicable, it will be ignored.</p><p><br></p><p>Additional permissions may exist based on installed plugins.</p><p><br></p><p>A comprehensive list of all permissions are available:</p><p><br></p><p>Course Permissions PDF: <a href="http://bit.ly/cnvs-course-permissions">bit.ly/cnvs-course-permissions</a></p><p><br></p><p>Account Permissions PDF: <a href="http://bit.ly/cnvs-acct-permissions">bit.ly/cnvs-acct-permissions</a></p> |
 | `permissions[<X>][locked]`                 | `boolean`         | If the value is 1, permission \<X> will be locked downstream (new roles in subaccounts cannot override the setting). For any other value, permission \<X> is left unlocked. Ignored if permission \<X> is already locked upstream. May occur multiple times with unique values for \<X>.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `permissions[<X>][applies_to_self]`        | `boolean`         | If the value is 1, permission \<X> applies to the account this role is in. The default value is 1. Must be true if applies\_to\_descendants is false. This value is only returned if enabled is true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `permissions[<X>][applies_to_descendants]` | `boolean`         | If the value is 1, permission \<X> cascades down to sub accounts of the account this role is in. The default value is 1. Must be true if applies\_to\_self is false.This value is only returned if enabled is true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `permissions[<X>][applies_to_self]`        | `boolean`         | If the value is 1, permission \<X> applies to the account this role is in. The default value is 1. Must be true if applies_to_descendants is false. This value is only returned if enabled is true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `permissions[<X>][applies_to_descendants]` | `boolean`         | If the value is 1, permission \<X> cascades down to sub accounts of the account this role is in. The default value is 1. Must be true if applies_to_self is false.This value is only returned if enabled is true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 **Example Request:**
 
@@ -167,7 +167,7 @@ Returns a [Role](#role) object.
 
 ### [Deactivate a role](#method.role_overrides.remove_role) <a href="#method.role_overrides.remove_role" id="method.role_overrides.remove_role"></a>
 
-[RoleOverridesController#remove\_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
+[RoleOverridesController#remove_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
 
 **`DELETE /api/v1/accounts/:account_id/roles/:id`**
 
@@ -186,7 +186,7 @@ Returns a [Role](#role) object.
 
 ### [Activate a role](#method.role_overrides.activate_role) <a href="#method.role_overrides.activate_role" id="method.role_overrides.activate_role"></a>
 
-[RoleOverridesController#activate\_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
+[RoleOverridesController#activate_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
 
 **`POST /api/v1/accounts/:account_id/roles/:id/activate`**
 
@@ -215,23 +215,23 @@ Update permissions for an existing role.
 
 Recognized roles are:
 
-* TeacherEnrollment
-* StudentEnrollment
-* TaEnrollment
-* ObserverEnrollment
-* DesignerEnrollment
-* AccountAdmin
-* Any previously created custom role
+- TeacherEnrollment
+- StudentEnrollment
+- TaEnrollment
+- ObserverEnrollment
+- DesignerEnrollment
+- AccountAdmin
+- Any previously created custom role
 
 **Request Parameters:**
 
-| Parameter                                  | Type      | Description                                                                                                                                                                                                                |
-| ------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`                                    | `string`  | The label for the role. Can only change the label of a custom role that belongs directly to the account.                                                                                                                   |
-| `permissions[<X>][explicit]`               | `boolean` | no description                                                                                                                                                                                                             |
-| `permissions[<X>][enabled]`                | `boolean` | These arguments are described in the documentation for the [add\_role method](#method.role_overrides.add_role). The list of available permissions can be found on the [Permissions list page](../basics/file.permissions). |
-| `permissions[<X>][applies_to_self]`        | `boolean` | If the value is 1, permission \<X> applies to the account this role is in. The default value is 1. Must be true if applies\_to\_descendants is false. This value is only returned if enabled is true.                      |
-| `permissions[<X>][applies_to_descendants]` | `boolean` | If the value is 1, permission \<X> cascades down to sub accounts of the account this role is in. The default value is 1. Must be true if applies\_to\_self is false.This value is only returned if enabled is true.        |
+| Parameter                                  | Type      | Description                                                                                                                                                                                                               |
+| ------------------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`                                    | `string`  | The label for the role. Can only change the label of a custom role that belongs directly to the account.                                                                                                                  |
+| `permissions[<X>][explicit]`               | `boolean` | no description                                                                                                                                                                                                            |
+| `permissions[<X>][enabled]`                | `boolean` | These arguments are described in the documentation for the [add_role method](#method.role_overrides.add_role). The list of available permissions can be found on the [Permissions list page](../basics/file.permissions). |
+| `permissions[<X>][applies_to_self]`        | `boolean` | If the value is 1, permission \<X> applies to the account this role is in. The default value is 1. Must be true if applies_to_descendants is false. This value is only returned if enabled is true.                       |
+| `permissions[<X>][applies_to_descendants]` | `boolean` | If the value is 1, permission \<X> cascades down to sub accounts of the account this role is in. The default value is 1. Must be true if applies_to_self is false.This value is only returned if enabled is true.         |
 
 **Example Request:**
 
@@ -251,7 +251,7 @@ Returns a [Role](#role) object.
 
 ### [List assignable permissions](#method.role_overrides.manageable_permissions) <a href="#method.role_overrides.manageable_permissions" id="method.role_overrides.manageable_permissions"></a>
 
-[RoleOverridesController#manageable\_permissions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
+[RoleOverridesController#manageable_permissions](https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/roles/permissions`**
 
@@ -261,18 +261,18 @@ List all permissions that can be granted to roles in the given account.
 
 This returns largely the same information documented on the [Permissions list page](../basics/file.permissions), with a few caveats:
 
-* Permission labels and group labels returned by this API are localized (the same text visible in the web UI).
-* This API includes permissions added by plugins.
-* This API excludes permissions that are disabled in or otherwise do not apply to the given account.
+- Permission labels and group labels returned by this API are localized (the same text visible in the web UI).
+- This API includes permissions added by plugins.
+- This API excludes permissions that are disabled in or otherwise do not apply to the given account.
 
 **Request Parameters:**
 
-| Parameter     | Type     | Description                                                                                            |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| `search_term` | `string` | If provided, return only permissions whose key, label, group, or group\_label match the search string. |
+| Parameter     | Type     | Description                                                                                           |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `search_term` | `string` | If provided, return only permissions whose key, label, group, or group_label match the search string. |
 
 Returns a list of [Permission](#permission) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

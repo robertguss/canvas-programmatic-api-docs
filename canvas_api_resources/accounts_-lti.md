@@ -39,6 +39,6 @@ Retrieve information on an individual account, given by local or global ID.
 
 Returns an [Account](#account) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -8,7 +8,7 @@
 
 Query audit log of course events.
 
-For each endpoint, a compound document is returned. The primary collection of event objects is paginated, ordered by date descending. Secondary collections of courses, users and page\_views related to the returned events are also included.
+For each endpoint, a compound document is returned. The primary collection of event objects is paginated, ordered by date descending. Secondary collections of courses, users and page_views related to the returned events are also included.
 
 The event data for `ConcludedEventData`, `UnconcludedEventData`, `PublishedEventData`, `UnpublishedEventData`, `DeletedEventData`, `RestoredEventData`, `ResetFromEventData`, `ResetToEventData`, `CopiedFromEventData`, and `CopiedToEventData` objects will return a empty objects as these do not have any additional log data associated.
 
@@ -91,7 +91,7 @@ The event data for `ConcludedEventData`, `UnconcludedEventData`, `PublishedEvent
 
 ### [Query by course.](#method.course_audit_api.for_course) <a href="#method.course_audit_api.for_course" id="method.course_audit_api.for_course"></a>
 
-[CourseAuditApiController#for\_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/course_audit_api_controller.rb)
+[CourseAuditApiController#for_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/course_audit_api_controller.rb)
 
 **`GET /api/v1/audit/course/courses/:course_id`**
 
@@ -110,7 +110,7 @@ Returns a list of [CourseEvent](#courseevent) objects.
 
 ### [Query by account.](#method.course_audit_api.for_account) <a href="#method.course_audit_api.for_account" id="method.course_audit_api.for_account"></a>
 
-[CourseAuditApiController#for\_account](https://github.com/instructure/canvas-lms/blob/master/app/controllers/course_audit_api_controller.rb)
+[CourseAuditApiController#for_account](https://github.com/instructure/canvas-lms/blob/master/app/controllers/course_audit_api_controller.rb)
 
 **`GET /api/v1/audit/course/accounts/:account_id`**
 
@@ -127,6 +127,6 @@ List course change events for a given account.
 
 Returns a list of [CourseEvent](#courseevent) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

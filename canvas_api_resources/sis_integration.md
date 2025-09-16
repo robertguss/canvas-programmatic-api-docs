@@ -170,7 +170,7 @@ Includes helpers for integration with SIS systems.
 
 ### [Retrieve assignments enabled for grade export to SIS](#method.sis_api.sis_assignments) <a href="#method.sis_api.sis_assignments" id="method.sis_api.sis_assignments"></a>
 
-[SisApiController#sis\_assignments](https://github.com/instructure/canvas-lms/blob/master/app/controllers/sis_api_controller.rb)
+[SisApiController#sis_assignments](https://github.com/instructure/canvas-lms/blob/master/app/controllers/sis_api_controller.rb)
 
 **`GET /api/sis/accounts/:account_id/assignments`**
 
@@ -180,9 +180,9 @@ Includes helpers for integration with SIS systems.
 
 **Scope:** `url:GET|/api/sis/courses/:course_id/assignments`
 
-Retrieve a list of published assignments flagged as “post\_to\_sis”. See the Assignments API for more details on assignments. Assignment group and section information are included for convenience.
+Retrieve a list of published assignments flagged as “post_to_sis”. See the Assignments API for more details on assignments. Assignment group and section information are included for convenience.
 
-Each section includes course information for the origin course and the cross-listed course, if applicable. The ‘origin\_course\` is the course to which the section belongs or the course from which the section was cross-listed. Generally, the \`origin\_course\` should be preferred when performing integration work. The \`xlist\_course\` is provided for consistency and is only present when the section has been cross-listed. See Sections API and Courses Api for me details.
+Each section includes course information for the origin course and the cross-listed course, if applicable. The ‘origin_course\` is the course to which the section belongs or the course from which the section was cross-listed. Generally, the \`origin_course\` should be preferred when performing integration work. The \`xlist_course\` is provided for consistency and is only present when the section has been cross-listed. See Sections API and Courses Api for me details.
 
 The ‘override\` is only provided if the Differentiated Assignments course feature is turned on and the assignment has an override for that section. When there is an override for the assignment the override object’s keys/values can be merged with the top level assignment object to create a view of the assignment object specific to that section. See Assignments api for more information on assignment overrides.
 
@@ -204,13 +204,13 @@ restricts to courses that start before this date (if they have a start date) res
 
 ### [Disable assignments currently enabled for grade export to SIS](#method.disable_post_to_sis_api.disable_post_to_sis) <a href="#method.disable_post_to_sis_api.disable_post_to_sis" id="method.disable_post_to_sis_api.disable_post_to_sis"></a>
 
-[DisablePostToSisApiController#disable\_post\_to\_sis](https://github.com/instructure/canvas-lms/blob/master/app/controllers/disable_post_to_sis_api_controller.rb)
+[DisablePostToSisApiController#disable_post_to_sis](https://github.com/instructure/canvas-lms/blob/master/app/controllers/disable_post_to_sis_api_controller.rb)
 
 **`PUT /api/sis/courses/:course_id/disable_post_to_sis`**
 
 **Scope:** `url:PUT|/api/sis/courses/:course_id/disable_post_to_sis`
 
-Disable all assignments flagged as “post\_to\_sis”, with the option of making it specific to a grading period, in a course.
+Disable all assignments flagged as “post_to_sis”, with the option of making it specific to a grading period, in a course.
 
 On success, the response will be 204 No Content with an empty body.
 
@@ -242,6 +242,6 @@ curl 'https://<canvas>/api/sis/courses/<course_id>/disable_post_to_sis' \
      -d 'grading_period_id=1'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

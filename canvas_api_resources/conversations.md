@@ -98,71 +98,71 @@ Can be an array (by setting "filter[]") or single value (by setting "filter")
 | Parameter                      | Type      | Description                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `scope`                        | `string`  | <p>When set, only return conversations of the specified type. For example, set to “unread” to return only conversations that haven’t been read. The default behavior is to return all non-archived conversations (i.e. read and unread).</p><p>Allowed values: <code>unread</code>, <code>starred</code>, <code>archived</code>, <code>sent</code></p> |
-| `filter[]`                     | `string`  | When set, only return conversations for the specified courses, groups or users. The id should be prefixed with its type, e.g. “user\_123”,                                                                                                                                                                                                             |
+| `filter[]`                     | `string`  | When set, only return conversations for the specified courses, groups or users. The id should be prefixed with its type, e.g. “user_123”,                                                                                                                                                                                                              |
 | `filter_mode`                  | `string`  | <p>When filter[] contains multiple filters, combine them with this mode, filtering conversations that at have at least all of the contexts (“and”) or at least one of the contexts (“or”)</p><p>Allowed values: <code>and</code>, <code>or</code>, <code>default or</code></p>                                                                         |
 | `interleave_submissions`       | `boolean` | (Obsolete) Submissions are no longer linked to conversations. This parameter is ignored.                                                                                                                                                                                                                                                               |
-| `include_all_conversation_ids` | `boolean` | Default is false. If true, the top-level element of the response will be an object rather than an array, and will have the keys “conversations” which will contain the paged conversation data, and “conversation\_ids” which will contain the ids of all conversations under this scope/filter in the same order.                                     |
+| `include_all_conversation_ids` | `boolean` | Default is false. If true, the top-level element of the response will be an object rather than an array, and will have the keys “conversations” which will contain the paged conversation data, and “conversation_ids” which will contain the ids of all conversations under this scope/filter in the same order.                                      |
 | `include[]`                    | `string`  | <ul><li><p>“participant_avatars”</p><p>Optionally include an “avatar_url” key for each user participating in the conversation</p></li><li><p>“uuid”</p><p>Optionally include an “uuid” key for each user participating in the conversation</p></li></ul><p>Allowed values: <code>participant_avatars</code>, <code>uuid</code></p>                     |
 
 **API response field:**
 
-* id
+- id
 
 The unique identifier for the conversation.
 
-* subject
+- subject
 
 The subject of the conversation.
 
-* workflow\_state
+- workflow_state
 
 The current state of the conversation (read, unread or archived)
 
-* last\_message
+- last_message
 
 A <=100 character preview from the most recent message
 
-* last\_message\_at
+- last_message_at
 
 The timestamp of the latest message
 
-* message\_count
+- message_count
 
 The number of messages in this conversation
 
-* subscribed
+- subscribed
 
 Indicates whether the user is actively subscribed to the conversation
 
-* private
+- private
 
 Indicates whether this is a private conversation (i.e. audience of one)
 
-* starred
+- starred
 
 Whether the conversation is starred
 
-* properties
+- properties
 
-Additional conversation flags (last\_author, attachments, media\_objects). Each listed property means the flag is set to true (i.e. the current user is the most recent author, there are attachments, or there are media objects)
+Additional conversation flags (last_author, attachments, media_objects). Each listed property means the flag is set to true (i.e. the current user is the most recent author, there are attachments, or there are media objects)
 
-* audience
+- audience
 
 Array of user ids who are involved in the conversation, ordered by participation level, then alphabetical. Excludes current user, unless this is a monologue.
 
-* audience\_contexts
+- audience_contexts
 
 Most relevant shared contexts (courses and groups) between current user and other participants. If there is only one participant, it will also include that user’s enrollment(s)/ membership type(s) in each course/group
 
-* avatar\_url
+- avatar_url
 
 URL to appropriate icon for this conversation (custom, individual or group avatar, depending on audience)
 
-* participants
+- participants
 
-Array of users (id, name, full\_name) participating in the conversation. Includes current user. If ‘include\[]=participant\_avatars\` was passed as an argument, each user in the array will also have an “avatar\_url” field. If \`include\[]=uuid\` was passed as an argument, each user in the array will also have an “uuid” field
+Array of users (id, name, full_name) participating in the conversation. Includes current user. If ‘include\[]=participant_avatars\` was passed as an argument, each user in the array will also have an “avatar_url” field. If \`include\[]=uuid\` was passed as an argument, each user in the array will also have an “uuid” field
 
-* visible
+- visible
 
 Boolean, indicates whether the conversation is visible under the current scope and filter. This attribute is always true in the index API response, and is primarily useful in create/update responses so that you can know if the record should be displayed in the UI. The default scope is assumed, unless a scope or filter is passed to the create/update API call.
 
@@ -171,27 +171,28 @@ Boolean, indicates whether the conversation is visible under the current scope a
 ```js
 [
   {
-    "id": 2,
-    "subject": "conversations api example",
-    "workflow_state": "unread",
-    "last_message": "sure thing, here's the file",
-    "last_message_at": "2011-09-02T12:00:00Z",
-    "message_count": 2,
-    "subscribed": true,
-    "private": true,
-    "starred": false,
-    "properties": ["attachments"],
-    "audience": [2],
-    "audience_contexts": {"courses": {"1": ["StudentEnrollment"]}, "groups": {}},
-    "avatar_url": "https://canvas.instructure.com/images/messages/avatar-group-50.png",
-    "participants": [
-      {"id": 1, "name": "Joe", "full_name": "Joe TA"},
-      {"id": 2, "name": "Jane", "full_name": "Jane Teacher"}
+    id: 2,
+    subject: "conversations api example",
+    workflow_state: "unread",
+    last_message: "sure thing, here's the file",
+    last_message_at: "2011-09-02T12:00:00Z",
+    message_count: 2,
+    subscribed: true,
+    private: true,
+    starred: false,
+    properties: ["attachments"],
+    audience: [2],
+    audience_contexts: { courses: { 1: ["StudentEnrollment"] }, groups: {} },
+    avatar_url:
+      "https://canvas.instructure.com/images/messages/avatar-group-50.png",
+    participants: [
+      { id: 1, name: "Joe", full_name: "Joe TA" },
+      { id: 2, name: "Jane", full_name: "Jane Teacher" },
     ],
-    "visible": true,
-    "context_name": "Canvas 101"
-  }
-]
+    visible: true,
+    context_name: "Canvas 101",
+  },
+];
 ```
 
 Returns a list of [Conversation](#conversation) objects.
@@ -248,24 +249,23 @@ Returns any currently running conversation batches for the current user. Convers
 ```js
 [
   {
-    "id": 1,
-    "subject": "conversations api example",
-    "workflow_state": "created",
-    "completion": 0.1234,
-    "tags": [],
-    "message":
-    {
-      "id": 1,
-      "created_at": "2011-09-02T10:00:00Z",
-      "body": "quick reminder, no class tomorrow",
-      "author_id": 1,
-      "generated": false,
-      "media_comment": null,
-      "forwarded_messages": [],
-      "attachments": []
-    }
-  }
-]
+    id: 1,
+    subject: "conversations api example",
+    workflow_state: "created",
+    completion: 0.1234,
+    tags: [],
+    message: {
+      id: 1,
+      created_at: "2011-09-02T10:00:00Z",
+      body: "quick reminder, no class tomorrow",
+      author_id: 1,
+      generated: false,
+      media_comment: null,
+      forwarded_messages: [],
+      attachments: [],
+    },
+  },
+];
 ```
 
 ### [Get a single conversation](#method.conversations.show) <a href="#method.conversations.show" id="method.conversations.show"></a>
@@ -290,39 +290,47 @@ Returns information for a single conversation for the current user. Response inc
 
 **API response field:**
 
-* participants
+- participants
 
 Array of relevant users. Includes current user. If there are forwarded messages in this conversation, the authors of those messages will also be included, even if they are not participating in this conversation. Fields include:
 
-* messages
+- messages
 
 Array of messages, newest first. Fields include:
 
-*   id
+- id
 
-    The unique identifier for the message
-*   created\_at
+  The unique identifier for the message
 
-    The timestamp of the message
-*   body
+- created_at
 
-    The actual message body
-*   author\_id
+  The timestamp of the message
 
-    The id of the user who sent the message (see audience, participants)
-*   generated
+- body
 
-    If true, indicates this is a system-generated message (e.g. “Bob added Alice to the conversation”)
-*   media\_comment
+  The actual message body
 
-    Audio/video comment data for this message (if applicable). Fields include: display\_name, content-type, media\_id, media\_type, url
-*   forwarded\_messages
+- author_id
 
-    If this message contains forwarded messages, they will be included here (same format as this list). Note that those messages may have forwarded messages of their own, etc.
-*   attachments
+  The id of the user who sent the message (see audience, participants)
 
-    Array of attachments for this message. Fields include: display\_name, content-type, filename, url
-* submissions
+- generated
+
+  If true, indicates this is a system-generated message (e.g. “Bob added Alice to the conversation”)
+
+- media_comment
+
+  Audio/video comment data for this message (if applicable). Fields include: display_name, content-type, media_id, media_type, url
+
+- forwarded_messages
+
+  If this message contains forwarded messages, they will be included here (same format as this list). Note that those messages may have forwarded messages of their own, etc.
+
+- attachments
+
+  Array of attachments for this message. Fields include: display_name, content-type, filename, url
+
+- submissions
 
 (Obsolete) Array of assignment submissions having comments relevant to this conversation. Submissions are no longer linked to conversations. This field will always be nil or empty.
 
@@ -431,7 +439,7 @@ Updates attributes for a single conversation.
 
 ### [Mark all as read](#method.conversations.mark_all_as_read) <a href="#method.conversations.mark_all_as_read" id="method.conversations.mark_all_as_read"></a>
 
-[ConversationsController#mark\_all\_as\_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
+[ConversationsController#mark_all_as_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
 
 **`POST /api/v1/conversations/mark_all_as_read`**
 
@@ -470,7 +478,7 @@ Response includes same fields as UPDATE action
 
 ### [Add recipients](#method.conversations.add_recipients) <a href="#method.conversations.add_recipients" id="method.conversations.add_recipients"></a>
 
-[ConversationsController#add\_recipients](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
+[ConversationsController#add_recipients](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
 
 **`POST /api/v1/conversations/:id/add_recipients`**
 
@@ -480,9 +488,9 @@ Add recipients to an existing group conversation. Response is similar to the GET
 
 **Request Parameters:**
 
-| Parameter      | Type              | Description                                                                                                                                                                                            |
-| -------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `recipients[]` | Required `string` | An array of recipient ids. These may be user ids or course/group ids prefixed with “course\_” or “group\_” respectively, e.g. [recipients\[\]=1\&recipients](conversations)=2\&recipients\[]=course\_3 |
+| Parameter      | Type              | Description                                                                                                                                                                                           |
+| -------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `recipients[]` | Required `string` | An array of recipient ids. These may be user ids or course/group ids prefixed with “course\_” or “group\_” respectively, e.g. [recipients\[\]=1\&recipients](conversations)=2\&recipients\[]=course_3 |
 
 **Example Response:**
 
@@ -525,7 +533,7 @@ Add recipients to an existing group conversation. Response is similar to the GET
 
 ### [Add a message](#method.conversations.add_message) <a href="#method.conversations.add_message" id="method.conversations.add_message"></a>
 
-[ConversationsController#add\_message](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
+[ConversationsController#add_message](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
 
 **`POST /api/v1/conversations/:id/add_message`**
 
@@ -588,7 +596,7 @@ An array of message ids from this conversation to send to recipients of the new 
 
 ### [Delete a message](#method.conversations.remove_messages) <a href="#method.conversations.remove_messages" id="method.conversations.remove_messages"></a>
 
-[ConversationsController#remove\_messages](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
+[ConversationsController#remove_messages](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
 
 **`POST /api/v1/conversations/:id/remove_messages`**
 
@@ -621,7 +629,7 @@ Delete messages from this conversation. Note that this only affects this user’
 
 ### [Batch update conversations](#method.conversations.batch_update) <a href="#method.conversations.batch_update" id="method.conversations.batch_update"></a>
 
-[ConversationsController#batch\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
+[ConversationsController#batch_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
 
 **`PUT /api/v1/conversations`**
 
@@ -651,7 +659,7 @@ Returns a [Progress](../progress#progress) object.
 
 ### [Find recipients](#method.conversations.find_recipients) <a href="#method.conversations.find_recipients" id="method.conversations.find_recipients"></a>
 
-[ConversationsController#find\_recipients](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
+[ConversationsController#find_recipients](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
 
 **`GET /api/v1/conversations/find_recipients`**
 
@@ -661,7 +669,7 @@ Deprecated, see the [Find recipients endpoint](../search#method.search.recipient
 
 ### [Unread count](#method.conversations.unread_count) <a href="#method.conversations.unread_count" id="method.conversations.unread_count"></a>
 
-[ConversationsController#unread\_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
+[ConversationsController#unread_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb)
 
 **`GET /api/v1/conversations/unread_count`**
 
@@ -675,6 +683,6 @@ Get the number of unread conversations for the current user
 {'unread_count': '7'}
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

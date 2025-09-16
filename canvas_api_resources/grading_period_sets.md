@@ -97,6 +97,6 @@ Update an existing grading period set
 
 **204 No Content** response code is returned if the deletion was successful.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

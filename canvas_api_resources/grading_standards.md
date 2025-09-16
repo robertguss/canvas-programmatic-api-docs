@@ -129,7 +129,7 @@ Returns a [GradingStandard](#gradingstandard) object.
 
 ### [List the grading standards available in a context.](#method.grading_standards_api.context_index) <a href="#method.grading_standards_api.context_index" id="method.grading_standards_api.context_index"></a>
 
-[GradingStandardsApiController#context\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grading_standards_api_controller.rb)
+[GradingStandardsApiController#context_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grading_standards_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/grading_standards`**
 
@@ -152,7 +152,7 @@ Returns a list of [GradingStandard](#gradingstandard) objects.
 
 ### [Get a single grading standard in a context.](#method.grading_standards_api.context_show) <a href="#method.grading_standards_api.context_show" id="method.grading_standards_api.context_show"></a>
 
-[GradingStandardsApiController#context\_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grading_standards_api_controller.rb)
+[GradingStandardsApiController#context_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grading_standards_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/grading_standards/:grading_standard_id`**
 
@@ -187,7 +187,7 @@ Returns a [GradingStandard](#gradingstandard) object.
 
 Updates the grading standard with the given id
 
-If the grading standard has been used for grading, only the title can be updated. The data, points\_based, and scaling\_factor cannot be modified once the grading standard has been used to grade assignments.
+If the grading standard has been used for grading, only the title can be updated. The data, points_based, and scaling_factor cannot be modified once the grading standard has been used to grade assignments.
 
 **Request Parameters:**
 
@@ -260,6 +260,6 @@ curl https://<canvas>/api/v1/courses/1/grading_standards/5 \
 
 Returns a [GradingStandard](#gradingstandard) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

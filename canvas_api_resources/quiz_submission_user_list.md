@@ -102,6 +102,6 @@ List of users who have or haven't submitted for a quiz.
 | --------------- | ---------------------- | ------------------------------------------------------------------------------------------ |
 | `conversations` | `QuizUserConversation` | <ul><li><p><br></p><p>Body and recipients to send the message to.</p><p><br></p></li></ul> |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

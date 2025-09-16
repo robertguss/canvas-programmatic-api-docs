@@ -244,7 +244,7 @@ Returns a [Rubric](#rubric) object.
 
 ### [Get the courses and assignments for a rubric](#method.rubrics_api.used_locations) <a href="#method.rubrics_api.used_locations" id="method.rubrics_api.used_locations"></a>
 
-[RubricsApiController#used\_locations](https://github.com/instructure/canvas-lms/blob/master/app/controllers/rubrics_api_controller.rb)
+[RubricsApiController#used_locations](https://github.com/instructure/canvas-lms/blob/master/app/controllers/rubrics_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/rubrics/:id/used_locations`**
 
@@ -272,7 +272,7 @@ Returns the rubric import object that was created
 
 ### [Templated file for importing a rubric](#method.rubrics_api.upload_template) <a href="#method.rubrics_api.upload_template" id="method.rubrics_api.upload_template"></a>
 
-[RubricsApiController#upload\_template](https://github.com/instructure/canvas-lms/blob/master/app/controllers/rubrics_api_controller.rb)
+[RubricsApiController#upload_template](https://github.com/instructure/canvas-lms/blob/master/app/controllers/rubrics_api_controller.rb)
 
 **`GET /api/v1/rubrics/upload_template`**
 
@@ -282,7 +282,7 @@ Returns a CSV template file that can be used to import rubrics into Canvas.
 
 ### [Get the status of a rubric import](#method.rubrics_api.upload_status) <a href="#method.rubrics_api.upload_status" id="method.rubrics_api.upload_status"></a>
 
-[RubricsApiController#upload\_status](https://github.com/instructure/canvas-lms/blob/master/app/controllers/rubrics_api_controller.rb)
+[RubricsApiController#upload_status](https://github.com/instructure/canvas-lms/blob/master/app/controllers/rubrics_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/rubrics/upload/:id`**
 
@@ -413,6 +413,6 @@ Delete the RubricAssociation with the given ID
 
 Returns a [RubricAssociation](#rubricassociation) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

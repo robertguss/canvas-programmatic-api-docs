@@ -113,6 +113,6 @@ curl -X DELETE https://<canvas>/api/v1/courses/<course_id>/external_feeds/<feed_
 
 Returns an [ExternalFeed](#externalfeed) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

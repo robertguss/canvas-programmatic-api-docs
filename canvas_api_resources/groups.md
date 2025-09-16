@@ -29,10 +29,10 @@ Group memberships are the objects that tie users and groups together.
   // Whether or not the current user is following this group.
   "followed_by_user": false,
   // How people are allowed to join the group.  For all groups except for
-  // community groups, the user must share the group's parent course or account. 
+  // community groups, the user must share the group's parent course or account.
   // For student organized or community groups, where a user can be a member of as
   // many or few as they want, the applicable levels are
-  // 'parent_context_auto_join', 'parent_context_request', and 'invitation_only'. 
+  // 'parent_context_auto_join', 'parent_context_request', and 'invitation_only'.
   // For class groups, where students are divided up and should only be part of
   // one group of the category, this value will always be 'invitation_only', and
   // is not relevant. * If 'parent_context_auto_join', anyone can join and will be
@@ -136,7 +136,7 @@ Returns a list of [Group](#group) objects.
 
 ### [List the groups available in a context.](#method.groups.context_index) <a href="#method.groups.context_index" id="method.groups.context_index"></a>
 
-[GroupsController#context\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
+[GroupsController#context_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/groups`**
 
@@ -167,7 +167,7 @@ Returns a list of [Group](#group) objects.
 
 ### [Bulk fetch user tags for multiple users in a course](#method.groups.bulk_user_tags) <a href="#method.groups.bulk_user_tags" id="method.groups.bulk_user_tags"></a>
 
-[GroupsController#bulk\_user\_tags](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
+[GroupsController#bulk_user_tags](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
 
 **`GET /api/v1/courses/:course_id/bulk_user_tags`**
 
@@ -236,8 +236,8 @@ Creates a new group. Groups created using the “/api/v1/groups/” endpoint wil
 | `description`      | `string`  | A description of the group                                                                                                                           |
 | `is_public`        | `boolean` | whether the group is public (applies only to community groups)                                                                                       |
 | `join_level`       | `string`  | <p>no description</p><p>Allowed values: <code>parent_context_auto_join</code>, <code>parent_context_request</code>, <code>invitation_only</code></p> |
-| `storage_quota_mb` | `integer` | The allowed file storage for the group, in megabytes. This parameter is ignored if the caller does not have the manage\_storage\_quotas permission.  |
-| `sis_group_id`     | `string`  | The sis ID of the group. Must have manage\_sis permission to set.                                                                                    |
+| `storage_quota_mb` | `integer` | The allowed file storage for the group, in megabytes. This parameter is ignored if the caller does not have the manage_storage_quotas permission.    |
+| `sis_group_id`     | `string`  | The sis ID of the group. Must have manage_sis permission to set.                                                                                     |
 
 **Example Request:**
 
@@ -271,9 +271,9 @@ Modifies an existing group. Note that to set an avatar image for the group, you 
 | `is_public`               | `boolean` | Whether the group is public (applies only to community groups). Currently you cannot set a group back to private once it has been made public.                                             |
 | `join_level`              | `string`  | <p>no description</p><p>Allowed values: <code>parent_context_auto_join</code>, <code>parent_context_request</code>, <code>invitation_only</code></p>                                       |
 | `avatar_id`               | `integer` | The id of the attachment previously uploaded to the group that you would like to use as the avatar image for this group.                                                                   |
-| `storage_quota_mb`        | `integer` | The allowed file storage for the group, in megabytes. This parameter is ignored if the caller does not have the manage\_storage\_quotas permission.                                        |
+| `storage_quota_mb`        | `integer` | The allowed file storage for the group, in megabytes. This parameter is ignored if the caller does not have the manage_storage_quotas permission.                                          |
 | `members[]`               | `string`  | An array of user ids for users you would like in the group. Users not in the group will be sent invitations. Existing group members who aren’t in the list will be removed from the group. |
-| `sis_group_id`            | `string`  | The sis ID of the group. Must have manage\_sis permission to set.                                                                                                                          |
+| `sis_group_id`            | `string`  | The sis ID of the group. Must have manage_sis permission to set.                                                                                                                           |
 | `override_sis_stickiness` | `boolean` | Default is true. If false, any fields containing “sticky” changes will not be updated. See SIS CSV Format documentation for information on which fields can have SIS stickiness            |
 
 **Example Request:**
@@ -362,7 +362,7 @@ Returns a list of [User](../users#user) objects.
 
 ### [Upload a file](#method.groups.create_file) <a href="#method.groups.create_file" id="method.groups.create_file"></a>
 
-[GroupsController#create\_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
+[GroupsController#create_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
 
 **`POST /api/v1/groups/:group_id/files`**
 
@@ -376,7 +376,7 @@ Only those with the “Manage Files” permission on a group can upload files to
 
 ### [Preview processed html](#method.groups.preview_html) <a href="#method.groups.preview_html" id="method.groups.preview_html"></a>
 
-[GroupsController#preview\_html](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
+[GroupsController#preview_html](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
 
 **`POST /api/v1/groups/:group_id/preview_html`**
 
@@ -408,7 +408,7 @@ curl https://<canvas>/api/v1/groups/<group_id>/preview_html \
 
 ### [Group activity stream](#method.groups.activity_stream) <a href="#method.groups.activity_stream" id="method.groups.activity_stream"></a>
 
-[GroupsController#activity\_stream](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
+[GroupsController#activity_stream](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
 
 **`GET /api/v1/groups/:group_id/activity_stream`**
 
@@ -420,7 +420,7 @@ For full documentation, see the API documentation for the user activity stream, 
 
 ### [Group activity stream summary](#method.groups.activity_stream_summary) <a href="#method.groups.activity_stream_summary" id="method.groups.activity_stream_summary"></a>
 
-[GroupsController#activity\_stream\_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
+[GroupsController#activity_stream_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb)
 
 **`GET /api/v1/groups/:group_id/activity_stream/summary`**
 
@@ -523,14 +523,14 @@ Returns a [GroupMembership](#groupmembership) object.
 
 **Scope:** `url:POST|/api/v1/groups/:group_id/memberships`
 
-Join, or request to join, a group, depending on the join\_level of the group. If the membership or join request already exists, then it is simply returned.
+Join, or request to join, a group, depending on the join_level of the group. If the membership or join request already exists, then it is simply returned.
 
 For differentiation tags, you can bulk add users using one of two methods:
 
 1. Provide an array of user IDs via the ‘members\[]\` parameter.
 2. Use the course-wide option with the following parameters:
-   * ‘all\_in\_group\_course\` \[Boolean]: If set to true, the endpoint will add every currently enrolled student (from the course context) to the differentiation tag.
-   * ‘exclude\_user\_ids\[]\` \[Integer]: When using \`all\_in\_group\_course\`, you can optionally exclude specific users by providing their IDs in this parameter.
+   - ‘all_in_group_course\` \[Boolean]: If set to true, the endpoint will add every currently enrolled student (from the course context) to the differentiation tag.
+   - ‘exclude_user_ids\[]\` \[Integer]: When using \`all_in_group_course\`, you can optionally exclude specific users by providing their IDs in this parameter.
 
 In this context, these parameters only apply to differentiation tag memberships.
 
@@ -617,7 +617,7 @@ Returns a [GroupMembership](#groupmembership) object.
 
 **Scope:** `url:DELETE|/api/v1/groups/:group_id/users/:user_id`
 
-Leave a group if you are allowed to leave (some groups, such as sets of course groups created by teachers, cannot be left). You may also use ‘self’ in place of a membership\_id.
+Leave a group if you are allowed to leave (some groups, such as sets of course groups created by teachers, cannot be left). You may also use ‘self’ in place of a membership_id.
 
 **Example Request:**
 
@@ -635,14 +635,14 @@ curl https://<canvas>/api/v1/groups/<group_id>/users/<user_id> \
 
 ### \[Bulk delete memberships
 
-Bulk deletes memberships by providing an array of user IDs.]\(#method.group\_memberships.destroy\_bulk)
+Bulk deletes memberships by providing an array of user IDs.]\(#method.group_memberships.destroy_bulk)
 
-[GroupMembershipsController#destroy\_bulk](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_memberships_controller.rb)
+[GroupMembershipsController#destroy_bulk](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_memberships_controller.rb)
 
 **`DELETE /api/v1/groups/:group_id/users`**
 
 **Scope:** `url:DELETE|/api/v1/groups/:group_id/users`
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

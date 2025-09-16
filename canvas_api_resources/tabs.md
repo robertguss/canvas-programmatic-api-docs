@@ -122,6 +122,6 @@ curl https://<canvas>/api/v1/courses/<course_id>/tabs/tab_id \
 
 Returns a [Tab](#tab) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

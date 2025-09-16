@@ -23,7 +23,7 @@ API for managing user career experience and role preferences in Canvas.
 
 ### [Get current and available experiences](#method.career_experience.experience_summary) <a href="#method.career_experience.experience_summary" id="method.career_experience.experience_summary"></a>
 
-[CareerExperienceController#experience\_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/career_experience_controller.rb)
+[CareerExperienceController#experience_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/career_experience_controller.rb)
 
 **`GET /api/v1/career/experience_summary`**
 
@@ -42,7 +42,7 @@ Returns an [ExperienceSummary](#experiencesummary) object.
 
 ### [Switch experience](#method.career_experience.switch_experience) <a href="#method.career_experience.switch_experience" id="method.career_experience.switch_experience"></a>
 
-[CareerExperienceController#switch\_experience](https://github.com/instructure/canvas-lms/blob/master/app/controllers/career_experience_controller.rb)
+[CareerExperienceController#switch_experience](https://github.com/instructure/canvas-lms/blob/master/app/controllers/career_experience_controller.rb)
 
 **`POST /api/v1/career/switch_experience`**
 
@@ -66,7 +66,7 @@ curl -X POST https://<canvas>/api/v1/career_experience/switch_experience \
 
 ### [Switch role](#method.career_experience.switch_role) <a href="#method.career_experience.switch_role" id="method.career_experience.switch_role"></a>
 
-[CareerExperienceController#switch\_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/career_experience_controller.rb)
+[CareerExperienceController#switch_role](https://github.com/instructure/canvas-lms/blob/master/app/controllers/career_experience_controller.rb)
 
 **`POST /api/v1/career/switch_role`**
 
@@ -88,6 +88,6 @@ curl -X POST https://<canvas>/api/v1/career_experience/switch_role \
   -d 'role=learner'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

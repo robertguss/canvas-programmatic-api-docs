@@ -65,7 +65,7 @@ Returns a list of [CourseEpubExport](#courseepubexport) objects.
 
 Begin an ePub export for a course.
 
-You can use the [Progress API](../progress#method.progress.show) to track the progress of the export. The export’s progress is linked to with the _progress\_url_ value.
+You can use the [Progress API](../progress#method.progress.show) to track the progress of the export. The export’s progress is linked to with the _progress_url_ value.
 
 When the export completes, use the [Show content export](#method.epub_exports.show) endpoint to retrieve a download URL for the exported content.
 
@@ -83,6 +83,6 @@ Get information about a single ePub export.
 
 Returns an [EpubExport](#epubexport) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

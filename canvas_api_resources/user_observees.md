@@ -36,7 +36,7 @@ A paginated list of users that the given user is observing. This endpoint return
 
 **Note:** all users are allowed to list their own observees. Administrators can list other users’ observees.
 
-The returned observees will include an attribute “observation\_link\_root\_account\_ids”, a list of ids for the root accounts the observer and observee are linked on. The observer will only be able to observe in courses associated with these root accounts.
+The returned observees will include an attribute “observation_link_root_account_ids”, a list of ids for the root accounts the observer and observee are linked on. The observer will only be able to observe in courses associated with these root accounts.
 
 **Request Parameters:**
 
@@ -66,7 +66,7 @@ A paginated list of observers linked to a given user.
 
 **Note:** all users are allowed to list their own observers. Administrators can list other users’ observers.
 
-The returned observers will include an attribute “observation\_link\_root\_account\_ids”, a list of ids for the root accounts the observer and observee are linked on. The observer will only be able to observe in courses associated with these root accounts.
+The returned observers will include an attribute “observation_link_root_account_ids”, a list of ids for the root accounts the observer and observee are linked on. The observer will only be able to observe in courses associated with these root accounts.
 
 **Request Parameters:**
 
@@ -100,8 +100,8 @@ Register the given user to observe another user, given the observee’s credenti
 
 | Parameter             | Type      | Description                                                                                                                                                                                                                   |
 | --------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `observee[unique_id]` | `string`  | The login id for the user to observe. Required if access\_token is omitted.                                                                                                                                                   |
-| `observee[password]`  | `string`  | The password for the user to observe. Required if access\_token is omitted.                                                                                                                                                   |
+| `observee[unique_id]` | `string`  | The login id for the user to observe. Required if access_token is omitted.                                                                                                                                                    |
+| `observee[password]`  | `string`  | The password for the user to observe. Required if access_token is omitted.                                                                                                                                                    |
 | `access_token`        | `string`  | The access token for the user to observe. Required if `observee[unique_id]` or `observee[password]` are omitted.                                                                                                              |
 | `pairing_code`        | `string`  | A generated pairing code for the user to observe. Required if the Observer pairing code feature flag is enabled                                                                                                               |
 | `root_account_id`     | `integer` | The ID for the root account to associate with the observation link. Defaults to the current domain account. If ‘all’ is specified, a link will be created for each root account associated to both the observer and observee. |
@@ -142,7 +142,7 @@ Returns an [User](../users#user) object.
 
 ### [Show an observer](#method.user_observees.show_observer) <a href="#method.user_observees.show_observer" id="method.user_observees.show_observer"></a>
 
-[UserObserveesController#show\_observer](https://github.com/instructure/canvas-lms/blob/master/app/controllers/user_observees_controller.rb)
+[UserObserveesController#show_observer](https://github.com/instructure/canvas-lms/blob/master/app/controllers/user_observees_controller.rb)
 
 **`GET /api/v1/users/:user_id/observers/:observer_id`**
 
@@ -226,6 +226,6 @@ If the user is a student, will generate a code to be used with self registration
 
 Returns a [PairingCode](#pairingcode) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

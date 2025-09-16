@@ -110,7 +110,7 @@ Returns a list of [OutcomeGroup](#outcomegroup) objects.
 
 ### [Get all outcome links for context](#method.outcome_groups_api.link_index) <a href="#method.outcome_groups_api.link_index" id="method.outcome_groups_api.link_index"></a>
 
-[OutcomeGroupsApiController#link\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcome_groups_api_controller.rb)
+[OutcomeGroupsApiController#link_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcome_groups_api_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/outcome_group_links`**
 
@@ -291,21 +291,21 @@ Returns a list of [OutcomeLink](#outcomelink) objects.
 
 **Scope:** `url:PUT|/api/v1/courses/:course_id/outcome_groups/:id/outcomes/:outcome_id`
 
-Link an outcome into the outcome group. The outcome to link can either be specified by a PUT to the link URL for a specific outcome (the outcome\_id in the PUT URLs) or by supplying the information for a new outcome (title, description, ratings, mastery\_points) in a POST to the collection.
+Link an outcome into the outcome group. The outcome to link can either be specified by a PUT to the link URL for a specific outcome (the outcome_id in the PUT URLs) or by supplying the information for a new outcome (title, description, ratings, mastery_points) in a POST to the collection.
 
-If linking an existing outcome, the outcome\_id must identify an outcome available to this context; i.e. an outcome owned by this group’s context, an outcome owned by an associated account, or a global outcome. With outcome\_id present, any other parameters (except move\_from) are ignored.
+If linking an existing outcome, the outcome_id must identify an outcome available to this context; i.e. an outcome owned by this group’s context, an outcome owned by an associated account, or a global outcome. With outcome_id present, any other parameters (except move_from) are ignored.
 
 If defining a new outcome, the outcome is created in the outcome group’s context using the provided title, description, ratings, and mastery points; the title is required but all other fields are optional. The new outcome is then linked into the outcome group.
 
-If ratings are provided when creating a new outcome, an embedded rubric criterion is included in the new outcome. This criterion’s mastery\_points default to the maximum points in the highest rating if not specified in the mastery\_points parameter. Any ratings lacking a description are given a default of “No description”. Any ratings lacking a point value are given a default of 0. If no ratings are provided, the mastery\_points parameter is ignored.
+If ratings are provided when creating a new outcome, an embedded rubric criterion is included in the new outcome. This criterion’s mastery_points default to the maximum points in the highest rating if not specified in the mastery_points parameter. Any ratings lacking a description are given a default of “No description”. Any ratings lacking a point value are given a default of 0. If no ratings are provided, the mastery_points parameter is ignored.
 
 **Request Parameters:**
 
 | Parameter                | Type      | Description                                                                                                                                                                                                                                                                                                                                             |
 | ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `outcome_id`             | `integer` | The ID of the existing outcome to link.                                                                                                                                                                                                                                                                                                                 |
-| `move_from`              | `integer` | The ID of the old outcome group. Only used if outcome\_id is present.                                                                                                                                                                                                                                                                                   |
-| `title`                  | `string`  | The title of the new outcome. Required if outcome\_id is absent.                                                                                                                                                                                                                                                                                        |
+| `move_from`              | `integer` | The ID of the old outcome group. Only used if outcome_id is present.                                                                                                                                                                                                                                                                                    |
+| `title`                  | `string`  | The title of the new outcome. Required if outcome_id is absent.                                                                                                                                                                                                                                                                                         |
 | `display_name`           | `string`  | A friendly name shown in reports for outcomes with cryptic titles, such as common core standards names.                                                                                                                                                                                                                                                 |
 | `description`            | `string`  | The description of the new outcome.                                                                                                                                                                                                                                                                                                                     |
 | `vendor_guid`            | `string`  | A custom GUID for the learning standard.                                                                                                                                                                                                                                                                                                                |
@@ -313,7 +313,7 @@ If ratings are provided when creating a new outcome, an embedded rubric criterio
 | `ratings[][description]` | `string`  | The description of a rating level for the embedded rubric criterion.                                                                                                                                                                                                                                                                                    |
 | `ratings[][points]`      | `integer` | The points corresponding to a rating level for the embedded rubric criterion.                                                                                                                                                                                                                                                                           |
 | `calculation_method`     | `string`  | <p>The new calculation method. Defaults to “decaying_average” if the Outcomes New Decaying Average Calculation Method FF is ENABLED then Defaults to “weighted_average”</p><p>Allowed values: <code>weighted_average</code>, <code>decaying_average</code>, <code>n_mastery</code>, <code>latest</code>, <code>highest</code>, <code>average</code></p> |
-| `calculation_int`        | `integer` | The new calculation int. Only applies if the calculation\_method is “weighted\_average”, “decaying\_average” or “n\_mastery”. Defaults to 65                                                                                                                                                                                                            |
+| `calculation_int`        | `integer` | The new calculation int. Only applies if the calculation_method is “weighted_average”, “decaying_average” or “n_mastery”. Defaults to 65                                                                                                                                                                                                                |
 
 **Example Request:**
 
@@ -486,10 +486,10 @@ The source group must be either global, from the same context as this outcome gr
 
 **Request Parameters:**
 
-| Parameter                 | Type               | Description                                                                                                                                                                                                                                                                                                                                                                      |
-| ------------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `source_outcome_group_id` | Required `integer` | The ID of the source outcome group.                                                                                                                                                                                                                                                                                                                                              |
-| `async`                   | `boolean`          | If true, perform action asynchronously. In that case, this endpoint will return a Progress object instead of an OutcomeGroup. Use the [progress endpoint](../progress#method.progress.show) to query the status of the operation. The imported outcome group id and url will be returned in the results of the Progress object as “outcome\_group\_id” and “outcome\_group\_url” |
+| Parameter                 | Type               | Description                                                                                                                                                                                                                                                                                                                                                                  |
+| ------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `source_outcome_group_id` | Required `integer` | The ID of the source outcome group.                                                                                                                                                                                                                                                                                                                                          |
+| `async`                   | `boolean`          | If true, perform action asynchronously. In that case, this endpoint will return a Progress object instead of an OutcomeGroup. Use the [progress endpoint](../progress#method.progress.show) to query the status of the operation. The imported outcome group id and url will be returned in the results of the Progress object as “outcome_group_id” and “outcome_group_url” |
 
 **Example Request:**
 
@@ -502,6 +502,6 @@ curl 'https://<canvas>/api/v1/accounts/2/outcome_groups/3/import.json' \
 
 Returns an [OutcomeGroup](#outcomegroup) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

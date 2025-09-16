@@ -142,7 +142,7 @@ Returns a [BlackoutDate](#blackoutdate) object.
 
 ### [Update a list of Blackout Dates](#method.blackout_dates.bulk_update) <a href="#method.blackout_dates.bulk_update" id="method.blackout_dates.bulk_update"></a>
 
-[BlackoutDatesController#bulk\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/blackout_dates_controller.rb)
+[BlackoutDatesController#bulk_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/blackout_dates_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/blackout_dates`**
 
@@ -156,6 +156,6 @@ Create, update, and delete blackout dates to sync the db with the incoming data.
 | ----------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `blackout_dates:` | `string` | <ul><li><p>blackout_date, …</p><p>An object containing the array of BlackoutDates we want to exist after this operation. For array entries, if it has an id it will be updated, if not created, and if an existing BlackoutDate id is missing from the array, it will be deleted.</p></li></ul> |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

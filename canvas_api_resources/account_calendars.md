@@ -95,14 +95,14 @@ Returns an [AccountCalendar](#accountcalendar) object.
 
 **Scope:** `url:PUT|/api/v1/account_calendars/:account_id`
 
-Set an account calendar’s visibility and auto\_subscribe values. Requires the ‘manage\_account\_calendar\_visibility\` permission on the account.
+Set an account calendar’s visibility and auto_subscribe values. Requires the ‘manage_account_calendar_visibility\` permission on the account.
 
 **Request Parameters:**
 
-| Parameter        | Type      | Description                                                                                                                                                        |
-| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `visible`        | `boolean` | Allow administrators with ‘manage\_account\_calendar\_events\` permission to create events on this calendar, and allow users to view this calendar and its events. |
-| `auto_subscribe` | `boolean` | When true, users will automatically see events from this account in their calendar, even if they haven’t manually added that calendar.                             |
+| Parameter        | Type      | Description                                                                                                                                                     |
+| ---------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `visible`        | `boolean` | Allow administrators with ‘manage_account_calendar_events\` permission to create events on this calendar, and allow users to view this calendar and its events. |
+| `auto_subscribe` | `boolean` | When true, users will automatically see events from this account in their calendar, even if they haven’t manually added that calendar.                          |
 
 **Example Request:**
 
@@ -118,15 +118,15 @@ Returns an [AccountCalendar](#accountcalendar) object.
 
 ### [Update several calendars](#method.account_calendars_api.bulk_update) <a href="#method.account_calendars_api.bulk_update" id="method.account_calendars_api.bulk_update"></a>
 
-[AccountCalendarsApiController#bulk\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_calendars_api_controller.rb)
+[AccountCalendarsApiController#bulk_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_calendars_api_controller.rb)
 
 **`PUT /api/v1/accounts/:account_id/account_calendars`**
 
 **Scope:** `url:PUT|/api/v1/accounts/:account_id/account_calendars`
 
-Set visibility and/or auto\_subscribe on many calendars simultaneously. Requires the ‘manage\_account\_calendar\_visibility\` permission on the account.
+Set visibility and/or auto_subscribe on many calendars simultaneously. Requires the ‘manage_account_calendar_visibility\` permission on the account.
 
-Accepts a JSON array of objects containing 2-3 keys each: ‘id\` (the account’s id, required), ‘visible\` (a boolean indicating whether the account calendar is visible), and \`auto\_subscribe\` (a boolean indicating whether users should see these events in their calendar without manually subscribing).
+Accepts a JSON array of objects containing 2-3 keys each: ‘id\` (the account’s id, required), ‘visible\` (a boolean indicating whether the account calendar is visible), and \`auto_subscribe\` (a boolean indicating whether users should see these events in their calendar without manually subscribing).
 
 Returns the count of updated accounts.
 
@@ -141,13 +141,13 @@ curl https://<canvas>/api/v1/accounts/1/account_calendars \
 
 ### [List all account calendars](#method.account_calendars_api.all_calendars) <a href="#method.account_calendars_api.all_calendars" id="method.account_calendars_api.all_calendars"></a>
 
-[AccountCalendarsApiController#all\_calendars](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_calendars_api_controller.rb)
+[AccountCalendarsApiController#all_calendars](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_calendars_api_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/account_calendars`**
 
 **Scope:** `url:GET|/api/v1/accounts/:account_id/account_calendars`
 
-Returns a paginated list of account calendars for the provided account and its first level of sub-accounts. Includes hidden calendars in the response. Requires the ‘manage\_account\_calendar\_visibility\` permission.
+Returns a paginated list of account calendars for the provided account and its first level of sub-accounts. Includes hidden calendars in the response. Requires the ‘manage_account_calendar_visibility\` permission.
 
 **Request Parameters:**
 
@@ -167,7 +167,7 @@ Returns a list of [AccountCalendar](#accountcalendar) objects.
 
 ### [Count of all visible account calendars](#method.account_calendars_api.visible_calendars_count) <a href="#method.account_calendars_api.visible_calendars_count" id="method.account_calendars_api.visible_calendars_count"></a>
 
-[AccountCalendarsApiController#visible\_calendars\_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_calendars_api_controller.rb)
+[AccountCalendarsApiController#visible_calendars_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_calendars_api_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/visible_calendars_count`**
 
@@ -182,6 +182,6 @@ curl https://<canvas>/api/v1/accounts/1/visible_calendars_count \
   -H 'Authorization: Bearer <token>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

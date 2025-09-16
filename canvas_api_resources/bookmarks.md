@@ -133,6 +133,6 @@ curl -X DELETE 'https://<canvas>/api/v1/users/self/bookmarks/1' \
      -H 'Authorization: Bearer <token>'
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

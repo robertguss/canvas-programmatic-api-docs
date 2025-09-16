@@ -101,7 +101,7 @@ Returns an [OutcomeImport](#outcomeimport) object.
 
 ### [Get IDs of outcome groups created after successful import](#method.outcome_imports_api.created_group_ids) <a href="#method.outcome_imports_api.created_group_ids" id="method.outcome_imports_api.created_group_ids"></a>
 
-[OutcomeImportsApiController#created\_group\_ids](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcome_imports_api_controller.rb)
+[OutcomeImportsApiController#created_group_ids](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcome_imports_api_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/outcome_imports/:id/created_group_ids`**
 
@@ -121,6 +121,6 @@ Examples:
       -H "Authorization: Bearer <token>"
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

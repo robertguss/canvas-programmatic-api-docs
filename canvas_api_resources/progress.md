@@ -90,7 +90,7 @@ Returns a [Progress](#progress) object.
 
 **Scope:** `url:POST|/api/v1/progress/:id/cancel`
 
-Cancel an asynchronous job associated with a Progress object If you include “message” in the POSTed data, it will be set on the Progress and returned. This is handy to distinguish between cancel and fail for a workflow\_state of “failed”.
+Cancel an asynchronous job associated with a Progress object If you include “message” in the POSTed data, it will be set on the Progress and returned. This is handy to distinguish between cancel and fail for a workflow_state of “failed”.
 
 Returns a [Progress](#progress) object.
 
@@ -106,6 +106,6 @@ Return completion and status information about an asynchronous job
 
 Returns a [Progress](#progress) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

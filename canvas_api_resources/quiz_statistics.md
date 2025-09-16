@@ -18,7 +18,7 @@ Some of these statistics are exclusive to Multiple Choice and True/False types o
 {
   // The ID of the quiz statistics report.
   "id": 1,
-  // The ID of the Quiz the statistics report is for. 
+  // The ID of the Quiz the statistics report is for.
   // NOTE: AVAILABLE ONLY IN NON-JSON-API REQUESTS.
   "quiz_id": 2,
   // Whether there are any students that have made mutliple submissions for this
@@ -39,7 +39,7 @@ Some of these statistics are exclusive to Multiple Choice and True/False types o
   // Question-specific statistics for each question and its answers.
   "submission_statistics": null,
   // JSON-API construct that contains links to media related to this quiz
-  // statistics object. 
+  // statistics object.
   // NOTE: AVAILABLE ONLY IN JSON-API REQUESTS.
   "links": null
 }
@@ -643,6 +643,6 @@ Formula question statistics look just like the statistics for [Essays](#essay-qu
 
 True/False question statistics look just like the statistics for [Multiple-Choice](#multiple-choice-question-stats).
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

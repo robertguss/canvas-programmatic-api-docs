@@ -103,7 +103,7 @@ Modify an existing outcome. Fields not provided are left as is; unrecognized fie
 
 If any new ratings are provided, the combination of all new ratings provided completely replace any existing embedded rubric criterion; it is not possible to tweak the ratings of the embedded rubric criterion.
 
-A new embedded rubric criterion’s mastery\_points default to the maximum points in the highest rating if not specified in the mastery\_points parameter. Any new ratings lacking a description are given a default of “No description”. Any new ratings lacking a point value are given a default of 0.
+A new embedded rubric criterion’s mastery_points default to the maximum points in the highest rating if not specified in the mastery_points parameter. Any new ratings lacking a description are given a default of “No description”. Any new ratings lacking a point value are given a default of 0.
 
 **Request Parameters:**
 
@@ -117,7 +117,7 @@ A new embedded rubric criterion’s mastery\_points default to the maximum point
 | `ratings[][description]` | `string`  | The description of a new rating level for the embedded rubric criterion.                                                                                                                                                                                                                                                                                                                                                                     |
 | `ratings[][points]`      | `integer` | The points corresponding to a new rating level for the embedded rubric criterion.                                                                                                                                                                                                                                                                                                                                                            |
 | `calculation_method`     | `string`  | <p>The new calculation method. If the Outcomes New Decaying Average Calculation Method FF is ENABLED then “weighted_average” can be used and it is same as previous “decaying_average” and new “decaying_average” will have improved version of calculation.</p><p>Allowed values: <code>weighted_average</code>, <code>decaying_average</code>, <code>n_mastery</code>, <code>latest</code>, <code>highest</code>, <code>average</code></p> |
-| `calculation_int`        | `integer` | The new calculation int. Only applies if the calculation\_method is “decaying\_average” or “n\_mastery”                                                                                                                                                                                                                                                                                                                                      |
+| `calculation_int`        | `integer` | The new calculation int. Only applies if the calculation_method is “decaying_average” or “n_mastery”                                                                                                                                                                                                                                                                                                                                         |
 | `add_defaults`           | `boolean` | If defaults are requested, then color and mastery level defaults will be added to outcome ratings in the result. This will only take effect if the Account Level Mastery Scales FF is DISABLED                                                                                                                                                                                                                                               |
 
 **Example Request:**
@@ -165,7 +165,7 @@ Returns an [Outcome](#outcome) object.
 
 ### [Get aligned assignments for an outcome in a course for a particular student](#method.outcomes_api.outcome_alignments) <a href="#method.outcomes_api.outcome_alignments" id="method.outcomes_api.outcome_alignments"></a>
 
-[OutcomesApiController#outcome\_alignments](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcomes_api_controller.rb)
+[OutcomesApiController#outcome_alignments](https://github.com/instructure/canvas-lms/blob/master/app/controllers/outcomes_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/outcome_alignments`**
 
@@ -182,6 +182,6 @@ Returns all assignments aligned to a specific outcome for a student in a course.
 
 Returns a list of [OutcomeAlignment](#outcomealignment) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

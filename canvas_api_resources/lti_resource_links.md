@@ -16,9 +16,9 @@ Caution! Resource Links are usually managed by the tool that created them via LT
 
 Common patterns for using this API include:
 
-* facilitating migration between two different versions of the same tool by updating the domain of the launch URL
-* creating new links to embed in rich content in Canvas
-* responding to a course copy or other Canvas content migration by updating the launch URL
+- facilitating migration between two different versions of the same tool by updating the domain of the launch URL
+- creating new links to embed in rich content in Canvas
+- responding to a course copy or other Canvas content migration by updating the launch URL
 
 **A Lti::ResourceLink object looks like:**
 
@@ -107,8 +107,8 @@ Returns a list of [Lti::ResourceLink](#lti::resourcelink) objects.
 
 Return details about the specified resource link. The ID can be in the standard Canvas format (“1”), or in these special formats:
 
-* resource\_link\_uuid:\<uuid> - Find the resource link by its resource\_link\_uuid
-* lookup\_uuid:\<uuid> - Find the resource link by its lookup\_uuid
+- resource_link_uuid:\<uuid> - Find the resource link by its resource_link_uuid
+- lookup_uuid:\<uuid> - Find the resource link by its lookup_uuid
 
 **Request Parameters:**
 
@@ -138,7 +138,7 @@ Create a new LTI Resource Link in the specified course with the provided paramet
 
 **Caution!** Resource Links are usually created by the tool via LTI Deep Linking. The tool has no knowledge of links created via this API, and may not be able to handle or launch them.
 
-Links created using this API cannot be associated with a specific piece of Canvas content, like an Assignment, Module Item, or Collaboration. Links created using this API are only suitable for embedding in rich content using the ‘canvas\_launch\_url\` provided in the API response.
+Links created using this API cannot be associated with a specific piece of Canvas content, like an Assignment, Module Item, or Collaboration. Links created using this API are only suitable for embedding in rich content using the ‘canvas_launch_url\` provided in the API response.
 
 This link will be associated with the ContextExternalTool available in this context that matches the provided url. If a matching tool is not found, the link will not be created and this will return an error.
 
@@ -165,7 +165,7 @@ Returns a [Lti::ResourceLink](#lti::resourcelink) object.
 
 ### [Bulk Create LTI Resource Links](#method.lti/resource_links.bulk_create) <a href="#method.lti-resource_links.bulk_create" id="method.lti-resource_links.bulk_create"></a>
 
-[Lti::ResourceLinksController#bulk\_create](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/resource_links_controller.rb)
+[Lti::ResourceLinksController#bulk_create](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/resource_links_controller.rb)
 
 **`POST /api/v1/courses/:course_id/lti_resource_links/bulk`**
 
@@ -175,7 +175,7 @@ Create up to 100 new LTI Resource Links in the specified course with the provide
 
 **Caution!** Resource Links are usually created by the tool via LTI Deep Linking. The tool has no knowledge of links created via this API, and may not be able to handle or launch them.
 
-Links created using this API cannot be associated with a specific piece of Canvas content, like an Assignment, Module Item, or Collaboration. Links created using this API are only suitable for embedding in rich content using the ‘canvas\_launch\_url\` provided in the API response.
+Links created using this API cannot be associated with a specific piece of Canvas content, like an Assignment, Module Item, or Collaboration. Links created using this API are only suitable for embedding in rich content using the ‘canvas_launch_url\` provided in the API response.
 
 Each link will be associated with the ContextExternalTool available in this context that matches the provided url. If a matching tool is not found, or any parameters are invalid, no links will be created and this will return an error.
 
@@ -242,8 +242,8 @@ Returns a [Lti::ResourceLink](#lti::resourcelink) object.
 
 Delete the specified resource link. The ID can be in the standard Canvas format (“1”), or in these special formats:
 
-* resource\_link\_uuid:\<uuid> - Find the resource link by its resource\_link\_uuid
-* lookup\_uuid:\<uuid> - Find the resource link by its lookup\_uuid
+- resource_link_uuid:\<uuid> - Find the resource link by its resource_link_uuid
+- lookup_uuid:\<uuid> - Find the resource link by its lookup_uuid
 
 Only links that are not associated with Assignments, Module Items, or Collaborations can be deleted.
 
@@ -257,6 +257,6 @@ curl -X DELETE 'https://<canvas>/api/v1/courses/1/lti_resource_links/lookup_uuid
 
 Returns a [Lti::ResourceLink](#lti::resourcelink) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

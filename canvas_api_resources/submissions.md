@@ -8,7 +8,7 @@
 
 API for accessing and updating submissions for an assignment. The submission id in these URLs is the id of the student in the course, there is no separate submission id exposed in these APIs.
 
-All submission actions can be performed with either the course id, or the course section id. SIS ids can be used, prefixed by "sis\_course\_id:" or "sis\_section\_id:" as described in the API documentation on SIS IDs.
+All submission actions can be performed with either the course id, or the course section id. SIS ids can be used, prefixed by "sis_course_id:" or "sis_section_id:" as described in the API documentation on SIS IDs.
 
 **A MediaComment object looks like:**
 
@@ -79,7 +79,7 @@ All submission actions can be performed with either the course id, or the course
   // The id of the user who graded the submission. This will be null for
   // submissions that haven't been graded yet. It will be a positive number if a
   // real user has graded the submission and a negative number if the submission
-  // was graded by a process (e.g. Quiz autograder and autograding LTI tools). 
+  // was graded by a process (e.g. Quiz autograder and autograding LTI tools).
   // Specifically autograded quizzes set grader_id to the negative of the quiz id.
   // Submissions autograded by LTI tools set grader_id to the negative of the tool
   // id.
@@ -143,19 +143,19 @@ Make a submission for an assignment. You must be actively enrolled as a student 
 
 All online turn-in submission types are supported in this API. However, there are a few things that are not yet supported:
 
-* Files can be submitted based on a file ID of a user or group file or through the [file upload API](#method.submissions_api.create_file). However, there is no API yet for listing the user and group files.
-* Media comments can be submitted, however, there is no API yet for creating a media comment to submit.
-* Integration with Google Docs is not yet supported.
+- Files can be submitted based on a file ID of a user or group file or through the [file upload API](#method.submissions_api.create_file). However, there is no API yet for listing the user and group files.
+- Media comments can be submitted, however, there is no API yet for creating a media comment to submit.
+- Integration with Google Docs is not yet supported.
 
 **Request Parameters:**
 
 | Parameter                               | Type              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `comment[text_comment]`                 | `string`          | Include a textual comment with the submission.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `submission[group_comment]`             | `boolean`         | Whether or not this comment should be sent to the entire group (defaults to false). Ignored if this is not a group assignment or if no text\_comment is provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `submission[group_comment]`             | `boolean`         | Whether or not this comment should be sent to the entire group (defaults to false). Ignored if this is not a group assignment or if no text_comment is provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `submission[submission_type]`           | Required `string` | <p>The type of submission being made. The assignment submission_types must include this submission type as an allowed option, or the submission will be rejected with a 400 error.</p><p><br></p><p>The submission_type given determines which of the following parameters is used. For instance, to submit a URL, <code>submission[submission_type]</code> must be set to “online_url”, otherwise the <code>submission[url]</code> parameter will be ignored.</p><p><br></p><p>“basic_lti_launch” requires the assignment submission_type “online” or “external_tool”</p><p>Allowed values: <code>online_text_entry</code>, <code>online_url</code>, <code>online_upload</code>, <code>media_recording</code>, <code>basic_lti_launch</code>, <code>student_annotation</code></p> |
-| `submission[body]`                      | `string`          | Submit the assignment as an HTML document snippet. Note this HTML snippet will be sanitized using the same ruleset as a submission made from the Canvas web UI. The sanitized HTML will be returned in the response as the submission body. Requires a submission\_type of “online\_text\_entry”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `submission[url]`                       | `string`          | Submit the assignment as a URL. The URL scheme must be “http” or “https”, no “ftp” or other URL schemes are allowed. If no scheme is given (e.g. “[www.example.com](https://www.example.com)”) then “http” will be assumed. Requires a submission\_type of “online\_url” or “basic\_lti\_launch”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `submission[body]`                      | `string`          | Submit the assignment as an HTML document snippet. Note this HTML snippet will be sanitized using the same ruleset as a submission made from the Canvas web UI. The sanitized HTML will be returned in the response as the submission body. Requires a submission_type of “online_text_entry”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `submission[url]`                       | `string`          | Submit the assignment as a URL. The URL scheme must be “http” or “https”, no “ftp” or other URL schemes are allowed. If no scheme is given (e.g. “[www.example.com](https://www.example.com)”) then “http” will be assumed. Requires a submission_type of “online_url” or “basic_lti_launch”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `submission[file_ids][]`                | `integer`         | <p>Submit the assignment as a set of one or more previously uploaded files residing in the submitting user’s files section (or the group’s files section, for group assignments).</p><p><br></p><p>To upload a new file to submit, see the submissions <a href="#method.submissions_api.create_file">Upload a file API</a>.</p><p><br></p><p>Requires a submission_type of “online_upload”.</p>                                                                                                                                                                                                                                                                                                                                                                                    |
 | `submission[media_comment_id]`          | `string`          | <p>The media comment id to submit. Media comment ids can be submitted via this API, however, note that there is not yet an API to generate or list existing media comments, so this functionality is currently of limited use.</p><p><br></p><p>Requires a submission_type of “media_recording”.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `submission[media_comment_type]`        | `string`          | <p>The type of media comment being submitted.</p><p>Allowed values: <code>audio</code>, <code>video</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -186,75 +186,75 @@ A paginated list of all existing submissions for an assignment.
 
 **API response field:**
 
-* assignment\_id
+- assignment_id
 
 The unique identifier for the assignment.
 
-* user\_id
+- user_id
 
 The id of the user who submitted the assignment.
 
-* grader\_id
+- grader_id
 
-The id of the user who graded the submission. This will be null for submissions that haven’t been graded yet. It will be a positive number if a real user has graded the submission and a negative number if the submission was graded by a process (e.g. Quiz autograder and autograding LTI tools). Specifically autograded quizzes set grader\_id to the negative of the quiz id. Submissions autograded by LTI tools set grader\_id to the negative of the tool id.
+The id of the user who graded the submission. This will be null for submissions that haven’t been graded yet. It will be a positive number if a real user has graded the submission and a negative number if the submission was graded by a process (e.g. Quiz autograder and autograding LTI tools). Specifically autograded quizzes set grader_id to the negative of the quiz id. Submissions autograded by LTI tools set grader_id to the negative of the tool id.
 
-* canvadoc\_document\_id
+- canvadoc_document_id
 
 The id for the canvadoc document associated with this submission, if it was a file upload.
 
-* submitted\_at
+- submitted_at
 
 The timestamp when the assignment was submitted, if an actual submission has been made.
 
-* score
+- score
 
 The raw score for the assignment submission.
 
-* attempt
+- attempt
 
 If multiple submissions have been made, this is the attempt number.
 
-* body
+- body
 
 The content of the submission, if it was submitted directly in a text field.
 
-* grade
+- grade
 
 The grade for the submission, translated into the assignment grading scheme (so a letter grade, for example).
 
-* grade\_matches\_current\_submission
+- grade_matches_current_submission
 
 A boolean flag which is false if the student has re-submitted since the submission was last graded.
 
-* preview\_url
+- preview_url
 
 Link to the URL in canvas where the submission can be previewed. This will require the user to log in.
 
-* redo\_request
+- redo_request
 
 If the submission was reassigned
 
-* url
+- url
 
 If the submission was made as a URL.
 
-* late
+- late
 
 Whether the submission was made after the applicable due date.
 
-* assignment\_visible
+- assignment_visible
 
 Whether this assignment is visible to the user who submitted the assignment.
 
-* workflow\_state
+- workflow_state
 
-The current status of the submission. Possible values: “submitted”, “unsubmitted”, “graded”, “pending\_review”
+The current status of the submission. Possible values: “submitted”, “unsubmitted”, “graded”, “pending_review”
 
 Returns a list of [Submission](../what_if_grades#submission) objects.
 
 ### [List submissions for multiple assignments](#method.submissions_api.for_students) <a href="#method.submissions_api.for_students" id="method.submissions_api.for_students"></a>
 
-[SubmissionsApiController#for\_students](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#for_students](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/students/submissions`**
 
@@ -268,21 +268,21 @@ A paginated list of all existing submissions for a given set of students and ass
 
 **Request Parameters:**
 
-| Parameter             | Type       | Description                                                                                                                                                                                                                                                                                                                           |
-| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `student_ids[]`       | `string`   | List of student ids to return submissions for. If this argument is omitted, return submissions for the calling user. Students may only list their own submissions. Observers may only list those of associated students. The special id “all” will return submissions for all students in the course/section as appropriate.          |
-| `assignment_ids[]`    | `string`   | List of assignments to return submissions for. If none are given, submissions for all assignments are returned.                                                                                                                                                                                                                       |
-| `grouped`             | `boolean`  | If this argument is present, the response will be grouped by student, rather than a flat array of submissions.                                                                                                                                                                                                                        |
-| `post_to_sis`         | `boolean`  | If this argument is set to true, the response will only include submissions for assignments that have the post\_to\_sis flag set to true and user enrollments that were added through sis.                                                                                                                                            |
-| `submitted_since`     | `DateTime` | If this argument is set, the response will only include submissions that were submitted after the specified date\_time. This will exclude submissions that do not have a submitted\_at which will exclude unsubmitted submissions. The value must be formatted as ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                      |
-| `graded_since`        | `DateTime` | If this argument is set, the response will only include submissions that were graded after the specified date\_time. This will exclude submissions that have not been graded. The value must be formatted as ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                           |
-| `grading_period_id`   | `integer`  | The id of the grading period in which submissions are being requested (Requires grading periods to exist on the account)                                                                                                                                                                                                              |
-| `workflow_state`      | `string`   | <p>The current status of the submission</p><p>Allowed values: <code>submitted</code>, <code>unsubmitted</code>, <code>graded</code>, <code>pending_review</code></p>                                                                                                                                                                  |
-| `enrollment_state`    | `string`   | <p>The current state of the enrollments. If omitted will include all enrollments that are not deleted.</p><p>Allowed values: <code>active</code>, <code>concluded</code></p>                                                                                                                                                          |
-| `state_based_on_date` | `boolean`  | If omitted it is set to true. When set to false it will ignore the effective state of the student enrollments and use the workflow\_state for the enrollments. The argument is ignored unless enrollment\_state argument is also passed.                                                                                              |
-| `order`               | `string`   | <p>The order submissions will be returned in. Defaults to “id”. Doesn’t affect results for “grouped” mode.</p><p>Allowed values: <code>id</code>, <code>graded_at</code></p>                                                                                                                                                          |
-| `order_direction`     | `string`   | <p>Determines whether ordered results are returned in ascending or descending order. Defaults to “ascending”. Doesn’t affect results for “grouped” mode.</p><p>Allowed values: <code>ascending</code>, <code>descending</code></p>                                                                                                    |
-| `include[]`           | `string`   | Associations to include with the group. ‘total\_scores`requires the`grouped`argument.</p> Allowed values:`submission\_history`,` submission\_comments`,` submission\_html\_comments`,` rubric\_assessment`,` assignment`,` total\_scores`,` visibility`,` course`,` user`,` sub\_assignment\_submissions`,` student\_entered\_score\` |
+| Parameter             | Type       | Description                                                                                                                                                                                                                                                                                                                  |
+| --------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `student_ids[]`       | `string`   | List of student ids to return submissions for. If this argument is omitted, return submissions for the calling user. Students may only list their own submissions. Observers may only list those of associated students. The special id “all” will return submissions for all students in the course/section as appropriate. |
+| `assignment_ids[]`    | `string`   | List of assignments to return submissions for. If none are given, submissions for all assignments are returned.                                                                                                                                                                                                              |
+| `grouped`             | `boolean`  | If this argument is present, the response will be grouped by student, rather than a flat array of submissions.                                                                                                                                                                                                               |
+| `post_to_sis`         | `boolean`  | If this argument is set to true, the response will only include submissions for assignments that have the post_to_sis flag set to true and user enrollments that were added through sis.                                                                                                                                     |
+| `submitted_since`     | `DateTime` | If this argument is set, the response will only include submissions that were submitted after the specified date_time. This will exclude submissions that do not have a submitted_at which will exclude unsubmitted submissions. The value must be formatted as ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                               |
+| `graded_since`        | `DateTime` | If this argument is set, the response will only include submissions that were graded after the specified date_time. This will exclude submissions that have not been graded. The value must be formatted as ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                   |
+| `grading_period_id`   | `integer`  | The id of the grading period in which submissions are being requested (Requires grading periods to exist on the account)                                                                                                                                                                                                     |
+| `workflow_state`      | `string`   | <p>The current status of the submission</p><p>Allowed values: <code>submitted</code>, <code>unsubmitted</code>, <code>graded</code>, <code>pending_review</code></p>                                                                                                                                                         |
+| `enrollment_state`    | `string`   | <p>The current state of the enrollments. If omitted will include all enrollments that are not deleted.</p><p>Allowed values: <code>active</code>, <code>concluded</code></p>                                                                                                                                                 |
+| `state_based_on_date` | `boolean`  | If omitted it is set to true. When set to false it will ignore the effective state of the student enrollments and use the workflow_state for the enrollments. The argument is ignored unless enrollment_state argument is also passed.                                                                                       |
+| `order`               | `string`   | <p>The order submissions will be returned in. Defaults to “id”. Doesn’t affect results for “grouped” mode.</p><p>Allowed values: <code>id</code>, <code>graded_at</code></p>                                                                                                                                                 |
+| `order_direction`     | `string`   | <p>Determines whether ordered results are returned in ascending or descending order. Defaults to “ascending”. Doesn’t affect results for “grouped” mode.</p><p>Allowed values: <code>ascending</code>, <code>descending</code></p>                                                                                           |
+| `include[]`           | `string`   | Associations to include with the group. ‘total_scores`requires the`grouped`argument.</p> Allowed values:`submission_history`,` submission_comments`,` submission_html_comments`,` rubric_assessment`,` assignment`,` total_scores`,` visibility`,` course`,` user`,` sub_assignment_submissions`,` student_entered_score\`   |
 
 **Example Response:**
 
@@ -328,7 +328,7 @@ Get a single submission, based on user id.
 
 ### [Get a single submission by anonymous id](#method.submissions_api.show_anonymous) <a href="#method.submissions_api.show_anonymous" id="method.submissions_api.show_anonymous"></a>
 
-[SubmissionsApiController#show\_anonymous](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#show_anonymous](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id`**
 
@@ -348,7 +348,7 @@ Get a single submission, based on the submission’s anonymous id.
 
 ### [Upload a file](#method.submissions_api.create_file) <a href="#method.submissions_api.create_file" id="method.submissions_api.create_file"></a>
 
-[SubmissionsApiController#create\_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#create_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`POST /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/files`**
 
@@ -376,7 +376,7 @@ The final step of the file upload workflow will return the attachment data, incl
 
 **Scope:** `url:PUT|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id`
 
-Comment on and/or update the grading for a student’s assignment submission. If any submission or rubric\_assessment arguments are provided, the user must have permission to manage grades in the appropriate context (course or section).
+Comment on and/or update the grading for a student’s assignment submission. If any submission or rubric_assessment arguments are provided, the user must have permission to manage grades in the appropriate context (course or section).
 
 **Request Parameters:**
 
@@ -426,7 +426,7 @@ points or percentage rather than the letter grade.
 
 ### [Grade or comment on a submission by anonymous id](#method.submissions_api.update_anonymous) <a href="#method.submissions_api.update_anonymous" id="method.submissions_api.update_anonymous"></a>
 
-[SubmissionsApiController#update\_anonymous](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#update_anonymous](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id`**
 
@@ -436,7 +436,7 @@ points or percentage rather than the letter grade.
 
 **Scope:** `url:PUT|/api/v1/sections/:section_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id`
 
-Comment on and/or update the grading for a student’s assignment submission, fetching the submission by anonymous id (instead of user id). If any submission or rubric\_assessment arguments are provided, the user must have permission to manage grades in the appropriate context (course or section).
+Comment on and/or update the grading for a student’s assignment submission, fetching the submission by anonymous id (instead of user id). If any submission or rubric_assessment arguments are provided, the user must have permission to manage grades in the appropriate context (course or section).
 
 **Request Parameters:**
 
@@ -486,7 +486,7 @@ points or percentage rather than the letter grade.
 
 ### [List gradeable students](#method.submissions_api.gradeable_students) <a href="#method.submissions_api.gradeable_students" id="method.submissions_api.gradeable_students"></a>
 
-[SubmissionsApiController#gradeable\_students](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#gradeable_students](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/assignments/:assignment_id/gradeable_students`**
 
@@ -494,7 +494,7 @@ points or percentage rather than the letter grade.
 
 A paginated list of gradeable students for the assignment. The caller must have permission to view grades.
 
-If anonymous grading is enabled for the current assignment and the allow\_new\_anonymous\_id parameter is passed, the returned data will not include any values identifying the student, but will instead include an assignment-specific anonymous ID for each student.
+If anonymous grading is enabled for the current assignment and the allow_new_anonymous_id parameter is passed, the returned data will not include any values identifying the student, but will instead include an assignment-specific anonymous ID for each student.
 
 Section-limited instructors will only see students in their own sections.
 
@@ -509,7 +509,7 @@ Returns a list of [UserDisplay](../users#userdisplay) objects.
 
 ### [List multiple assignments gradeable students](#method.submissions_api.multiple_gradeable_students) <a href="#method.submissions_api.multiple_gradeable_students" id="method.submissions_api.multiple_gradeable_students"></a>
 
-[SubmissionsApiController#multiple\_gradeable\_students](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#multiple_gradeable_students](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/assignments/gradeable_students`**
 
@@ -544,7 +544,7 @@ that user can submit
 
 ### [Grade or comment on multiple submissions](#method.submissions_api.bulk_update) <a href="#method.submissions_api.bulk_update" id="method.submissions_api.bulk_update"></a>
 
-[SubmissionsApiController#bulk\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#bulk_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`POST /api/v1/courses/:course_id/submissions/update_grades`**
 
@@ -568,17 +568,17 @@ The user must have permission to manage grades in the appropriate context (cours
 
 **Request Parameters:**
 
-| Parameter                                      | Type               | Description                                                                                                                     |
-| ---------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| `grade_data[<student_id>][posted_grade]`       | `string`           | See documentation for the posted\_grade argument in the [Submissions Update](#method.submissions_api.update) documentation      |
-| `grade_data[<student_id>][excuse]`             | `boolean`          | See documentation for the excuse argument in the [Submissions Update](#method.submissions_api.update) documentation             |
-| `grade_data[<student_id>][rubric_assessment]`  | `RubricAssessment` | See documentation for the rubric\_assessment argument in the [Submissions Update](#method.submissions_api.update) documentation |
-| `grade_data[<student_id>][text_comment]`       | `string`           | no description                                                                                                                  |
-| `grade_data[<student_id>][group_comment]`      | `boolean`          | no description                                                                                                                  |
-| `grade_data[<student_id>][media_comment_id]`   | `string`           | no description                                                                                                                  |
-| `grade_data[<student_id>][media_comment_type]` | `string`           | <p>no description</p><p>Allowed values: <code>audio</code>, <code>video</code></p>                                              |
-| `grade_data[<student_id>][file_ids][]`         | `integer`          | See documentation for the comment\[] arguments in the [Submissions Update](#method.submissions_api.update) documentation        |
-| `grade_data[<assignment_id>][<student_id>]`    | `integer`          | Specifies which assignment to grade. This argument is not necessary when using the assignment-specific endpoints.               |
+| Parameter                                      | Type               | Description                                                                                                                    |
+| ---------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `grade_data[<student_id>][posted_grade]`       | `string`           | See documentation for the posted_grade argument in the [Submissions Update](#method.submissions_api.update) documentation      |
+| `grade_data[<student_id>][excuse]`             | `boolean`          | See documentation for the excuse argument in the [Submissions Update](#method.submissions_api.update) documentation            |
+| `grade_data[<student_id>][rubric_assessment]`  | `RubricAssessment` | See documentation for the rubric_assessment argument in the [Submissions Update](#method.submissions_api.update) documentation |
+| `grade_data[<student_id>][text_comment]`       | `string`           | no description                                                                                                                 |
+| `grade_data[<student_id>][group_comment]`      | `boolean`          | no description                                                                                                                 |
+| `grade_data[<student_id>][media_comment_id]`   | `string`           | no description                                                                                                                 |
+| `grade_data[<student_id>][media_comment_type]` | `string`           | <p>no description</p><p>Allowed values: <code>audio</code>, <code>video</code></p>                                             |
+| `grade_data[<student_id>][file_ids][]`         | `integer`          | See documentation for the comment\[] arguments in the [Submissions Update](#method.submissions_api.update) documentation       |
+| `grade_data[<assignment_id>][<student_id>]`    | `integer`          | Specifies which assignment to grade. This argument is not necessary when using the assignment-specific endpoints.              |
 
 **Example Request:**
 
@@ -594,7 +594,7 @@ Returns a [Progress](../progress#progress) object.
 
 ### [Mark submission as read](#method.submissions_api.mark_submission_read) <a href="#method.submissions_api.mark_submission_read" id="method.submissions_api.mark_submission_read"></a>
 
-[SubmissionsApiController#mark\_submission\_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#mark_submission_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/read`**
 
@@ -619,7 +619,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/assignments/<assignment_id>/su
 
 ### [Mark submission as unread](#method.submissions_api.mark_submission_unread) <a href="#method.submissions_api.mark_submission_unread" id="method.submissions_api.mark_submission_unread"></a>
 
-[SubmissionsApiController#mark\_submission\_unread](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#mark_submission_unread](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`DELETE /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/read`**
 
@@ -643,7 +643,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/assignments/<assignment_id>/su
 
 ### [Mark bulk submissions as read](#method.submissions_api.mark_bulk_submissions_as_read) <a href="#method.submissions_api.mark_bulk_submissions_as_read" id="method.submissions_api.mark_bulk_submissions_as_read"></a>
 
-[SubmissionsApiController#mark\_bulk\_submissions\_as\_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#mark_bulk_submissions_as_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/submissions/bulk_mark_read`**
 
@@ -675,7 +675,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/submissions/bulk_mark_read.jso
 
 ### [Mark submission item as read](#method.submissions_api.mark_submission_item_read) <a href="#method.submissions_api.mark_submission_item_read" id="method.submissions_api.mark_submission_item_read"></a>
 
-[SubmissionsApiController#mark\_submission\_item\_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#mark_submission_item_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/read/:item`**
 
@@ -702,7 +702,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/assignments/<assignment_id>/su
 
 ### [Clear unread status for all submissions.](#method.submissions_api.submissions_clear_unread) <a href="#method.submissions_api.submissions_clear_unread" id="method.submissions_api.submissions_clear_unread"></a>
 
-[SubmissionsApiController#submissions\_clear\_unread](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#submissions_clear_unread](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/submissions/:user_id/clear_unread`**
 
@@ -729,7 +729,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/submissions/<user_id>/clear_un
 
 ### [Get rubric assessments read state](#method.submissions_api.rubric_assessments_read_state) <a href="#method.submissions_api.rubric_assessments_read_state" id="method.submissions_api.rubric_assessments_read_state"></a>
 
-[SubmissionsApiController#rubric\_assessments\_read\_state](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#rubric_assessments_read_state](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read`**
 
@@ -771,7 +771,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/assignments/<assignment_id>/su
 
 ### [Mark rubric assessments as read](#method.submissions_api.mark_rubric_assessments_read) <a href="#method.submissions_api.mark_rubric_assessments_read" id="method.submissions_api.mark_rubric_assessments_read"></a>
 
-[SubmissionsApiController#mark\_rubric\_assessments\_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#mark_rubric_assessments_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read`**
 
@@ -819,7 +819,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/assignments/<assignment_id>/su
 
 ### [Get document annotations read state](#method.submissions_api.document_annotations_read_state) <a href="#method.submissions_api.document_annotations_read_state" id="method.submissions_api.document_annotations_read_state"></a>
 
-[SubmissionsApiController#document\_annotations\_read\_state](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#document_annotations_read_state](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read`**
 
@@ -848,7 +848,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/assignments/<assignment_id>/su
 
 ### [Mark document annotations as read](#method.submissions_api.mark_document_annotations_read) <a href="#method.submissions_api.mark_document_annotations_read" id="method.submissions_api.mark_document_annotations_read"></a>
 
-[SubmissionsApiController#mark\_document\_annotations\_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#mark_document_annotations_read](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read`**
 
@@ -881,7 +881,7 @@ curl 'https://<canvas>/api/v1/courses/<course_id>/assignments/<assignment_id>/su
 
 ### [Submission Summary](#method.submissions_api.submission_summary) <a href="#method.submissions_api.submission_summary" id="method.submissions_api.submission_summary"></a>
 
-[SubmissionsApiController#submission\_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
+[SubmissionsApiController#submission_summary](https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb)
 
 **`GET /api/v1/courses/:course_id/assignments/:assignment_id/submission_summary`**
 
@@ -910,6 +910,6 @@ Returns the number of submissions for the given assignment based on gradeable st
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

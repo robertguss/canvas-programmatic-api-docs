@@ -95,7 +95,7 @@ Returns a list of [Conference](#conference) objects.
 
 ### [List conferences for the current user](#method.conferences.for_user) <a href="#method.conferences.for_user" id="method.conferences.for_user"></a>
 
-[ConferencesController#for\_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conferences_controller.rb)
+[ConferencesController#for_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/conferences_controller.rb)
 
 **`GET /api/v1/conferences`**
 
@@ -120,6 +120,6 @@ curl 'https://<canvas>/api/v1/conferences' \
 
 Returns a list of [Conference](#conference) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

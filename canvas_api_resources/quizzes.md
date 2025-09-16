@@ -238,7 +238,7 @@ Change order of the quiz questions or groups within the quiz
 
 ### [Validate quiz access code](#method.quizzes/quizzes_api.validate_access_code) <a href="#method.quizzes-quizzes_api.validate_access_code" id="method.quizzes-quizzes_api.validate_access_code"></a>
 
-[Quizzes::QuizzesApiController#validate\_access\_code](https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quizzes_api_controller.rb)
+[Quizzes::QuizzesApiController#validate_access_code](https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quizzes_api_controller.rb)
 
 **`POST /api/v1/courses/:course_id/quizzes/:id/validate_access_code`**
 
@@ -252,6 +252,6 @@ Accepts an access code and returns a boolean indicating whether that access code
 | ------------- | ----------------- | ------------------------------- |
 | `access_code` | Required `string` | The access code being validated |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

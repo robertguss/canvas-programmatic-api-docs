@@ -62,9 +62,9 @@ Returns a list of all available reports.
 
 **Request Parameters:**
 
-| Parameter               | Type      | Description                                                                                                                                   |
-| ----------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `includes_all_versions` | `boolean` | Whether to retrieve reports that consider all the submissions or only the most recent. Defaults to false, ignored for item\_analysis reports. |
+| Parameter               | Type      | Description                                                                                                                                  |
+| ----------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `includes_all_versions` | `boolean` | Whether to retrieve reports that consider all the submissions or only the most recent. Defaults to false, ignored for item_analysis reports. |
 
 Returns a list of [QuizReport](#quizreport) objects.
 
@@ -80,15 +80,15 @@ Create and return a new report for this quiz. If a previously generated report m
 
 **Responses**
 
-* `400 Bad Request` if the specified report type is invalid
-* `409 Conflict` if a quiz report of the specified type is already being generated
+- `400 Bad Request` if the specified report type is invalid
+- `409 Conflict` if a quiz report of the specified type is already being generated
 
 **Request Parameters:**
 
 | Parameter                            | Type              | Description                                                                                                                                                                                               |
 | ------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `quiz_report[report_type]`           | Required `string` | <p>The type of report to be generated.</p><p>Allowed values: <code>student_analysis</code>, <code>item_analysis</code></p>                                                                                |
-| `quiz_report[includes_all_versions]` | `boolean`         | Whether the report should consider all submissions or only the most recent. Defaults to false, ignored for item\_analysis.                                                                                |
+| `quiz_report[includes_all_versions]` | `boolean`         | Whether the report should consider all submissions or only the most recent. Defaults to false, ignored for item_analysis.                                                                                 |
 | `include`                            | `String[]`        | <p>Whether the output should include documents for the file and/or progress objects associated with this report. (Note: JSON-API only)</p><p>Allowed values: <code>file</code>, <code>progress</code></p> |
 
 Returns a [QuizReport](#quizreport) object.
@@ -121,13 +121,13 @@ Returns a [QuizReport](#quizreport) object.
 
 This API allows you to cancel a previous request you issued for a report to be generated. Or in the case of an already generated report, you’d like to remove it, perhaps to generate it another time with an updated version that provides new features.
 
-You must check the report’s generation status before attempting to use this interface. See the “workflow\_state” property of the QuizReport’s Progress object for more information. Only when the progress reports itself in a “queued” state can the generation be aborted.
+You must check the report’s generation status before attempting to use this interface. See the “workflow_state” property of the QuizReport’s Progress object for more information. Only when the progress reports itself in a “queued” state can the generation be aborted.
 
 **Responses**
 
-* `204 No Content` if your request was accepted
-* `422 Unprocessable Entity` if the report is not being generated or can not be aborted at this stage
+- `204 No Content` if your request was accepted
+- `422 Unprocessable Entity` if the report is not being generated or can not be aborted at this stage
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

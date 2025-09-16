@@ -53,6 +53,6 @@ A list of scopes that can be applied to developer keys and access tokens.
 
 Returns a list of [Scope](#scope) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

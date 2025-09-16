@@ -94,6 +94,6 @@ Retrieve the set of events captured during a specific submission attempt.
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

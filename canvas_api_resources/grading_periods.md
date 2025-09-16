@@ -113,7 +113,7 @@ Update an existing grading period.
 
 ### [Batch update grading periods](#method.grading_periods.batch_update) <a href="#method.grading_periods.batch_update" id="method.grading_periods.batch_update"></a>
 
-[GradingPeriodsController#batch\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grading_periods_controller.rb)
+[GradingPeriodsController#batch_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grading_periods_controller.rb)
 
 **`PATCH /api/v1/courses/:course_id/grading_periods/batch_update`**
 
@@ -127,15 +127,15 @@ Update multiple grading periods
 
 **Request Parameters:**
 
-| Parameter                       | Type              | Description                                                                                                                                                                                |
-| ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `set_id`                        | Required `string` | The id of the grading period set.                                                                                                                                                          |
-| `grading_periods[][id]`         | `string`          | The id of the grading period. If the id parameter does not exist, a new grading period will be created.                                                                                    |
-| `grading_periods[][title]`      | Required `string` | The title of the grading period. The title is required for creating a new grading period, but not for updating an existing grading period.                                                 |
-| `grading_periods[][start_date]` | Required `Date`   | The date the grading period starts. The start\_date is required for creating a new grading period, but not for updating an existing grading period.                                        |
-| `grading_periods[][end_date]`   | Required `Date`   | The date the grading period ends. The end\_date is required for creating a new grading period, but not for updating an existing grading period.                                            |
-| `grading_periods[][close_date]` | Required `Date`   | The date after which grades can no longer be changed for a grading period. The close\_date is required for creating a new grading period, but not for updating an existing grading period. |
-| `grading_periods[][weight]`     | `number`          | A weight value that contributes to the overall weight of a grading period set which is used to calculate how much assignments in this period contribute to the total grade                 |
+| Parameter                       | Type              | Description                                                                                                                                                                               |
+| ------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `set_id`                        | Required `string` | The id of the grading period set.                                                                                                                                                         |
+| `grading_periods[][id]`         | `string`          | The id of the grading period. If the id parameter does not exist, a new grading period will be created.                                                                                   |
+| `grading_periods[][title]`      | Required `string` | The title of the grading period. The title is required for creating a new grading period, but not for updating an existing grading period.                                                |
+| `grading_periods[][start_date]` | Required `Date`   | The date the grading period starts. The start_date is required for creating a new grading period, but not for updating an existing grading period.                                        |
+| `grading_periods[][end_date]`   | Required `Date`   | The date the grading period ends. The end_date is required for creating a new grading period, but not for updating an existing grading period.                                            |
+| `grading_periods[][close_date]` | Required `Date`   | The date after which grades can no longer be changed for a grading period. The close_date is required for creating a new grading period, but not for updating an existing grading period. |
+| `grading_periods[][weight]`     | `number`          | A weight value that contributes to the overall weight of a grading period set which is used to calculate how much assignments in this period contribute to the total grade                |
 
 **Example Response:**
 
@@ -145,6 +145,6 @@ Update multiple grading periods
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

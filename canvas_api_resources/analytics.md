@@ -24,7 +24,7 @@ API for retrieving the data exposed in Canvas Analytics
 
 Returns page view hits summed across all courses in the department. Two groupings of these counts are returned; one by day (`by_date`), the other by category (`by_category`). The possible categories are announcements, assignments, collaborations, conferences, discussions, files, general, grades, groups, modules, other, pages, and quizzes.
 
-This and the other department-level endpoints have three variations which all return the same style of data but for different subsets of courses. All share the prefix /api/v1/accounts/\<account\_id>/analytics. The possible suffixes are:
+This and the other department-level endpoints have three variations which all return the same style of data but for different subsets of courses. All share the prefix /api/v1/accounts/\<account_id>/analytics. The possible suffixes are:
 
 ```
 * /current: includes all available courses in the default term
@@ -35,7 +35,7 @@ This and the other department-level endpoints have three variations which all re
 
 Courses not yet offered or which have been deleted are never included.
 
-/current and /completed are intended for use when the account has only one term. /terms/\<term\_id> is intended for use when the account has multiple terms.
+/current and /completed are intended for use when the account has only one term. /terms/\<term_id> is intended for use when the account has multiple terms.
 
 The action follows the suffix.
 
@@ -232,7 +232,7 @@ curl https://<canvas>/api/v1/accounts/<account_id>/analytics/terms/<term_id>/sta
 
 **Scope:** `url:GET|/api/v1/courses/:course_id/analytics/activity`
 
-Returns page view hits and participation numbers grouped by day through the entire history of the course. Page views is returned as a hash, where the hash keys are dates in the format “YYYY-MM-DD”. The page\_views result set includes page views broken out by access category. Participations is returned as an array of dates in the format “YYYY-MM-DD”.
+Returns page view hits and participation numbers grouped by day through the entire history of the course. Page views is returned as a hash, where the hash keys are dates in the format “YYYY-MM-DD”. The page_views result set includes page views broken out by access category. Participations is returned as an array of dates in the format “YYYY-MM-DD”.
 
 **Example Request:**
 
@@ -246,11 +246,11 @@ curl https://<canvas>/api/v1/courses/<course_id>/analytics/activity \
 ```js
 [
   {
-    "date": "2012-01-24",
-    "participations": 3,
-    "views": 10
-  }
-]
+    date: "2012-01-24",
+    participations: 3,
+    views: 10,
+  },
+];
 ```
 
 ### [Get course-level assignment data](#method.analytics_api.course_assignments) <a href="#method.analytics_api.course_assignments" id="method.analytics_api.course_assignments"></a>
@@ -263,9 +263,9 @@ Returns a list of assignments for the course sorted by due date. For each assign
 
 **Request Parameters:**
 
-| Parameter | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| --------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `async`   | `boolean` | If async is true, then the course\_assignments call can happen asynch- ronously and MAY return a response containing a progress\_url key instead of an assignments array. If it does, then it is the caller’s responsibility to poll the API again to see if the progress is complete. If the data is ready (possibly even on the first async call) then it will be passed back normally, as documented in the example response. |
+| Parameter | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `async`   | `boolean` | If async is true, then the course_assignments call can happen asynch- ronously and MAY return a response containing a progress_url key instead of an assignments array. If it does, then it is the caller’s responsibility to poll the API again to see if the progress is complete. If the data is ready (possibly even on the first async call) then it will be passed back normally, as documented in the example response. |
 
 **Example Request:**
 
@@ -385,7 +385,7 @@ curl https://<canvas>/api/v1/courses/<course_id>/analytics/student_summaries \
 
 Returns page view hits grouped by hour, and participation details through the entire history of the course.
 
-‘page\_views\` are returned as a hash, where the keys are iso8601 dates, bucketed by the hour. \`participations\` are returned as an array of hashes, sorted oldest to newest.
+‘page_views\` are returned as a hash, where the keys are iso8601 dates, bucketed by the hour. \`participations\` are returned as an array of hashes, sorted oldest to newest.
 
 **Example Request:**
 
@@ -436,48 +436,43 @@ curl https://<canvas>/api/v1/courses/<course_id>/analytics/users/<user_id>/assig
 ```js
 [
   {
-    "assignment_id": 1234,
-    "title": "Assignment 1",
-    "points_possible": 10,
-    "due_at": "2012-01-25T22:00:00-07:00",
-    "unlock_at": "2012-01-20T22:00:00-07:00",
-    "muted": false,
-    "min_score": 2,
-    "max_score": 10,
-    "median": 7,
-    "first_quartile": 4,
-    "third_quartile": 8,
-    "module_ids": [
-        1,
-        2
-    ],
-    "submission": {
-      "posted_at": "2012-01-23T20:00:00-07:00",
-      "submitted_at": "2012-01-22T22:00:00-07:00",
-      "score": 10
-    }
+    assignment_id: 1234,
+    title: "Assignment 1",
+    points_possible: 10,
+    due_at: "2012-01-25T22:00:00-07:00",
+    unlock_at: "2012-01-20T22:00:00-07:00",
+    muted: false,
+    min_score: 2,
+    max_score: 10,
+    median: 7,
+    first_quartile: 4,
+    third_quartile: 8,
+    module_ids: [1, 2],
+    submission: {
+      posted_at: "2012-01-23T20:00:00-07:00",
+      submitted_at: "2012-01-22T22:00:00-07:00",
+      score: 10,
+    },
   },
   {
-    "assignment_id": 1235,
-    "title": "Assignment 2",
-    "points_possible": 15,
-    "due_at": "2012-01-26T22:00:00-07:00",
-    "unlock_at": null,
-    "muted": true,
-    "min_score": 8,
-    "max_score": 8,
-    "median": 8,
-    "first_quartile": 8,
-    "third_quartile": 8,
-    "module_ids": [
-        1
-    ],
-    "submission": {
-      "posted_at": null,
-      "submitted_at": "2012-01-22T22:00:00-07:00"
-    }
-  }
-]
+    assignment_id: 1235,
+    title: "Assignment 2",
+    points_possible: 15,
+    due_at: "2012-01-26T22:00:00-07:00",
+    unlock_at: null,
+    muted: true,
+    min_score: 8,
+    max_score: 8,
+    median: 8,
+    first_quartile: 8,
+    third_quartile: 8,
+    module_ids: [1],
+    submission: {
+      posted_at: null,
+      submitted_at: "2012-01-22T22:00:00-07:00",
+    },
+  },
+];
 ```
 
 ### [Get user-in-a-course-level messaging data](#method.analytics_api.student_in_course_messaging) <a href="#method.analytics_api.student_in_course_messaging" id="method.analytics_api.student_in_course_messaging"></a>
@@ -509,6 +504,6 @@ curl https://<canvas>/api/v1/courses/<course_id>/analytics/users/<user_id>/commu
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

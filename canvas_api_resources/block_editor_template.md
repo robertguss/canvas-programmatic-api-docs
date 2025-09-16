@@ -62,6 +62,6 @@ curl -H 'Authorization: Bearer <token>' \
 
 Returns a list of [BlockEditorTemplate](#blockeditortemplate) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

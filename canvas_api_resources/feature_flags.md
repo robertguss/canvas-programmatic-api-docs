@@ -8,7 +8,7 @@
 
 Manage optional features in Canvas.
 
-_Deprecated_\[2016-01-15] FeatureFlags previously had a locking\_account\_id field; it was never used, and has been removed. It is still included in API responses for backwards compatibility reasons. Its value is always null.
+_Deprecated_\[2016-01-15] FeatureFlags previously had a locking_account_id field; it was never used, and has been removed. It is still included in API responses for backwards compatibility reasons. Its value is always null.
 
 **A Feature object looks like:**
 
@@ -96,7 +96,7 @@ Returns a list of [Feature](#feature) objects.
 
 ### [List enabled features](#method.feature_flags.enabled_features) <a href="#method.feature_flags.enabled_features" id="method.feature_flags.enabled_features"></a>
 
-[FeatureFlagsController#enabled\_features](https://github.com/instructure/canvas-lms/blob/master/app/controllers/feature_flags_controller.rb)
+[FeatureFlagsController#enabled_features](https://github.com/instructure/canvas-lms/blob/master/app/controllers/feature_flags_controller.rb)
 
 **`GET /api/v1/courses/:course_id/features/enabled`**
 
@@ -122,7 +122,7 @@ curl 'http://<canvas>/api/v1/courses/1/features/enabled' \
 **Example Response:**
 
 ```js
-["fancy_wickets", "automatic_essay_grading", "telepathic_navigation"]
+["fancy_wickets", "automatic_essay_grading", "telepathic_navigation"];
 ```
 
 ### [List environment features](#method.feature_flags.environment) <a href="#method.feature_flags.environment" id="method.feature_flags.environment"></a>
@@ -164,7 +164,7 @@ curl 'http://<canvas>/api/v1/features/environment' \
 
 **Scope:** `url:GET|/api/v1/users/:user_id/features/flags/:feature`
 
-Get the feature flag that applies to a given Account, Course, or User. The flag may be defined on the object, or it may be inherited from a parent account. You can look at the context\_id and context\_type of the returned object to determine which is the case. If these fields are missing, then the object is the global Canvas default.
+Get the feature flag that applies to a given Account, Course, or User. The flag may be defined on the object, or it may be inherited from a parent account. You can look at the context_id and context_type of the returned object to determine which is the case. If these fields are missing, then the object is the global Canvas default.
 
 **Example Request:**
 
@@ -236,6 +236,6 @@ curl -X DELETE 'http://<canvas>/api/v1/courses/1/features/flags/fancy_wickets' \
 
 Returns a [FeatureFlag](#featureflag) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

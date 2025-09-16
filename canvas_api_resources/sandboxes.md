@@ -24,6 +24,6 @@ This endpoint returns a CSV file with the UUID mapping for the sandbox. The CSV 
 * `new_uuid` - The UUID of the corresponding object in the sandbox
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

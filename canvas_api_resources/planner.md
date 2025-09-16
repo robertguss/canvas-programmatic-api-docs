@@ -89,17 +89,17 @@ API for creating, accessing and updating planner override. PlannerOverrides are 
 
 Retrieve the paginated list of objects to be shown on the planner for the current user with the associated planner override to override an item’s visibility if set.
 
-Planner items for a student may also be retrieved by a linked observer. Use the path that accepts a user\_id and supply the student’s id.
+Planner items for a student may also be retrieved by a linked observer. Use the path that accepts a user_id and supply the student’s id.
 
 **Request Parameters:**
 
-| Parameter          | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                |
-| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `start_date`       | `Date`   | Only return items starting from the given date. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                             |
-| `end_date`         | `Date`   | Only return items up to the given date. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                                     |
-| `context_codes[]`  | `string` | List of context codes of courses and/or groups whose items you want to see. If not specified, defaults to all contexts associated to the current user. Note that concluded courses will be ignored unless specified in the includes\[] parameter. The format of this field is the context type, followed by an underscore, followed by the context id. For example: course\_42, group\_123 |
-| `observed_user_id` | `string` | Return planner items for the given observed user. Must be accompanied by context\_codes\[]. The user making the request must be observing the observed user in all the courses specified by context\_codes\[].                                                                                                                                                                             |
-| `filter`           | `string` | <p>Only return items that have new or unread activity</p><p>Allowed values: <code>new_activity</code></p>                                                                                                                                                                                                                                                                                  |
+| Parameter          | Type     | Description                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `start_date`       | `Date`   | Only return items starting from the given date. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                           |
+| `end_date`         | `Date`   | Only return items up to the given date. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                                                   |
+| `context_codes[]`  | `string` | List of context codes of courses and/or groups whose items you want to see. If not specified, defaults to all contexts associated to the current user. Note that concluded courses will be ignored unless specified in the includes\[] parameter. The format of this field is the context type, followed by an underscore, followed by the context id. For example: course_42, group_123 |
+| `observed_user_id` | `string` | Return planner items for the given observed user. Must be accompanied by context_codes\[]. The user making the request must be observing the observed user in all the courses specified by context_codes\[].                                                                                                                                                                             |
+| `filter`           | `string` | <p>Only return items that have new or unread activity</p><p>Allowed values: <code>new_activity</code></p>                                                                                                                                                                                                                                                                                |
 
 **Example Response:**
 
@@ -178,34 +178,34 @@ Retrieve planner note for a user
 
 **Request Parameters:**
 
-| Parameter         | Type       | Description                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ----------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `start_date`      | `DateTime` | Only return notes with todo dates since the start\_date (inclusive). No default. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                             |
-| `end_date`        | `DateTime` | Only return notes with todo dates before the end\_date (inclusive). No default. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ. If end\_date and start\_date are both specified and equivalent, then only notes with todo dates on that day are returned.                                                                                                                    |
-| `context_codes[]` | `string`   | List of context codes of courses whose notes you want to see. If not specified, defaults to all contexts that the user belongs to. The format of this field is the context type, followed by an underscore, followed by the context id. For example: course\_42 Including a code matching the user’s own context code (e.g. user\_1) will include notes that are not associated with any particular course. |
+| Parameter         | Type       | Description                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `start_date`      | `DateTime` | Only return notes with todo dates since the start_date (inclusive). No default. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ.                                                                                                                                                                                                                                            |
+| `end_date`        | `DateTime` | Only return notes with todo dates before the end_date (inclusive). No default. The value should be formatted as: yyyy-mm-dd or ISO 8601 YYYY-MM-DDTHH:MM:SSZ. If end_date and start_date are both specified and equivalent, then only notes with todo dates on that day are returned.                                                                                                                     |
+| `context_codes[]` | `string`   | List of context codes of courses whose notes you want to see. If not specified, defaults to all contexts that the user belongs to. The format of this field is the context type, followed by an underscore, followed by the context id. For example: course_42 Including a code matching the user’s own context code (e.g. user_1) will include notes that are not associated with any particular course. |
 
 **Example Response:**
 
 ```js
 [
   {
-    'id': 4,
-    'title': 'Bring bio book',
-    'description': 'bring bio book for friend tomorrow',
-    'user_id': 1238,
-    'course_id': 4567,  // If the user assigns a note to a course
-    'todo_date': "2017-05-09T10:12:00Z",
-    'workflow_state': "active",
+    id: 4,
+    title: "Bring bio book",
+    description: "bring bio book for friend tomorrow",
+    user_id: 1238,
+    course_id: 4567, // If the user assigns a note to a course
+    todo_date: "2017-05-09T10:12:00Z",
+    workflow_state: "active",
   },
   {
-    'id': 5,
-    'title': 'Bring english book',
-    'description': 'bring english book to class tomorrow',
-    'user_id': 1234,
-    'todo_date': "2017-05-09T10:12:00Z",
-    'workflow_state': "active",
+    id: 5,
+    title: "Bring english book",
+    description: "bring english book to class tomorrow",
+    user_id: 1234,
+    todo_date: "2017-05-09T10:12:00Z",
+    workflow_state: "active",
   },
-]
+];
 ```
 
 Returns a list of [PlannerNote](#plannernote) objects.
@@ -234,12 +234,12 @@ Update a planner note for the current user
 
 **Request Parameters:**
 
-| Parameter   | Type      | Description                                                                                                                                                                                                                                                                                                         |
-| ----------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`     | `string`  | The title of the planner note.                                                                                                                                                                                                                                                                                      |
-| `details`   | `string`  | Text of the planner note.                                                                                                                                                                                                                                                                                           |
-| `todo_date` | `Date`    | The date where this planner note should appear in the planner. The value should be formatted as: yyyy-mm-dd.                                                                                                                                                                                                        |
-| `course_id` | `integer` | The ID of the course to associate with the planner note. The caller must be able to view the course in order to associate it with a planner note. Use a null or empty value to remove a planner note from a course. Note that if the planner note is linked to a learning object, its course\_id cannot be changed. |
+| Parameter   | Type      | Description                                                                                                                                                                                                                                                                                                        |
+| ----------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `title`     | `string`  | The title of the planner note.                                                                                                                                                                                                                                                                                     |
+| `details`   | `string`  | Text of the planner note.                                                                                                                                                                                                                                                                                          |
+| `todo_date` | `Date`    | The date where this planner note should appear in the planner. The value should be formatted as: yyyy-mm-dd.                                                                                                                                                                                                       |
+| `course_id` | `integer` | The ID of the course to associate with the planner note. The caller must be able to view the course in order to associate it with a planner note. Use a null or empty value to remove a planner note from a course. Note that if the planner note is linked to a learning object, its course_id cannot be changed. |
 
 Returns a [PlannerNote](#plannernote) object.
 
@@ -255,14 +255,14 @@ Create a planner note for the current user
 
 **Request Parameters:**
 
-| Parameter            | Type      | Description                                                                                                                                                                                                                                                                                                                                                                     |
-| -------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`              | `string`  | The title of the planner note.                                                                                                                                                                                                                                                                                                                                                  |
-| `details`            | `string`  | Text of the planner note.                                                                                                                                                                                                                                                                                                                                                       |
-| `todo_date`          | `Date`    | The date where this planner note should appear in the planner. The value should be formatted as: yyyy-mm-dd.                                                                                                                                                                                                                                                                    |
-| `course_id`          | `integer` | The ID of the course to associate with the planner note. The caller must be able to view the course in order to associate it with a planner note.                                                                                                                                                                                                                               |
-| `linked_object_type` | `string`  | The type of a learning object to link to this planner note. Must be used in conjunction wtih linked\_object\_id and course\_id. Valid linked\_object\_type values are: ‘announcement’, ‘assignment’, ‘discussion\_topic’, ‘wiki\_page’, ‘quiz’                                                                                                                                  |
-| `linked_object_id`   | `integer` | The id of a learning object to link to this planner note. Must be used in conjunction with linked\_object\_type and course\_id. The object must be in the same course as specified by course\_id. If the title argument is not provided, the planner note will use the learning object’s title as its title. Only one planner note may be linked to a specific learning object. |
+| Parameter            | Type      | Description                                                                                                                                                                                                                                                                                                                                                                 |
+| -------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`              | `string`  | The title of the planner note.                                                                                                                                                                                                                                                                                                                                              |
+| `details`            | `string`  | Text of the planner note.                                                                                                                                                                                                                                                                                                                                                   |
+| `todo_date`          | `Date`    | The date where this planner note should appear in the planner. The value should be formatted as: yyyy-mm-dd.                                                                                                                                                                                                                                                                |
+| `course_id`          | `integer` | The ID of the course to associate with the planner note. The caller must be able to view the course in order to associate it with a planner note.                                                                                                                                                                                                                           |
+| `linked_object_type` | `string`  | The type of a learning object to link to this planner note. Must be used in conjunction wtih linked_object_id and course_id. Valid linked_object_type values are: ‘announcement’, ‘assignment’, ‘discussion_topic’, ‘wiki_page’, ‘quiz’                                                                                                                                     |
+| `linked_object_id`   | `integer` | The id of a learning object to link to this planner note. Must be used in conjunction with linked_object_type and course_id. The object must be in the same course as specified by course_id. If the title argument is not provided, the planner note will use the learning object’s title as its title. Only one planner note may be linked to a specific learning object. |
 
 Returns a [PlannerNote](#plannernote) object.
 
@@ -354,6 +354,6 @@ Delete a planner override for the current user
 
 Returns a [PlannerOverride](#planneroverride) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -36,7 +36,7 @@ Result API for 1EdTech (IMS) [Assignment and Grade Services](https://github.com/
 
 **Scope:** `url:GET|/api/lti/courses/:course_id/line_items/:line_item_id/results`
 
-Show existing Results of a line item. Can be used to retrieve a specific student’s result by adding the user\_id (defined as the lti\_user\_id or the Canvas user\_id) as a query parameter (i.e. user\_id=1000). If user\_id is included, it will return only one Result in the collection if the result exists, otherwise it will be empty. May also limit number of results by adding the limit query param (i.e. limit=100)
+Show existing Results of a line item. Can be used to retrieve a specific student’s result by adding the user_id (defined as the lti_user_id or the Canvas user_id) as a query parameter (i.e. user_id=1000). If user_id is included, it will return only one Result in the collection if the result exists, otherwise it will be empty. May also limit number of results by adding the limit query param (i.e. limit=100)
 
 Returns a [Result](#result) object.
 
@@ -52,6 +52,6 @@ Show existing Result of a line item.
 
 Returns a [Result](#result) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

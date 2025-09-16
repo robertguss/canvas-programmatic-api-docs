@@ -66,22 +66,24 @@ Returns a list of [User](../users#user) objects.
 
 ### [Bulk select provisional grades](#method.provisional_grades.bulk_select) <a href="#method.provisional_grades.bulk_select" id="method.provisional_grades.bulk_select"></a>
 
-[ProvisionalGradesController#bulk\_select](https://github.com/instructure/canvas-lms/blob/master/app/controllers/provisional_grades_controller.rb)
+[ProvisionalGradesController#bulk_select](https://github.com/instructure/canvas-lms/blob/master/app/controllers/provisional_grades_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/assignments/:assignment_id/provisional_grades/bulk_select`**
 
 **Scope:** `url:PUT|/api/v1/courses/:course_id/assignments/:assignment_id/provisional_grades/bulk_select`
 
-Choose which provisional grades will be received by associated students for an assignment. The caller must be the final grader for the assignment or an admin with :select\_final\_grade rights.
+Choose which provisional grades will be received by associated students for an assignment. The caller must be the final grader for the assignment or an admin with :select_final_grade rights.
 
 **Example Response:**
 
 ```js
-[{
-  "assignment_id": 867,
-  "student_id": 5309,
-  "selected_provisional_grade_id": 53669
-}]
+[
+  {
+    assignment_id: 867,
+    student_id: 5309,
+    selected_provisional_grade_id: 53669,
+  },
+];
 ```
 
 ### [Show provisional grade status for a student](#method.provisional_grades.status) <a href="#method.provisional_grades.status" id="method.provisional_grades.status"></a>
@@ -120,7 +122,7 @@ curl 'https://<canvas>/api/v1/courses/1/assignments/2/provisional_grades/status?
 
 **Scope:** `url:PUT|/api/v1/courses/:course_id/assignments/:assignment_id/provisional_grades/:provisional_grade_id/select`
 
-Choose which provisional grade the student should receive for a submission. The caller must be the final grader for the assignment or an admin with :select\_final\_grade rights.
+Choose which provisional grade the student should receive for a submission. The caller must be the final grader for the assignment or an admin with :select_final_grade rights.
 
 **Example Response:**
 
@@ -181,6 +183,6 @@ curl 'https://<canvas>/api/v1/courses/1/assignments/2/anonymous_provisional_grad
 { "needs_provisional_grade": false }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

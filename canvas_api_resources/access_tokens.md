@@ -14,7 +14,7 @@
 
 **Scope:** `url:GET|/api/v1/users/:user_id/tokens/:id`
 
-The ID can be the actual database ID of the token, or the ‘token\_hint’ value.
+The ID can be the actual database ID of the token, or the ‘token_hint’ value.
 
 ### [Create an access token](#method.tokens.create) <a href="#method.tokens.create" id="method.tokens.create"></a>
 
@@ -44,7 +44,7 @@ Create a new access token for the specified user. If the user is not the current
 
 Update an existing access token.
 
-The ID can be the actual database ID of the token, or the ‘token\_hint’ value.
+The ID can be the actual database ID of the token, or the ‘token_hint’ value.
 
 Regenerating an expired token requires a new expiration date.
 
@@ -65,8 +65,8 @@ Regenerating an expired token requires a new expiration date.
 
 **Scope:** `url:DELETE|/api/v1/users/:user_id/tokens/:id`
 
-The ID can be the actual database ID of the token, or the ‘token\_hint’ value.
+The ID can be the actual database ID of the token, or the ‘token_hint’ value.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

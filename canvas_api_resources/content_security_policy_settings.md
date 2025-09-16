@@ -14,7 +14,7 @@ API for enabling/disabling the use of Content Security Policy headers and config
 
 ### [Get current settings for account or course](#method.csp_settings.get_csp_settings) <a href="#method.csp_settings.get_csp_settings" id="method.csp_settings.get_csp_settings"></a>
 
-[CspSettingsController#get\_csp\_settings](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
+[CspSettingsController#get_csp_settings](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -32,33 +32,33 @@ Update multiple modules in an account.
 
 **API response field:**
 
-* enabled
+- enabled
 
 Whether CSP is enabled.
 
-* inherited
+- inherited
 
 Whether the current CSP settings are inherited from a parent account.
 
-* settings\_locked
+- settings_locked
 
 Whether current CSP settings can be overridden by sub-accounts and courses.
 
-* effective\_whitelist
+- effective_whitelist
 
 If enabled, lists the currently allowed domains (includes domains automatically allowed through external tools).
 
-* tools\_whitelist
+- tools_whitelist
 
 (Account-only) Lists the automatically allowed domains with their respective external tools
 
-* current\_account\_whitelist
+- current_account_whitelist
 
 (Account-only) Lists the current list of domains explicitly allowed by this account. (Note: this list will not take effect unless CSP is explicitly enabled on this account)
 
 ### [Enable, disable, or clear explicit CSP setting](#method.csp_settings.set_csp_setting) <a href="#method.csp_settings.set_csp_setting" id="method.csp_settings.set_csp_setting"></a>
 
-[CspSettingsController#set\_csp\_setting](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
+[CspSettingsController#set_csp_setting](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -74,7 +74,7 @@ BETA: This API endpoint is not finalized, and there could be breaking changes be
 
 Either explicitly sets CSP to be on or off for courses and sub-accounts, or clear the explicit settings to default to those set by a parent account
 
-Note: If “inherited” and “settings\_locked” are both true for this account or course, then the CSP setting cannot be modified.
+Note: If “inherited” and “settings_locked” are both true for this account or course, then the CSP setting cannot be modified.
 
 **Request Parameters:**
 
@@ -84,7 +84,7 @@ Note: If “inherited” and “settings\_locked” are both true for this accou
 
 ### [Lock or unlock current CSP settings for sub-accounts and courses](#method.csp_settings.set_csp_lock) <a href="#method.csp_settings.set_csp_lock" id="method.csp_settings.set_csp_lock"></a>
 
-[CspSettingsController#set\_csp\_lock](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
+[CspSettingsController#set_csp_lock](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -104,7 +104,7 @@ Can only be set if CSP is explicitly enabled or disabled on this account (i.e. �
 
 ### [Add an allowed domain to account](#method.csp_settings.add_domain) <a href="#method.csp_settings.add_domain" id="method.csp_settings.add_domain"></a>
 
-[CspSettingsController#add\_domain](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
+[CspSettingsController#add_domain](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -124,7 +124,7 @@ Adds an allowed domain for the current account. Note: this will not take effect 
 
 ### [Add multiple allowed domains to an account](#method.csp_settings.add_multiple_domains) <a href="#method.csp_settings.add_multiple_domains" id="method.csp_settings.add_multiple_domains"></a>
 
-[CspSettingsController#add\_multiple\_domains](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
+[CspSettingsController#add_multiple_domains](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -144,7 +144,7 @@ Adds multiple allowed domains for the current account. Note: this will not take 
 
 ### [Remove a domain from account](#method.csp_settings.remove_domain) <a href="#method.csp_settings.remove_domain" id="method.csp_settings.remove_domain"></a>
 
-[CspSettingsController#remove\_domain](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
+[CspSettingsController#remove_domain](https://github.com/instructure/canvas-lms/blob/master/app/controllers/csp_settings_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -162,6 +162,6 @@ Removes an allowed domain from the current account.
 | --------- | ----------------- | -------------- |
 | `domain`  | Required `string` | no description |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

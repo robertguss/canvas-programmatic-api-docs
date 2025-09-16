@@ -63,7 +63,7 @@ Returns the late policy for a course.
 
 **Scope:** `url:POST|/api/v1/courses/:id/late_policy`
 
-Create a late policy. If the course already has a late policy, a bad\_request is returned since there can only be one late policy per course.
+Create a late policy. If the course already has a late policy, a bad_request is returned since there can only be one late policy per course.
 
 **Request Parameters:**
 
@@ -107,6 +107,6 @@ Patch a late policy. No body is returned upon success.
 | `late_policy[late_submission_minimum_percent_enabled]` | `boolean` | Whether to enable the late submission minimum percent for a late policy. |
 | `late_policy[late_submission_minimum_percent]`         | `number`  | The minimum grade a submissions can have in percentage points.           |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

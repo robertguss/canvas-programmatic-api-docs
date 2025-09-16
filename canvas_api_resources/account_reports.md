@@ -93,7 +93,7 @@ API for accessing account reports.
 
 ### [List Available Reports](#method.account_reports.available_reports) <a href="#method.account_reports.available_reports" id="method.account_reports.available_reports"></a>
 
-[AccountReportsController#available\_reports](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_reports_controller.rb)
+[AccountReportsController#available_reports](https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_reports_controller.rb)
 
 **`GET /api/v1/accounts/:account_id/reports`**
 
@@ -109,18 +109,18 @@ Returns a paginated list of reports for the current context.
 
 **API response field:**
 
-* name
+- name
 
 The name of the report.
 
-* parameters
+- parameters
 
 The parameters will vary for each report
 
-* last\_run
-*   Report
+- last_run
+- Report
 
-    The last run of the report. This will be null if the report has never been run.
+  The last run of the report. This will be null if the report has never been run.
 
 **Example Request:**
 
@@ -271,6 +271,6 @@ curl -H 'Authorization: Bearer <token>' \
 
 Returns a [Report](../course_reports#report) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

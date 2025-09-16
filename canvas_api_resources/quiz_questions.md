@@ -102,10 +102,10 @@ Returns the paginated list of QuizQuestions in this quiz.
 
 **Request Parameters:**
 
-| Parameter                 | Type      | Description                                                                                                                                                                                                                                                                                                                                         |
-| ------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `quiz_submission_id`      | `integer` | If specified, the endpoint will return the questions that were presented for that submission. This is useful if the quiz has been modified after the submission was created and the latest quiz version’s set of questions does not match the submission’s. NOTE: you must specify quiz\_submission\_attempt as well if you specify this parameter. |
-| `quiz_submission_attempt` | `integer` | The attempt of the submission you want the questions for.                                                                                                                                                                                                                                                                                           |
+| Parameter                 | Type      | Description                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `quiz_submission_id`      | `integer` | If specified, the endpoint will return the questions that were presented for that submission. This is useful if the quiz has been modified after the submission was created and the latest quiz version’s set of questions does not match the submission’s. NOTE: you must specify quiz_submission_attempt as well if you specify this parameter. |
+| `quiz_submission_attempt` | `integer` | The attempt of the submission you want the questions for.                                                                                                                                                                                                                                                                                         |
 
 Returns a list of [QuizQuestion](#quizquestion) objects.
 
@@ -202,6 +202,6 @@ Returns a [QuizQuestion](#quizquestion) object.
 | `quiz_id` | Required `integer` | The associated quiz’s unique identifier |
 | `id`      | Required `integer` | The quiz question’s unique identifier   |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

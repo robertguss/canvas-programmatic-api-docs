@@ -79,7 +79,7 @@ Configure blueprint courses
 {
   // The ID of the learning object that was changed in the blueprint course.
   "asset_id": 2,
-  // The type of the learning object that was changed in the blueprint course. 
+  // The type of the learning object that was changed in the blueprint course.
   // One of 'assignment', 'attachment', 'discussion_topic', 'external_tool',
   // 'quiz', 'wiki_page', 'syllabus', or 'settings'.  For 'syllabus' or
   // 'settings', the asset_id is the course id.
@@ -135,7 +135,7 @@ Configure blueprint courses
 
 **Scope:** `url:GET|/api/v1/courses/:course_id/blueprint_templates/:template_id`
 
-Using ‘default’ as the template\_id should suffice for the current implmentation (as there should be only one template per course). However, using specific template ids may become necessary in the future
+Using ‘default’ as the template_id should suffice for the current implmentation (as there should be only one template per course). However, using specific template ids may become necessary in the future
 
 **Example Request:**
 
@@ -148,7 +148,7 @@ Returns a [BlueprintTemplate](#blueprinttemplate) object.
 
 ### [Get associated course information](#method.master_courses/master_templates.associated_courses) <a href="#method.master_courses-master_templates.associated_courses" id="method.master_courses-master_templates.associated_courses"></a>
 
-[MasterCourses::MasterTemplatesController#associated\_courses](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#associated_courses](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_templates/:template_id/associated_courses`**
 
@@ -167,7 +167,7 @@ Returns a list of [Course](../courses#course) objects.
 
 ### [Update associated courses](#method.master_courses/master_templates.update_associations) <a href="#method.master_courses-master_templates.update_associations" id="method.master_courses-master_templates.update_associations"></a>
 
-[MasterCourses::MasterTemplatesController#update\_associations](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#update_associations](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/blueprint_templates/:template_id/update_associations`**
 
@@ -196,7 +196,7 @@ curl https://<canvas>/api/v1/courses/1/blueprint_templates/default/update_associ
 
 ### [Begin a migration to push to associated courses](#method.master_courses/master_templates.queue_migration) <a href="#method.master_courses-master_templates.queue_migration" id="method.master_courses-master_templates.queue_migration"></a>
 
-[MasterCourses::MasterTemplatesController#queue\_migration](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#queue_migration](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`POST /api/v1/courses/:course_id/blueprint_templates/:template_id/migrations`**
 
@@ -228,7 +228,7 @@ Returns a [BlueprintMigration](#blueprintmigration) object.
 
 ### [Set or remove restrictions on a blueprint course object](#method.master_courses/master_templates.restrict_item) <a href="#method.master_courses-master_templates.restrict_item" id="method.master_courses-master_templates.restrict_item"></a>
 
-[MasterCourses::MasterTemplatesController#restrict\_item](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#restrict_item](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/blueprint_templates/:template_id/restrict_item`**
 
@@ -258,19 +258,19 @@ curl https://<canvas>/api/v1/courses/1/blueprint_templates/default/restrict_item
 
 ### [Get unsynced changes](#method.master_courses/master_templates.unsynced_changes) <a href="#method.master_courses-master_templates.unsynced_changes" id="method.master_courses-master_templates.unsynced_changes"></a>
 
-[MasterCourses::MasterTemplatesController#unsynced\_changes](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#unsynced_changes](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_templates/:template_id/unsynced_changes`**
 
 **Scope:** `url:GET|/api/v1/courses/:course_id/blueprint_templates/:template_id/unsynced_changes`
 
-Retrieve a list of learning objects that have changed since the last blueprint sync operation. If no syncs have been completed, a ChangeRecord with a change\_type of `initial_sync` is returned.
+Retrieve a list of learning objects that have changed since the last blueprint sync operation. If no syncs have been completed, a ChangeRecord with a change_type of `initial_sync` is returned.
 
 Returns a list of [ChangeRecord](#changerecord) objects.
 
 ### [List blueprint migrations](#method.master_courses/master_templates.migrations_index) <a href="#method.master_courses-master_templates.migrations_index" id="method.master_courses-master_templates.migrations_index"></a>
 
-[MasterCourses::MasterTemplatesController#migrations\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#migrations_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_templates/:template_id/migrations`**
 
@@ -289,7 +289,7 @@ Returns a list of [BlueprintMigration](#blueprintmigration) objects.
 
 ### [Show a blueprint migration](#method.master_courses/master_templates.migrations_show) <a href="#method.master_courses-master_templates.migrations_show" id="method.master_courses-master_templates.migrations_show"></a>
 
-[MasterCourses::MasterTemplatesController#migrations\_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#migrations_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_templates/:template_id/migrations/:id`**
 
@@ -308,7 +308,7 @@ Returns a [BlueprintMigration](#blueprintmigration) object.
 
 ### [Get migration details](#method.master_courses/master_templates.migration_details) <a href="#method.master_courses-master_templates.migration_details" id="method.master_courses-master_templates.migration_details"></a>
 
-[MasterCourses::MasterTemplatesController#migration\_details](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#migration_details](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_templates/:template_id/migrations/:id/details`**
 
@@ -327,7 +327,7 @@ Returns a list of [ChangeRecord](#changerecord) objects.
 
 ### [List blueprint subscriptions](#method.master_courses/master_templates.subscriptions_index) <a href="#method.master_courses-master_templates.subscriptions_index" id="method.master_courses-master_templates.subscriptions_index"></a>
 
-[MasterCourses::MasterTemplatesController#subscriptions\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#subscriptions_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_subscriptions`**
 
@@ -346,7 +346,7 @@ Returns a list of [BlueprintSubscription](#blueprintsubscription) objects.
 
 ### [List blueprint imports](#method.master_courses/master_templates.imports_index) <a href="#method.master_courses-master_templates.imports_index" id="method.master_courses-master_templates.imports_index"></a>
 
-[MasterCourses::MasterTemplatesController#imports\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#imports_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_subscriptions/:subscription_id/migrations`**
 
@@ -354,7 +354,7 @@ Returns a list of [BlueprintSubscription](#blueprintsubscription) objects.
 
 Shows a paginated list of migrations imported into a course associated with a blueprint, starting with the most recent. See also [the blueprint course side](#method.master_courses/master_templates.migrations_index).
 
-Use ‘default’ as the subscription\_id to use the currently active blueprint subscription.
+Use ‘default’ as the subscription_id to use the currently active blueprint subscription.
 
 **Example Request:**
 
@@ -367,7 +367,7 @@ Returns a list of [BlueprintMigration](#blueprintmigration) objects.
 
 ### [Show a blueprint import](#method.master_courses/master_templates.imports_show) <a href="#method.master_courses-master_templates.imports_show" id="method.master_courses-master_templates.imports_show"></a>
 
-[MasterCourses::MasterTemplatesController#imports\_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#imports_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_subscriptions/:subscription_id/migrations/:id`**
 
@@ -386,7 +386,7 @@ Returns a [BlueprintMigration](#blueprintmigration) object.
 
 ### [Get import details](#method.master_courses/master_templates.import_details) <a href="#method.master_courses-master_templates.import_details" id="method.master_courses-master_templates.import_details"></a>
 
-[MasterCourses::MasterTemplatesController#import\_details](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
+[MasterCourses::MasterTemplatesController#import_details](https://github.com/instructure/canvas-lms/blob/master/app/controllers/master_courses/master_templates_controller.rb)
 
 **`GET /api/v1/courses/:course_id/blueprint_subscriptions/:subscription_id/migrations/:id/details`**
 
@@ -403,6 +403,6 @@ curl https://<canvas>/api/v1/courses/2/blueprint_subscriptions/default/7/details
 
 Returns a list of [ChangeRecord](#changerecord) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

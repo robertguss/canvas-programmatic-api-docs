@@ -86,6 +86,6 @@ Delete a temporary enrollment pairing
 
 Returns a [TemporaryEnrollmentPairing](#temporaryenrollmentpairing) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

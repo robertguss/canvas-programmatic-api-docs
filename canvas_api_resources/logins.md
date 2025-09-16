@@ -24,43 +24,43 @@ Given a user ID, return a paginated list of that user’s logins for the given a
 
 **API response field:**
 
-* account\_id
+- account_id
 
 The ID of the login’s account.
 
-* id
+- id
 
 The unique, numeric ID for the login.
 
-* sis\_user\_id
+- sis_user_id
 
 The login’s unique SIS ID.
 
-* integration\_id
+- integration_id
 
 The login’s unique integration ID.
 
-* unique\_id
+- unique_id
 
 The unique ID for the login.
 
-* user\_id
+- user_id
 
 The unique ID of the login’s user.
 
-* authentication\_provider\_id
+- authentication_provider_id
 
 The ID of the authentication provider that this login is associated with
 
-* authentication\_provider\_type
+- authentication_provider_type
 
 The type of the authentication provider that this login is associated with
 
-* workflow\_state
+- workflow_state
 
 The current status of the login
 
-* declared\_user\_type
+- declared_user_type
 
 The declared intention for this user’s role
 
@@ -84,7 +84,7 @@ The declared intention for this user’s role
 
 ### [Kickoff password recovery flow](#method.pseudonyms.forgot_password) <a href="#method.pseudonyms.forgot_password" id="method.pseudonyms.forgot_password"></a>
 
-[PseudonymsController#forgot\_password](https://github.com/instructure/canvas-lms/blob/master/app/controllers/pseudonyms_controller.rb)
+[PseudonymsController#forgot_password](https://github.com/instructure/canvas-lms/blob/master/app/controllers/pseudonyms_controller.rb)
 
 **`POST /api/v1/users/reset_password`**
 
@@ -94,7 +94,7 @@ Given a user email, generate a nonce and email it to the user
 
 **API response field:**
 
-* requested
+- requested
 
 The recovery request status
 
@@ -221,6 +221,6 @@ curl https://<canvas>/api/v1/users/:user_id/logins/:login_id \
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

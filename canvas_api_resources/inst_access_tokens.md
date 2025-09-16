@@ -40,6 +40,6 @@ curl 'https://<canvas>/api/v1/inst_access_tokens' \
 
 Returns an [InstAccessToken](#instaccesstoken) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

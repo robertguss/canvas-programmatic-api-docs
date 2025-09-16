@@ -46,10 +46,10 @@
 
 **Scope:** `url:GET|/api/v1/users/:user_id/history`
 
-Return a paginated list of the user’s recent history. History entries are returned in descending order, newest to oldest. You may list history entries for yourself (use `self` as the user\_id), for a student you observe, or for a user you manage as an administrator. Note that the `per_page` pagination argument is not supported and the number of history entries returned per page will vary.
+Return a paginated list of the user’s recent history. History entries are returned in descending order, newest to oldest. You may list history entries for yourself (use `self` as the user_id), for a student you observe, or for a user you manage as an administrator. Note that the `per_page` pagination argument is not supported and the number of history entries returned per page will vary.
 
 Returns a list of [HistoryEntry](#historyentry) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

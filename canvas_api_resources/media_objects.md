@@ -199,7 +199,7 @@ Returns a list of [MediaObject](#mediaobject) objects.
 
 ### [Update Media Object](#method.media_objects.update_media_object) <a href="#method.media_objects.update_media_object" id="method.media_objects.update_media_object"></a>
 
-[MediaObjectsController#update\_media\_object](https://github.com/instructure/canvas-lms/blob/master/app/controllers/media_objects_controller.rb)
+[MediaObjectsController#update_media_object](https://github.com/instructure/canvas-lms/blob/master/app/controllers/media_objects_controller.rb)
 
 **`PUT /api/v1/media_objects/:media_object_id`**
 
@@ -217,6 +217,6 @@ Updates the title of a media object.
 | -------------------- | -------- | -------------- |
 | `user_entered_title` | `string` | The new title. |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

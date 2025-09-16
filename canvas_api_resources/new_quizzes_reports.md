@@ -45,8 +45,8 @@ Generate a new report for this quiz. Returns a progress object that can be used 
 
 **Responses**
 
-* `400 Bad Request` if the specified report type or format is invalid
-* `409 Conflict` if a quiz report of the specified type is already being generated
+- `400 Bad Request` if the specified report type or format is invalid
+- `409 Conflict` if a quiz report of the specified type is already being generated
 
 **Request Parameters:**
 
@@ -57,6 +57,6 @@ Generate a new report for this quiz. Returns a progress object that can be used 
 
 Returns a [Progress](../progress#progress) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

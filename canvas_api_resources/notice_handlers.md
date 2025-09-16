@@ -97,6 +97,6 @@ Subscribe (set) or unsubscribe (remove) a notice handler for the tool
 
 Returns a [NoticeHandler](#noticehandler) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

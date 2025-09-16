@@ -92,7 +92,7 @@ Returns a [QuizAssignmentOverrideSetContainer](#quizassignmentoverridesetcontain
 
 ### [Retrieve assignment-overridden dates for New Quizzes](#method.quizzes/quiz_assignment_overrides.new_quizzes) <a href="#method.quizzes-quiz_assignment_overrides.new_quizzes" id="method.quizzes-quiz_assignment_overrides.new_quizzes"></a>
 
-[Quizzes::QuizAssignmentOverridesController#new\_quizzes](https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_assignment_overrides_controller.rb)
+[Quizzes::QuizAssignmentOverridesController#new_quizzes](https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_assignment_overrides_controller.rb)
 
 **`GET /api/v1/courses/:course_id/new_quizzes/assignment_overrides`**
 
@@ -124,6 +124,6 @@ Retrieve the actual due-at, unlock-at, and available-at dates for quizzes based 
 
 Returns a [QuizAssignmentOverrideSetContainer](#quizassignmentoverridesetcontainer) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

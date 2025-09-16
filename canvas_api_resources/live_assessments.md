@@ -172,6 +172,6 @@ Returns a paginated list of live assessments.
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -27,7 +27,7 @@ Developer key account bindings API for binding a developer key to a context and 
 
 ### [Create a Developer Key Account Binding](#method.developer_key_account_bindings.create_or_update) <a href="#method.developer_key_account_bindings.create_or_update" id="method.developer_key_account_bindings.create_or_update"></a>
 
-[DeveloperKeyAccountBindingsController#create\_or\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/developer_key_account_bindings_controller.rb)
+[DeveloperKeyAccountBindingsController#create_or_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/developer_key_account_bindings_controller.rb)
 
 **`POST /api/v1/accounts/:account_id/developer_keys/:developer_key_id/developer_key_account_bindings`**
 
@@ -43,6 +43,6 @@ Create a new Developer Key Account Binding. The developer key specified in the r
 
 Returns a [DeveloperKeyAccountBinding](#developerkeyaccountbinding) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

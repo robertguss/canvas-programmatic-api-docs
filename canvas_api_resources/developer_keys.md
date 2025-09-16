@@ -123,7 +123,7 @@ Create a new Canvas API key. Creating an LTI 1.3 registration is not supported h
 | `developer_key[icon_url]`                    | `string`        | URL for a small icon to display in key list.                                                                                   |
 | `developer_key[name]`                        | `string`        | The display name.                                                                                                              |
 | `developer_key[notes]`                       | `string`        | User-provided notes about the key.                                                                                             |
-| `developer_key[redirect_uri]`                | `string`        | Deprecated in favor of redirect\_uris. Do not use.                                                                             |
+| `developer_key[redirect_uri]`                | `string`        | Deprecated in favor of redirect_uris. Do not use.                                                                              |
 | `developer_key[redirect_uris]`               | `array`         | List of URLs used during OAuth2 flow to validate given redirect URI.                                                           |
 | `developer_key[vendor_code]`                 | `string`        | User-specified code representing the vendor that uses the key.                                                                 |
 | `developer_key[visible]`                     | `boolean`       | Defaults to true. If false, key will not be visible in the UI.                                                                 |
@@ -155,7 +155,7 @@ Update an existing Canvas API key. Updating an LTI 1.3 registration is not suppo
 | `developer_key[icon_url]`                    | `string`        | URL for a small icon to display in key list.                                                                                   |
 | `developer_key[name]`                        | `string`        | The display name.                                                                                                              |
 | `developer_key[notes]`                       | `string`        | User-provided notes about the key.                                                                                             |
-| `developer_key[redirect_uri]`                | `string`        | Deprecated in favor of redirect\_uris. Do not use.                                                                             |
+| `developer_key[redirect_uri]`                | `string`        | Deprecated in favor of redirect_uris. Do not use.                                                                              |
 | `developer_key[redirect_uris]`               | `array`         | List of URLs used during OAuth2 flow to validate given redirect URI.                                                           |
 | `developer_key[vendor_code]`                 | `string`        | User-specified code representing the vendor that uses the key.                                                                 |
 | `developer_key[visible]`                     | `boolean`       | Defaults to true. If false, key will not be visible in the UI.                                                                 |
@@ -179,6 +179,6 @@ Delete an existing Canvas API key. Deleting an LTI 1.3 registration should be do
 
 Returns a [DeveloperKey](#developerkey) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

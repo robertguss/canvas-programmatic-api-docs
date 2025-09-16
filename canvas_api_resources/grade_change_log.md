@@ -62,7 +62,7 @@ For each endpoint, a compound document is returned. The primary collection of ev
 
 ### [Query by assignment](#method.grade_change_audit_api.for_assignment) <a href="#method.grade_change_audit_api.for_assignment" id="method.grade_change_audit_api.for_assignment"></a>
 
-[GradeChangeAuditApiController#for\_assignment](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
+[GradeChangeAuditApiController#for_assignment](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
 
 **`GET /api/v1/audit/grade_change/assignments/:assignment_id`**
 
@@ -81,7 +81,7 @@ Returns a list of [GradeChangeEvent](#gradechangeevent) objects.
 
 ### [Query by course](#method.grade_change_audit_api.for_course) <a href="#method.grade_change_audit_api.for_course" id="method.grade_change_audit_api.for_course"></a>
 
-[GradeChangeAuditApiController#for\_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
+[GradeChangeAuditApiController#for_course](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
 
 **`GET /api/v1/audit/grade_change/courses/:course_id`**
 
@@ -100,7 +100,7 @@ Returns a list of [GradeChangeEvent](#gradechangeevent) objects.
 
 ### [Query by student](#method.grade_change_audit_api.for_student) <a href="#method.grade_change_audit_api.for_student" id="method.grade_change_audit_api.for_student"></a>
 
-[GradeChangeAuditApiController#for\_student](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
+[GradeChangeAuditApiController#for_student](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
 
 **`GET /api/v1/audit/grade_change/students/:student_id`**
 
@@ -119,7 +119,7 @@ Returns a list of [GradeChangeEvent](#gradechangeevent) objects.
 
 ### [Query by grader](#method.grade_change_audit_api.for_grader) <a href="#method.grade_change_audit_api.for_grader" id="method.grade_change_audit_api.for_grader"></a>
 
-[GradeChangeAuditApiController#for\_grader](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
+[GradeChangeAuditApiController#for_grader](https://github.com/instructure/canvas-lms/blob/master/app/controllers/grade_change_audit_api_controller.rb)
 
 **`GET /api/v1/audit/grade_change/graders/:grader_id`**
 
@@ -161,6 +161,6 @@ At least one of `course_id`, `assignment_id`, `student_id`, or `grader_id` must 
 
 Returns a list of [GradeChangeEvent](#gradechangeevent) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

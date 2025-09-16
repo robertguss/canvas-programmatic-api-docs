@@ -125,7 +125,7 @@ API for accessing and building Course Paces.
 
 ### [Show a Course pace](#method.course_paces.api_show) <a href="#method.course_paces.api_show" id="method.course_paces.api_show"></a>
 
-[CoursePacesController#api\_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/course_paces_controller.rb)
+[CoursePacesController#api_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/course_paces_controller.rb)
 
 **`GET /api/v1/courses/:course_id/course_pacing/:id`**
 
@@ -135,10 +135,10 @@ Returns a course pace for the course and pace id provided
 
 **Request Parameters:**
 
-| Parameter        | Type               | Description                |
-| ---------------- | ------------------ | -------------------------- |
-| `course_id`      | Required `integer` | The id of the course       |
-| `course_pace_id` | Required `integer` | The id of the course\_pace |
+| Parameter        | Type               | Description               |
+| ---------------- | ------------------ | ------------------------- |
+| `course_id`      | Required `integer` | The id of the course      |
+| `course_pace_id` | Required `integer` | The id of the course_pace |
 
 **Example Request:**
 
@@ -231,10 +231,10 @@ Returns the updated course pace
 
 **Request Parameters:**
 
-| Parameter        | Type               | Description                |
-| ---------------- | ------------------ | -------------------------- |
-| `course_id`      | Required `integer` | The id of the course       |
-| `course_pace_id` | Required `integer` | The id of the course\_pace |
+| Parameter        | Type               | Description               |
+| ---------------- | ------------------ | ------------------------- |
+| `course_id`      | Required `integer` | The id of the course      |
+| `course_pace_id` | Required `integer` | The id of the course_pace |
 
 **Example Request:**
 
@@ -246,6 +246,6 @@ curl https://<canvas>/api/v1/courses/1/course_pacing/1 \
 
 Returns a [CoursePace](#coursepace) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

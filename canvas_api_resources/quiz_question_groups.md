@@ -127,6 +127,6 @@ Change the order of the quiz questions within the group
 | `order[][id]`   | Required `integer` | The associated item’s unique identifier                                                              |
 | `order[][type]` | `string`           | <p>The type of item is always ‘question’ for a group</p><p>Allowed values: <code>question</code></p> |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

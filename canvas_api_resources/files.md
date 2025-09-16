@@ -112,7 +112,7 @@ An API for managing files and folders See the File Upload Documentation for deta
 
 ### [Get quota information](#method.files.api_quota) <a href="#method.files.api_quota" id="method.files.api_quota"></a>
 
-[FilesController#api\_quota](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#api_quota](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`GET /api/v1/courses/:course_id/files/quota`**
 
@@ -143,7 +143,7 @@ curl 'https://<canvas>/api/v1/courses/1/files/quota' \
 
 ### [List files](#method.files.api_index) <a href="#method.files.api_index" id="method.files.api_index"></a>
 
-[FilesController#api\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#api_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`GET /api/v1/courses/:course_id/files`**
 
@@ -172,7 +172,7 @@ Returns the paginated list of files for the folder or course.
 | `search_term`             | `string` | The partial name of the files to match and return.                                                                                                                                                                                                                                                        |
 | `include[]`               | `string` | <p>Array of additional information to include.</p><p><br></p><ul><li><p>“user”</p><p>the user who uploaded the file or last edited its content</p></li><li><p>“usage_rights”</p><p>copyright and license information for the file (see UsageRights)</p></li></ul><p>Allowed values: <code>user</code></p> |
 | `only[]`                  | `Array`  | <p>Array of information to restrict to. Overrides include[]</p><p><br></p><ul><li><p>“names”</p><p>only returns file name information</p></li></ul>                                                                                                                                                       |
-| `sort`                    | `string` | Sort results by this field. Defaults to ‘name’. Note that ‘sort=user`implies`include\[]=user`.</p> Allowed values:` name`,` size`,` created\_at`,` updated\_at`,` content\_type`,` user\`                                                                                                                 |
+| `sort`                    | `string` | Sort results by this field. Defaults to ‘name’. Note that ‘sort=user`implies`include\[]=user`.</p> Allowed values:` name`,` size`,` created_at`,` updated_at`,` content_type`,` user\`                                                                                                                    |
 | `order`                   | `string` | <p>The sorting order. Defaults to ‘asc’.</p><p>Allowed values: <code>asc</code>, <code>desc</code></p>                                                                                                                                                                                                    |
 
 **Example Request:**
@@ -186,7 +186,7 @@ Returns a list of [File](../../external-tools/plagiarism-detection-platform/plag
 
 ### [Get public inline preview url](#method.files.public_url) <a href="#method.files.public_url" id="method.files.public_url"></a>
 
-[FilesController#public\_url](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#public_url](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`GET /api/v1/files/:id/public_url`**
 
@@ -215,7 +215,7 @@ curl 'https://<canvas>/api/v1/files/1/public_url' \
 
 ### [Get file](#method.files.api_show) <a href="#method.files.api_show" id="method.files.api_show"></a>
 
-[FilesController#api\_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#api_show](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`GET /api/v1/files/:id`**
 
@@ -261,7 +261,7 @@ Returns a [File](../../external-tools/plagiarism-detection-platform/plagiarism_d
 
 ### [Translate file reference](#method.files.file_ref) <a href="#method.files.file_ref" id="method.files.file_ref"></a>
 
-[FilesController#file\_ref](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#file_ref](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`GET /api/v1/courses/:course_id/files/file_ref/:migration_id`**
 
@@ -280,7 +280,7 @@ Returns a [File](../../external-tools/plagiarism-detection-platform/plagiarism_d
 
 ### [Update file](#method.files.api_update) <a href="#method.files.api_update" id="method.files.api_update"></a>
 
-[FilesController#api\_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#api_update](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`PUT /api/v1/files/:id`**
 
@@ -339,7 +339,7 @@ Returns a [File](../../external-tools/plagiarism-detection-platform/plagiarism_d
 
 ### [Get icon metadata](#method.files.icon_metadata) <a href="#method.files.icon_metadata" id="method.files.icon_metadata"></a>
 
-[FilesController#icon\_metadata](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#icon_metadata](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`GET /api/v1/files/:id/icon_metadata`**
 
@@ -385,7 +385,7 @@ curl 'https://<canvas>/api/v1/courses/1/files/1/metadata' \
 
 ### [Reset link verifier](#method.files.reset_verifier) <a href="#method.files.reset_verifier" id="method.files.reset_verifier"></a>
 
-[FilesController#reset\_verifier](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
+[FilesController#reset_verifier](https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb)
 
 **`POST /api/v1/files/:id/reset_verifier`**
 
@@ -406,7 +406,7 @@ Returns a [File](../../external-tools/plagiarism-detection-platform/plagiarism_d
 
 ### [List folders](#method.folders.api_index) <a href="#method.folders.api_index" id="method.folders.api_index"></a>
 
-[FoldersController#api\_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#api_index](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`GET /api/v1/folders/:id/folders`**
 
@@ -425,7 +425,7 @@ Returns a list of [Folder](#folder) objects.
 
 ### [List all folders](#method.folders.list_all_folders) <a href="#method.folders.list_all_folders" id="method.folders.list_all_folders"></a>
 
-[FoldersController#list\_all\_folders](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#list_all_folders](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`GET /api/v1/courses/:course_id/folders`**
 
@@ -452,7 +452,7 @@ Returns a list of [Folder](#folder) objects.
 
 ### [Resolve path](#method.folders.resolve_path) <a href="#method.folders.resolve_path" id="method.folders.resolve_path"></a>
 
-[FoldersController#resolve\_path](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#resolve_path](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`GET /api/v1/courses/:course_id/folders/by_path/*full_path`**
 
@@ -588,16 +588,16 @@ Creates a folder in the specified context
 
 **Request Parameters:**
 
-| Parameter            | Type              | Description                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| -------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`               | Required `string` | The name of the folder                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `parent_folder_id`   | `string`          | The id of the folder to store the new folder in. An error will be returned if this does not correspond to an existing folder. If this and parent\_folder\_path are sent an error will be returned. If neither is given, a default folder will be used.                                                                                                                                                                      |
-| `parent_folder_path` | `string`          | The path of the folder to store the new folder in. The path separator is the forward slash ‘/\`, never a back slash. The parent folder will be created if it does not already exist. This parameter only applies to new folders in a context that has folders, such as a user, a course, or a group. If this and parent\_folder\_id are sent an error will be returned. If neither is given, a default folder will be used. |
-| `lock_at`            | `DateTime`        | The datetime to lock the folder at                                                                                                                                                                                                                                                                                                                                                                                          |
-| `unlock_at`          | `DateTime`        | The datetime to unlock the folder at                                                                                                                                                                                                                                                                                                                                                                                        |
-| `locked`             | `boolean`         | Flag the folder as locked                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `hidden`             | `boolean`         | Flag the folder as hidden                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `position`           | `integer`         | Set an explicit sort position for the folder                                                                                                                                                                                                                                                                                                                                                                                |
+| Parameter            | Type              | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
+| -------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`               | Required `string` | The name of the folder                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `parent_folder_id`   | `string`          | The id of the folder to store the new folder in. An error will be returned if this does not correspond to an existing folder. If this and parent_folder_path are sent an error will be returned. If neither is given, a default folder will be used.                                                                                                                                                                      |
+| `parent_folder_path` | `string`          | The path of the folder to store the new folder in. The path separator is the forward slash ‘/\`, never a back slash. The parent folder will be created if it does not already exist. This parameter only applies to new folders in a context that has folders, such as a user, a course, or a group. If this and parent_folder_id are sent an error will be returned. If neither is given, a default folder will be used. |
+| `lock_at`            | `DateTime`        | The datetime to lock the folder at                                                                                                                                                                                                                                                                                                                                                                                        |
+| `unlock_at`          | `DateTime`        | The datetime to unlock the folder at                                                                                                                                                                                                                                                                                                                                                                                      |
+| `locked`             | `boolean`         | Flag the folder as locked                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `hidden`             | `boolean`         | Flag the folder as hidden                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `position`           | `integer`         | Set an explicit sort position for the folder                                                                                                                                                                                                                                                                                                                                                                              |
 
 **Example Request:**
 
@@ -619,7 +619,7 @@ Returns a [Folder](#folder) object.
 
 ### [Delete folder](#method.folders.api_destroy) <a href="#method.folders.api_destroy" id="method.folders.api_destroy"></a>
 
-[FoldersController#api\_destroy](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#api_destroy](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`DELETE /api/v1/folders/:id`**
 
@@ -642,7 +642,7 @@ curl -X DELETE 'https://<canvas>/api/v1/folders/<folder_id>' \
 
 ### [Upload a file](#method.folders.create_file) <a href="#method.folders.create_file" id="method.folders.create_file"></a>
 
-[FoldersController#create\_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#create_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`POST /api/v1/folders/:folder_id/files`**
 
@@ -656,7 +656,7 @@ Only those with the “Manage Files” permission on a course or group can uploa
 
 ### [Copy a file](#method.folders.copy_file) <a href="#method.folders.copy_file" id="method.folders.copy_file"></a>
 
-[FoldersController#copy\_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#copy_file](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`POST /api/v1/folders/:dest_folder_id/copy_file`**
 
@@ -685,7 +685,7 @@ Returns a [File](../../external-tools/plagiarism-detection-platform/plagiarism_d
 
 ### [Copy a folder](#method.folders.copy_folder) <a href="#method.folders.copy_folder" id="method.folders.copy_folder"></a>
 
-[FoldersController#copy\_folder](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#copy_folder](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`POST /api/v1/folders/:dest_folder_id/copy_folder`**
 
@@ -713,7 +713,7 @@ Returns a [Folder](#folder) object.
 
 ### [Get uploaded media folder for user](#method.folders.media_folder) <a href="#method.folders.media_folder" id="method.folders.media_folder"></a>
 
-[FoldersController#media\_folder](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
+[FoldersController#media_folder](https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb)
 
 **`GET /api/v1/courses/:course_id/folders/media`**
 
@@ -738,7 +738,7 @@ Returns a [Folder](#folder) object.
 
 ### [Set usage rights](#method.usage_rights.set_usage_rights) <a href="#method.usage_rights.set_usage_rights" id="method.usage_rights.set_usage_rights"></a>
 
-[UsageRightsController#set\_usage\_rights](https://github.com/instructure/canvas-lms/blob/master/app/controllers/usage_rights_controller.rb)
+[UsageRightsController#set_usage_rights](https://github.com/instructure/canvas-lms/blob/master/app/controllers/usage_rights_controller.rb)
 
 **`PUT /api/v1/courses/:course_id/usage_rights`**
 
@@ -769,7 +769,7 @@ Returns an [UsageRights](#usagerights) object.
 
 ### [Remove usage rights](#method.usage_rights.remove_usage_rights) <a href="#method.usage_rights.remove_usage_rights" id="method.usage_rights.remove_usage_rights"></a>
 
-[UsageRightsController#remove\_usage\_rights](https://github.com/instructure/canvas-lms/blob/master/app/controllers/usage_rights_controller.rb)
+[UsageRightsController#remove_usage_rights](https://github.com/instructure/canvas-lms/blob/master/app/controllers/usage_rights_controller.rb)
 
 **`DELETE /api/v1/courses/:course_id/usage_rights`**
 
@@ -812,6 +812,6 @@ A paginated list of licenses that can be applied
 
 Returns a list of [License](#license) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

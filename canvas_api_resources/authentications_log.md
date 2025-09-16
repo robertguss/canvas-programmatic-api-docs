@@ -33,7 +33,7 @@ Authentication logs are stored for one year.
 
 ### [Query by login.](#method.authentication_audit_api.for_login) <a href="#method.authentication_audit_api.for_login" id="method.authentication_audit_api.for_login"></a>
 
-[AuthenticationAuditApiController#for\_login](https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_audit_api_controller.rb)
+[AuthenticationAuditApiController#for_login](https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_audit_api_controller.rb)
 
 **`GET /api/v1/audit/authentication/logins/:login_id`**
 
@@ -50,7 +50,7 @@ List authentication events for a given login.
 
 ### [Query by account.](#method.authentication_audit_api.for_account) <a href="#method.authentication_audit_api.for_account" id="method.authentication_audit_api.for_account"></a>
 
-[AuthenticationAuditApiController#for\_account](https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_audit_api_controller.rb)
+[AuthenticationAuditApiController#for_account](https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_audit_api_controller.rb)
 
 **`GET /api/v1/audit/authentication/accounts/:account_id`**
 
@@ -67,7 +67,7 @@ List authentication events for a given account.
 
 ### [Query by user.](#method.authentication_audit_api.for_user) <a href="#method.authentication_audit_api.for_user" id="method.authentication_audit_api.for_user"></a>
 
-[AuthenticationAuditApiController#for\_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_audit_api_controller.rb)
+[AuthenticationAuditApiController#for_user](https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_audit_api_controller.rb)
 
 **`GET /api/v1/audit/authentication/users/:user_id`**
 
@@ -82,6 +82,6 @@ List authentication events for a given user.
 | `start_time` | `DateTime` | The beginning of the time range from which you want events. Events are stored for one year. |
 | `end_time`   | `DateTime` | The end of the time range from which you want events.                                       |
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

@@ -187,6 +187,6 @@ A paginated list of all closed poll sessions available to the current user.
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

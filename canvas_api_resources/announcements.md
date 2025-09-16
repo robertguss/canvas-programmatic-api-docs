@@ -50,6 +50,6 @@ curl https://<canvas>/api/v1/announcements?context_codes[]=course_1&context_code
 
 Returns a list of [DiscussionTopic](../discussion_topics#discussiontopic) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

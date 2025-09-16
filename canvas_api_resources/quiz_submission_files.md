@@ -46,6 +46,6 @@ This API endpoint is the first step in uploading a quiz submission file. See the
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

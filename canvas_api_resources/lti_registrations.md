@@ -12,9 +12,9 @@ BETA: This API resource is not finalized, and there could be breaking changes be
 
 API for accessing and configuring LTI registrations in a root account. LTI Registrations can be any of:
 
-* 1.3 Dynamic Registration
-* 1.3 manual installation (via JSON, URL, or UI)
-* 1.1 manual installation (via XML, URL, or UI)
+- 1.3 Dynamic Registration
+- 1.3 manual installation (via JSON, URL, or UI)
+- 1.1 manual installation (via XML, URL, or UI)
 
 The Dynamic Registration process uses a different API endpoint to finalize the process and create the registration. The [Registration guide](../external-tools/lti/file.registration) has more details on that process.
 
@@ -439,7 +439,7 @@ Returns all LTI registrations in the specified account. Includes registrations c
 | ----------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `per_page`  | `integer` | The number of registrations to return per page. Defaults to 15.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `page`      | `integer` | The page number to return. Defaults to 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `sort`      | `string`  | The field to sort by. Choices are: name, nickname, lti\_version, installed, installed\_by, updated\_by, updated, and on. Defaults to installed.                                                                                                                                                                                                                                                                                                                                                                                     |
+| `sort`      | `string`  | The field to sort by. Choices are: name, nickname, lti_version, installed, installed_by, updated_by, updated, and on. Defaults to installed.                                                                                                                                                                                                                                                                                                                                                                                        |
 | `dir`       | `string`  | <p>The order to sort the given column by. Defaults to desc.</p><p>Allowed values: <code>asc</code>, <code>desc</code></p>                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `include[]` | `string`  | <p>Array of additional data to include. Always includes [account_binding].</p><p><br></p><ul><li><p>“account_binding”</p><p>the registration’s binding to the given account</p></li><li><p>“configuration”</p><p>the registration’s Canvas-style tool configuration, without any overlays applied.</p></li><li><p>“overlaid_configuration”</p><p>the registration’s Canvas-style tool configuration, with all overlays applied.</p></li><li><p>“overlay”</p><p>the registration’s admin-defined configuration overlay</p></li></ul> |
 
@@ -543,9 +543,9 @@ curl -X POST 'https://<canvas>/api/v1/accounts/<account_id>/lti_registrations' \
 
 Returns a [Lti::Registration](#lti::registration) object.
 
-### [Show an LTI Registration (via the client\_id)](#method.lti/registrations.show_by_client_id) <a href="#method.lti-registrations.show_by_client_id" id="method.lti-registrations.show_by_client_id"></a>
+### [Show an LTI Registration (via the client_id)](#method.lti/registrations.show_by_client_id) <a href="#method.lti-registrations.show_by_client_id" id="method.lti-registrations.show_by_client_id"></a>
 
-[Lti::RegistrationsController#show\_by\_client\_id](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/registrations_controller.rb)
+[Lti::RegistrationsController#show_by_client_id](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/registrations_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -711,7 +711,7 @@ curl -X POST 'https://<canvas>/api/v1/accounts/<account_id>/lti_registrations/<r
 
 ### [Search for Accounts and Courses](#method.lti/registrations.context_search) <a href="#method.lti-registrations.context_search" id="method.lti-registrations.context_search"></a>
 
-[Lti::RegistrationsController#context\_search](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/registrations_controller.rb)
+[Lti::RegistrationsController#context_search](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/registrations_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -744,7 +744,7 @@ Returns a [ContextSearchResponse](#contextsearchresponse) object.
 
 ### [Get LTI Registration Overlay History](#method.lti/registrations.overlay_history) <a href="#method.lti-registrations.overlay_history" id="method.lti-registrations.overlay_history"></a>
 
-[Lti::RegistrationsController#overlay\_history](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/registrations_controller.rb)
+[Lti::RegistrationsController#overlay_history](https://github.com/instructure/canvas-lms/blob/master/app/controllers/lti/registrations_controller.rb)
 
 {% hint style="warning" %}
 BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.
@@ -772,6 +772,6 @@ curl -X GET 'https://<canvas>/api/v1/accounts/<account_id>/lti_registrations/<re
 
 Returns a list of [Lti::OverlayVersion](#lti::overlayversion) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

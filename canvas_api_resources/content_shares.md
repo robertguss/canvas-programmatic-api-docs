@@ -83,7 +83,7 @@ Returns a [ContentShare](#contentshare) object.
 
 **Scope:** `url:GET|/api/v1/users/:user_id/content_shares/received`
 
-Return a paginated list of content shares a user has sent or received. Use `self` as the user\_id to retrieve your own content shares. Only linked observers and administrators may view other users’ content shares.
+Return a paginated list of content shares a user has sent or received. Use `self` as the user_id to retrieve your own content shares. Only linked observers and administrators may view other users’ content shares.
 
 **Example Request:**
 
@@ -95,13 +95,13 @@ Returns a list of [ContentShare](#contentshare) objects.
 
 ### [Get unread shares count](#method.content_shares.unread_count) <a href="#method.content_shares.unread_count" id="method.content_shares.unread_count"></a>
 
-[ContentSharesController#unread\_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_shares_controller.rb)
+[ContentSharesController#unread_count](https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_shares_controller.rb)
 
 **`GET /api/v1/users/:user_id/content_shares/unread_count`**
 
 **Scope:** `url:GET|/api/v1/users/:user_id/content_shares/unread_count`
 
-Return the number of content shares a user has received that have not yet been read. Use `self` as the user\_id to retrieve your own content shares. Only linked observers and administrators may view other users’ content shares.
+Return the number of content shares a user has received that have not yet been read. Use `self` as the user_id to retrieve your own content shares. Only linked observers and administrators may view other users’ content shares.
 
 **Example Request:**
 
@@ -117,7 +117,7 @@ curl 'https://<canvas>/api/v1/users/self/content_shares/unread_count'
 
 **Scope:** `url:GET|/api/v1/users/:user_id/content_shares/:id`
 
-Return information about a single content share. You may use `self` as the user\_id to retrieve your own content share.
+Return information about a single content share. You may use `self` as the user_id to retrieve your own content share.
 
 **Example Request:**
 
@@ -135,7 +135,7 @@ Returns a [ContentShare](#contentshare) object.
 
 **Scope:** `url:DELETE|/api/v1/users/:user_id/content_shares/:id`
 
-Remove a content share from your list. Use `self` as the user\_id. Note that this endpoint does not delete other users’ copies of the content share.
+Remove a content share from your list. Use `self` as the user_id. Note that this endpoint does not delete other users’ copies of the content share.
 
 **Example Request:**
 
@@ -145,7 +145,7 @@ curl -X DELETE 'https://<canvas>/api/v1/users/self/content_shares/123'
 
 ### [Add users to content share](#method.content_shares.add_users) <a href="#method.content_shares.add_users" id="method.content_shares.add_users"></a>
 
-[ContentSharesController#add\_users](https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_shares_controller.rb)
+[ContentSharesController#add_users](https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_shares_controller.rb)
 
 **`POST /api/v1/users/:user_id/content_shares/:id/add_users`**
 
@@ -191,6 +191,6 @@ curl -X PUT 'https://<canvas>/api/v1/users/self/content_shares/123?read_state=re
 
 Returns a [ContentShare](#contentshare) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

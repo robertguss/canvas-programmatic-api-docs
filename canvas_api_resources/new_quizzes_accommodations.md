@@ -77,10 +77,10 @@ Apply accommodations at the **quiz level** for students in a specific assignment
 
 **Responses**
 
-* `200 OK`: Accommodations were processed with some successes and failures
-* `401 Unauthorized`: User does not have permission to update accommodations
-* `404 Not Found`: The course or assignment was not found
-* `400 Bad Request`: Validation error (e.g., invalid JSON, missing user IDs)
+- `200 OK`: Accommodations were processed with some successes and failures
+- `401 Unauthorized`: User does not have permission to update accommodations
+- `404 Not Found`: The course or assignment was not found
+- `400 Bad Request`: Validation error (e.g., invalid JSON, missing user IDs)
 
 **Request Parameters:**
 
@@ -132,10 +132,10 @@ Apply accommodations at the **course level** for students enrolled in a given co
 
 **Responses**
 
-* `200 OK`: Accommodations were processed with some successes and failures
-* `401 Unauthorized`: User does not have permission to update accommodations
-* `404 Not Found`: The course was not found
-* `400 Bad Request`: Validation error (e.g., invalid JSON, missing user IDs)
+- `200 OK`: Accommodations were processed with some successes and failures
+- `401 Unauthorized`: User does not have permission to update accommodations
+- `404 Not Found`: The course was not found
+- `400 Bad Request`: Validation error (e.g., invalid JSON, missing user IDs)
 
 **Request Parameters:**
 
@@ -165,6 +165,6 @@ curl -X POST 'https://<canvas>/api/v1/courses/123/accommodations' \
 
 Returns an [AccommodationResponse](#accommodationresponse) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

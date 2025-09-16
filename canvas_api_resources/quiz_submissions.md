@@ -67,7 +67,7 @@ API for accessing quiz submissions
 
 **Scope:** `url:GET|/api/v1/courses/:course_id/quizzes/:quiz_id/submissions`
 
-Get a list of all submissions for this quiz. Users who can view or manage grades for a course will have submissions from multiple users returned. A user who can only submit will have only their own submissions returned. When a user has an in-progress submission, only that submission is returned. When there isn’t an in-progress quiz\_submission, all completed submissions, including previous attempts, are returned.
+Get a list of all submissions for this quiz. Users who can view or manage grades for a course will have submissions from multiple users returned. A user who can only submit will have only their own submissions returned. When a user has an in-progress submission, only that submission is returned. When there isn’t an in-progress quiz_submission, all completed submissions, including previous attempts, are returned.
 
 **200 OK** response code is returned if the request was successful.
 
@@ -149,11 +149,11 @@ Start taking a Quiz by creating a QuizSubmission which you can use to answer que
 
 **Responses**
 
-* **200 OK** if the request was successful
-* **400 Bad Request** if the quiz is locked
-* **403 Forbidden** if an invalid access code is specified
-* **403 Forbidden** if the Quiz’s IP filter restriction does not pass
-* **409 Conflict** if a QuizSubmission already exists for this user and quiz
+- **200 OK** if the request was successful
+- **400 Bad Request** if the quiz is locked
+- **403 Forbidden** if an invalid access code is specified
+- **403 Forbidden** if the Quiz’s IP filter restriction does not pass
+- **409 Conflict** if a QuizSubmission already exists for this user and quiz
 
 **Request Parameters:**
 
@@ -182,10 +182,10 @@ Update the amount of points a student has scored for questions they’ve answere
 
 **Responses**
 
-* **200 OK** if the request was successful
-* **403 Forbidden** if you are not a teacher in this course
-* **400 Bad Request** if the attempt parameter is missing or invalid
-* **400 Bad Request** if the specified QS attempt is not yet complete
+- **200 OK** if the request was successful
+- **403 Forbidden** if you are not a teacher in this course
+- **400 Bad Request** if the attempt parameter is missing or invalid
+- **400 Bad Request** if the specified QS attempt is not yet complete
 
 **Request Parameters:**
 
@@ -226,9 +226,9 @@ Update the amount of points a student has scored for questions they’ve answere
 
 **See Also:**
 
-*   [Appendix: Manual Scoring](#Manual+Scoring-appendix)
+- [Appendix: Manual Scoring](#Manual+Scoring-appendix)
 
-    ### [Complete the quiz submission (turn it in).](#method.quizzes/quiz_submissions_api.complete) <a href="#method.quizzes-quiz_submissions_api.complete" id="method.quizzes-quiz_submissions_api.complete"></a>
+  ### [Complete the quiz submission (turn it in).](#method.quizzes/quiz_submissions_api.complete) <a href="#method.quizzes-quiz_submissions_api.complete" id="method.quizzes-quiz_submissions_api.complete"></a>
 
 [Quizzes::QuizSubmissionsApiController#complete](https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submissions_api_controller.rb)
 
@@ -240,13 +240,13 @@ Complete the quiz submission by marking it as complete and grading it. When the 
 
 **Responses**
 
-* **200 OK** if the request was successful
-* **403 Forbidden** if an invalid access code is specified
-* **403 Forbidden** if the Quiz’s IP filter restriction does not pass
-* **403 Forbidden** if an invalid token is specified
-* **400 Bad Request** if the QS is already complete
-* **400 Bad Request** if the attempt parameter is missing
-* **400 Bad Request** if the attempt parameter is not the latest attempt
+- **200 OK** if the request was successful
+- **403 Forbidden** if an invalid access code is specified
+- **403 Forbidden** if the Quiz’s IP filter restriction does not pass
+- **403 Forbidden** if an invalid token is specified
+- **400 Bad Request** if the QS is already complete
+- **400 Bad Request** if the attempt parameter is missing
+- **400 Bad Request** if the attempt parameter is not the latest attempt
 
 **Request Parameters:**
 
@@ -272,11 +272,11 @@ Complete the quiz submission by marking it as complete and grading it. When the 
 
 **Scope:** `url:GET|/api/v1/courses/:course_id/quizzes/:quiz_id/submissions/:id/time`
 
-Get the current timing data for the quiz attempt, both the end\_at timestamp and the time\_left parameter.
+Get the current timing data for the quiz attempt, both the end_at timestamp and the time_left parameter.
 
 **Responses**
 
-* **200 OK** if the request was successful
+- **200 OK** if the request was successful
 
 **Example Response:**
 
@@ -335,6 +335,6 @@ Get the current timing data for the quiz attempt, both the end\_at timestamp and
 }
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

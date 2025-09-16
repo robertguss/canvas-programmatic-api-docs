@@ -60,6 +60,6 @@ curl 'https://<canvas>/api/v1/accounts/<account_id>/sis_import_errors' \
 
 Returns a list of [SisImportError](#sisimporterror) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

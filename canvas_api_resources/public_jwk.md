@@ -24,6 +24,6 @@ Rotate the public key in jwk format when using lti services
 
 Returns a [DeveloperKey](../developer_keys#developerkey) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

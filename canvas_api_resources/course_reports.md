@@ -39,7 +39,6 @@ API for accessing course reports.
 ```js
 // The parameters returned will vary for each report.
 {
-  
 }
 ```
 
@@ -102,6 +101,6 @@ curl -H 'Authorization: Bearer <token>' \
 
 Returns a [Report](#report) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

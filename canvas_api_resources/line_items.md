@@ -56,8 +56,8 @@ Create a new Line Item
 | `resourceId`                                         | `string`          | A Tool Provider specified id for the Line Item. Multiple line items may share the same resourceId within a given context.                                                                                                                                     |
 | `tag`                                                | `string`          | A value used to qualify a line Item beyond its ids. Line Items may be queried by this value in the List endpoint. Multiple line items can share the same tag within a given context.                                                                          |
 | `resourceLinkId`                                     | `string`          | The resource link id the Line Item should be attached to. This value should match the LTI id of the Canvas assignment associated with the tool.                                                                                                               |
-| `startDateTime`                                      | `string`          | The ISO8601 date and time when the line item is made available. Corresponds to the assignment’s unlock\_at date.                                                                                                                                              |
-| `endDateTime`                                        | `string`          | The ISO8601 date and time when the line item stops receiving submissions. Corresponds to the assignment’s due\_at date.                                                                                                                                       |
+| `startDateTime`                                      | `string`          | The ISO8601 date and time when the line item is made available. Corresponds to the assignment’s unlock_at date.                                                                                                                                               |
+| `endDateTime`                                        | `string`          | The ISO8601 date and time when the line item stops receiving submissions. Corresponds to the assignment’s due_at date.                                                                                                                                        |
 | `https://canvas.instructure.com/lti/submission_type` | `object`          | <p>(EXTENSION) - Optional block to set Assignment Submission Type when creating a new assignment is created.</p><p><br></p><ul><li>type - ‘none’ or ‘external_tool’</li><li>external_tool_url - Submission URL only used when type: ‘external_tool’</li></ul> |
 
 **Example Request:**
@@ -98,8 +98,8 @@ Update new Line Item
 | `label`         | `string` | The label for the Line Item. If no resourceLinkId is specified this value will also be used as the name of the placeholder assignment.                                               |
 | `resourceId`    | `string` | A Tool Provider specified id for the Line Item. Multiple line items may share the same resourceId within a given context.                                                            |
 | `tag`           | `string` | A value used to qualify a line Item beyond its ids. Line Items may be queried by this value in the List endpoint. Multiple line items can share the same tag within a given context. |
-| `startDateTime` | `string` | The ISO8601 date and time when the line item is made available. Corresponds to the assignment’s unlock\_at date.                                                                     |
-| `endDateTime`   | `string` | The ISO8601 date and time when the line item stops receiving submissions. Corresponds to the assignment’s due\_at date.                                                              |
+| `startDateTime` | `string` | The ISO8601 date and time when the line item is made available. Corresponds to the assignment’s unlock_at date.                                                                      |
+| `endDateTime`   | `string` | The ISO8601 date and time when the line item stops receiving submissions. Corresponds to the assignment’s due_at date.                                                               |
 
 Returns a [LineItem](#lineitem) object.
 
@@ -136,8 +136,8 @@ List all Line Items for a course
 | Parameter          | Type     | Description                                                                                                                                                                                                                                                           |
 | ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `tag`              | `string` | If specified only Line Items with this tag will be included.                                                                                                                                                                                                          |
-| `resource_id`      | `string` | If specified only Line Items with this resource\_id will be included.                                                                                                                                                                                                 |
-| `resource_link_id` | `string` | If specified only Line Items attached to the specified resource\_link\_id will be included.                                                                                                                                                                           |
+| `resource_id`      | `string` | If specified only Line Items with this resource_id will be included.                                                                                                                                                                                                  |
+| `resource_link_id` | `string` | If specified only Line Items attached to the specified resource_link_id will be included.                                                                                                                                                                             |
 | `limit`            | `string` | May be used to limit the number of Line Items returned in a page                                                                                                                                                                                                      |
 | `include[]`        | `string` | <p>Array of additional information to include.</p><p><br></p><ul><li><p>“launch_url”</p><p>includes the launch URL for each line item using the “https://canvas.instructure.com/lti/launch_url” extension</p></li></ul><p>Allowed values: <code>launch_url</code></p> |
 
@@ -155,6 +155,6 @@ Delete an existing Line Item
 
 Returns a [LineItem](#lineitem) object.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

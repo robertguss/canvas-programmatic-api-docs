@@ -6,7 +6,7 @@
 
 ## Group Categories API
 
-Group Categories allow grouping of groups together in canvas. There are a few different built-in group categories used, or custom ones can be created. The built in group categories are: "communities", "student\_organized", and "imported".
+Group Categories allow grouping of groups together in canvas. There are a few different built-in group categories used, or custom ones can be created. The built in group categories are: "communities", "student_organized", and "imported".
 
 **A GroupCategory object looks like:**
 
@@ -26,7 +26,7 @@ Group Categories allow grouping of groups together in canvas. There are a few di
   // themselves to a group 'restricted' restricts them to only joining a group in
   // their section null disallows students from joining groups
   "self_signup": null,
-  // Gives instructors the ability to automatically have group leaders assigned. 
+  // Gives instructors the ability to automatically have group leaders assigned.
   // Values include 'random', 'first', and null; 'random' picks a student from the
   // group at random as the leader, 'first' sets the first student to be assigned
   // to the group as the leader
@@ -132,7 +132,7 @@ Create a new group category
 | `group_limit`           | `integer`         | Limit the maximum number of users in each group (Course Only). Requires self signup.                                                                                                                                                                                                                                                                                                                      |
 | `sis_group_category_id` | `string`          | The unique SIS identifier.                                                                                                                                                                                                                                                                                                                                                                                |
 | `create_group_count`    | `integer`         | Create this number of groups (Course Only).                                                                                                                                                                                                                                                                                                                                                               |
-| `split_group_count`     | `string`          | (Deprecated) Create this number of groups, and evenly distribute students among them. not allowed with “enable\_self\_signup”. because the group assignment happens synchronously, it’s recommended that you instead use the assign\_unassigned\_members endpoint. (Course Only)                                                                                                                          |
+| `split_group_count`     | `string`          | (Deprecated) Create this number of groups, and evenly distribute students among them. not allowed with “enable_self_signup”. because the group assignment happens synchronously, it’s recommended that you instead use the assign_unassigned_members endpoint. (Course Only)                                                                                                                              |
 
 **Example Request:**
 
@@ -146,13 +146,13 @@ Returns a [GroupCategory](#groupcategory) object.
 
 ### [Bulk manage differentiation tags](#method.group_categories.bulk_manage_differentiation_tag) <a href="#method.group_categories.bulk_manage_differentiation_tag" id="method.group_categories.bulk_manage_differentiation_tag"></a>
 
-[GroupCategoriesController#bulk\_manage\_differentiation\_tag](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_categories_controller.rb)
+[GroupCategoriesController#bulk_manage_differentiation_tag](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_categories_controller.rb)
 
 **`POST /api/v1/courses/:course_id/group_categories/bulk_manage_differentiation_tag`**
 
 **Scope:** `url:POST|/api/v1/courses/:course_id/group_categories/bulk_manage_differentiation_tag`
 
-This API is only meant for Groups and GroupCategories where non\_collaborative is true.
+This API is only meant for Groups and GroupCategories where non_collaborative is true.
 
 Perform bulk operations on groups within a group category, or create a new group category along with the groups in one transaction. If creation of the GroupCategory or any Group fails, the entire operation will be rolled back.
 
@@ -193,7 +193,7 @@ curl https://<canvas>/api/v1/courses/:course_id/group_categories/bulk_manage_dif
 
 ### [Import differentiation tags](#method.group_categories.import_tags) <a href="#method.group_categories.import_tags" id="method.group_categories.import_tags"></a>
 
-[GroupCategoriesController#import\_tags](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_categories_controller.rb)
+[GroupCategoriesController#import_tags](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_categories_controller.rb)
 
 **`POST /api/v1/courses/:course_id/group_categories/import_tags`**
 
@@ -289,7 +289,7 @@ Modifies an existing group category.
 | `group_limit`           | `integer` | Limit the maximum number of users in each group (Course Only). Requires self signup.                                                                                                                                                                                                                                                                                                                      |
 | `sis_group_category_id` | `string`  | The unique SIS identifier.                                                                                                                                                                                                                                                                                                                                                                                |
 | `create_group_count`    | `integer` | Create this number of groups (Course Only).                                                                                                                                                                                                                                                                                                                                                               |
-| `split_group_count`     | `string`  | (Deprecated) Create this number of groups, and evenly distribute students among them. not allowed with “enable\_self\_signup”. because the group assignment happens synchronously, it’s recommended that you instead use the assign\_unassigned\_members endpoint. (Course Only)                                                                                                                          |
+| `split_group_count`     | `string`  | (Deprecated) Create this number of groups, and evenly distribute students among them. not allowed with “enable_self_signup”. because the group assignment happens synchronously, it’s recommended that you instead use the assign_unassigned_members endpoint. (Course Only)                                                                                                                              |
 
 **Example Request:**
 
@@ -310,7 +310,7 @@ Returns a [GroupCategory](#groupcategory) object.
 
 **Scope:** `url:DELETE|/api/v1/group_categories/:group_category_id`
 
-Deletes a group category and all groups under it. Protected group categories can not be deleted, i.e. “communities” and “student\_organized”.
+Deletes a group category and all groups under it. Protected group categories can not be deleted, i.e. “communities” and “student_organized”.
 
 **Example Request:**
 
@@ -388,7 +388,7 @@ Returns a list of [User](../users#user) objects.
 
 ### [Assign unassigned members](#method.group_categories.assign_unassigned_members) <a href="#method.group_categories.assign_unassigned_members" id="method.group_categories.assign_unassigned_members"></a>
 
-[GroupCategoriesController#assign\_unassigned\_members](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_categories_controller.rb)
+[GroupCategoriesController#assign_unassigned_members](https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_categories_controller.rb)
 
 **`POST /api/v1/group_categories/:group_category_id/assign_unassigned_members`**
 
@@ -488,6 +488,6 @@ curl https://<canvas>/api/v1/group_categories/1/assign_unassigned_members \
 ]
 ```
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).

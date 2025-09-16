@@ -57,6 +57,6 @@ Find course content using a meaning-based search
 
 Returns a list of [SearchResult](#searchresult) objects.
 
-***
+---
 
 This documentation is generated directly from the Canvas LMS source code, available [on Github](https://github.com/instructure/canvas-lms).
