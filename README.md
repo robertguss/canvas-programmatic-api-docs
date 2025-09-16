@@ -1,23 +1,54 @@
-# Canvas API Postman
+# Canvas API → Postman Collection Generator
 
-Script to extract the current API documentation from Canvas and generate an importable Postman collection.
+Generate a comprehensive Postman collection (1,018+ endpoints across 128 Canvas LMS resources) directly from the official Canvas API markdown documentation.
 
-You'll need the ```requests``` python module to implement this.
+## Quick Start
 
-`pip install requests`
+```bash
+# Clone and setup
+git clone <repository-url>
+cd canvas-api-postman-master
 
-To generate the file:
+# Install dependencies
+uv venv && uv pip install -e .
+# OR using pip: pip install -e .
 
-`python3 canvas-api-postman.py`
+# Generate Postman collection
+just collection
+```
 
-Outputs an 'output.json' file that is used for import into Postman
+This creates `output/canvas_api.postman_collection.json` ready for import into Postman.
 
-In Postman choose Import -> Import File -> navigate to this folder
+## Import into Postman
 
-Once in Postman you'll need to set ```domain``` and ```user_token``` variables.
+1. Open Postman → Import → Upload Files
+2. Select `output/canvas_api.postman_collection.json`
+3. Set environment variables:
 
-For example:
+| Variable | Example Value |
+|----------|---------------|
+| `base_url` | `https://yourschool.instructure.com` |
+| `canvas_token` | `12345~abcdefg...789` |
 
-```domain: yourschool.instructure.com```
+## Features
 
-```user_token: 12345~abcdefg...789```
+- ✅ **1,018+ Canvas API endpoints** organized by resource type
+- ✅ **OAuth2 Bearer authentication** pre-configured
+- ✅ **Dynamic path variables** (`:course_id`, `:user_id`, etc.)
+- ✅ **Query parameters** with descriptions
+- ✅ **Request bodies** for POST/PUT/PATCH operations
+- ✅ **OAuth scopes** documented in request descriptions
+
+## Documentation
+
+For detailed usage, development, and API reference, see the [documentation](docs/index.md).
+
+## Available Commands
+
+```bash
+just fetch-docs     # Download latest Canvas API docs
+just collection     # Generate Postman collection
+just test          # Validate generated collection
+just format-docs   # Format markdown files
+just docs-serve    # Serve documentation locally
+```

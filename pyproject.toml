@@ -1,10 +1,19 @@
 [project]
 name = "canvas-api-postman-master"
 version = "0.1.0"
-description = "Add your description here"
+description = "Generate comprehensive Postman collections from Canvas API documentation"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "requests>=2.32.5",
     "beautifulsoup4>=4.12.0",
+    "markdown>=3.7",
+    "python-slugify>=8.0.4",
+    "pydantic>=2.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.24.0",
 ]
