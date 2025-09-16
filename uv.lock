@@ -103,6 +103,14 @@ test = [
     { name = "ruff" },
 ]
 
+[package.dev-dependencies]
+test = [
+    { name = "freezegun" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "requests-mock" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "beautifulsoup4", specifier = ">=4.12.0" },
@@ -128,6 +136,14 @@ requires-dist = [
     { name = "ruff", marker = "extra == 'test'" },
 ]
 provides-extras = ["dev", "test"]
+
+[package.metadata.requires-dev]
+test = [
+    { name = "freezegun", specifier = ">=1.5.5" },
+    { name = "pytest", specifier = ">=8.4.2" },
+    { name = "pytest-cov", specifier = ">=7.0.0" },
+    { name = "requests-mock", specifier = ">=1.12.1" },
+]
 
 [[package]]
 name = "certifi"

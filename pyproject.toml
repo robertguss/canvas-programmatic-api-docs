@@ -41,3 +41,11 @@ py-modules = [
     "parse_canvas_markdown",
     "test_collection"
 ]
+
+[dependency-groups]
+test = [
+    "freezegun>=1.5.5",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "requests-mock>=1.12.1",
+]
