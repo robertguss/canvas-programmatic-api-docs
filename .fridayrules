@@ -1,0 +1,43 @@
+# Canvas API Postman Collection Generator
+
+## Architecture
+- Python project using uv for dependency management (pyproject.toml)
+- Main scripts:
+  - `canvas-api-postman.py`: Legacy Postman collection generator
+  - `get_api_docs_in_markdown.py`: Canvas API docs fetcher
+- Dependencies: requests, beautifulsoup4
+- Canvas API docs stored in `canvas_api_resources/` as markdown files
+- Task automation via `justfile`
+
+## Directory Structure
+```
+├── canvas-api-postman.py          # Legacy collection generator
+├── get_api_docs_in_markdown.py    # API docs fetcher
+├── canvas_api_resources/          # Downloaded Canvas API docs (128 files)
+├── output/                        # Generated output directory
+├── pyproject.toml                 # Python project config
+├── justfile                       # Task automation
+└── uv.lock                        # Dependency lock file
+```
+
+## Testing Guidelines
+- No testing framework currently configured
+- No test files present
+- To add testing: install pytest and create tests/ directory
+
+## Linting Guidelines
+- No Python linting tools configured
+- Markdown formatting: `just format-docs` (uses prettier)
+- To add Python linting: consider ruff or black + mypy
+
+## Available Commands
+- `just fetch-docs`: Download latest Canvas API documentation
+- `just format-docs`: Format markdown files with prettier
+- `python canvas-api-postman.py`: Generate Postman collection (legacy)
+- `python get_api_docs_in_markdown.py`: Fetch API docs directly
+
+## Dependencies
+- Python >=3.13
+- requests >=2.32.5
+- beautifulsoup4 >=4.12.0
+- Node.js (for prettier via npx)
