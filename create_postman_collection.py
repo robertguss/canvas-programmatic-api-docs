@@ -7,10 +7,10 @@ from parse_canvas_markdown import parse_all_resources, Resource, Endpoint, Param
 
 
 class PostmanCollectionGenerator:
-    def __init__(self):
-        self.collection_id = str(uuid.uuid4())
-        self.base_url = "{{base_url}}"
-        self.access_token = "{{access_token}}"
+    def __init__(self, base_url="{{base_url}}", access_token="{{access_token}}", uuid_fn=None):
+        self.collection_id = str((uuid_fn or uuid.uuid4)())
+        self.base_url = base_url
+        self.access_token = access_token
     
     def generate_collection(self, resources: Dict[str, Resource]) -> Dict[str, Any]:
         collection = {

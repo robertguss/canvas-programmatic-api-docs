@@ -16,4 +16,9 @@ dependencies = [
 dev = [
     "mkdocs-material>=9.5.0",
     "mkdocstrings[python]>=0.24.0",
+    "pytest",
+    "pytest-cov",
+    "requests-mock",
+    "freezegun",
+    "ruff",
 ]
