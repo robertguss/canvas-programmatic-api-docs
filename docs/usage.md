@@ -1,6 +1,6 @@
-# Canvas API Postman Collection Generator
+# Usage Guide
 
-This project generates a comprehensive Postman collection from Canvas API markdown documentation.
+This guide covers how to generate and use Canvas API Postman collections.
 
 ## Generated Collection
 
@@ -132,6 +132,46 @@ If you notice missing endpoints, check:
 - **Authentication**: OAuth2 Bearer Token
 - **Format**: Postman Collection v2.1
 - **Generated From**: Canvas API Markdown Documentation
+
+## Advanced Usage
+
+### Custom Base URL
+
+You can override the base URL for specific environments:
+
+1. Create a new environment in Postman
+2. Set `base_url` variable to your Canvas instance
+3. Select the environment when making requests
+
+### Bulk Testing
+
+Use Postman's Collection Runner to test multiple endpoints:
+
+1. Select the Canvas API collection
+2. Click **Run** to open Collection Runner
+3. Choose specific folders or endpoints to test
+4. Configure iterations and delays as needed
+
+### Environment Variables
+
+Common variables you might want to set:
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `base_url` | Canvas instance URL | `https://school.instructure.com` |
+| `access_token` | Canvas API token | `12345~abcdef...` |
+| `course_id` | Course ID for testing | `123456` |
+| `user_id` | User ID for testing | `789012` |
+| `assignment_id` | Assignment ID for testing | `345678` |
+
+### Request Customization
+
+Each request can be customized:
+
+- **Headers**: Add custom headers as needed
+- **Parameters**: Enable/disable query parameters
+- **Body**: Modify form data for POST/PUT requests
+- **Tests**: Add JavaScript tests for response validation
 
 ## Next Steps
 
