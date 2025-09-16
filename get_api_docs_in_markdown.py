@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 INDEX_URL = "https://developerdocs.instructure.com/services/canvas/resources.md"
 BASE_URL = "https://developerdocs.instructure.com/services/canvas/"
-OUT_DIR = Path(__file__).parent / "canvas_api_resources"
+OUT_DIR = Path(__file__).parent / "data" / "canvas_api_resources"
 TIMEOUT = 10
 
 
