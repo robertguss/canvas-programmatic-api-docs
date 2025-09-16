@@ -7,8 +7,8 @@ collection:
 test:
     python test_collection.py
 
-format-docs:
-    npx prettier --write "canvas_api_resources/*.md"
+format-md:
+    npx prettier --write "**/*.md"
 
 docs-serve:
     uv pip install -e ".[dev]" && mkdocs serve
