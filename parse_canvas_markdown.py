@@ -1,12 +1,13 @@
 import re
 import json
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 from dataclasses import dataclass, field
 from pydantic import BaseModel
 import markdown
 from bs4 import BeautifulSoup
 from slugify import slugify
+from genson import SchemaBuilder
 
 
 @dataclass
@@ -16,6 +17,7 @@ class Parameter:
     type: str
     description: str
     required: bool = False
+    enum_values: Optional[List[str]] = None
 
 
 @dataclass
@@ -26,6 +28,8 @@ class Endpoint:
     description: str
     scope: Optional[str] = None
     parameters: List[Parameter] = field(default_factory=list)
+    response_schema: Optional[Dict[str, Any]] = None
+    request_schema: Optional[Dict[str, Any]] = None
 
 
 @dataclass
@@ -33,12 +37,15 @@ class Resource:
     name: str
     description: str
     endpoints: List[Endpoint] = field(default_factory=list)
+    schemas: Dict[str, Dict[str, Any]] = field(default_factory=dict)
 
 
 class CanvasMarkdownParser:
     ENDPOINT_PATTERN = re.compile(r'\*\*`(GET|POST|PUT|DELETE|PATCH)\s+([^`]+)`\*\*')
     SCOPE_PATTERN = re.compile(r'\*\*Scope:\*\*\s+`([^`]+)`')
     PATH_PARAM_PATTERN = re.compile(r':(\w+)')
+    JSON_BLOCK_PATTERN = re.compile(r'```js\n(.*?)\n```', re.DOTALL)
+    OBJECT_DEFINITION_PATTERN = re.compile(r'\*\*An? (\w+) object looks like:\*\*')
     
     def __init__(self):
         self.md = markdown.Markdown(extensions=['tables'])
@@ -50,17 +57,21 @@ class CanvasMarkdownParser:
         resource_name = self._extract_resource_name(content)
         resource_description = self._extract_resource_description(content)
         
+        # Extract schemas from JSON examples
+        schemas = self._extract_schemas(content)
+        
         # Find all endpoints
         endpoints = []
         for match in self.ENDPOINT_PATTERN.finditer(content):
-            endpoint = self._parse_endpoint(content, match)
+            endpoint = self._parse_endpoint(content, match, schemas)
             if endpoint:
                 endpoints.append(endpoint)
         
         return Resource(
             name=resource_name,
             description=resource_description,
-            endpoints=endpoints
+            endpoints=endpoints,
+            schemas=schemas
         )
     
     def _extract_resource_name(self, content: str) -> str:
@@ -87,7 +98,64 @@ class CanvasMarkdownParser:
         
         return ' '.join(description_lines) if description_lines else ""
     
-    def _parse_endpoint(self, content: str, match: re.Match) -> Optional[Endpoint]:
+    def _extract_schemas(self, content: str) -> Dict[str, Dict[str, Any]]:
+        schemas = {}
+        
+        # Find object definitions and their corresponding JSON examples
+        lines = content.split('\n')
+        current_object = None
+        
+        for i, line in enumerate(lines):
+            # Look for object definition patterns
+            obj_match = self.OBJECT_DEFINITION_PATTERN.search(line)
+            if obj_match:
+                current_object = obj_match.group(1)
+                
+                # Look for the next JSON block after this definition
+                remaining_content = '\n'.join(lines[i:])
+                json_match = self.JSON_BLOCK_PATTERN.search(remaining_content)
+                
+                if json_match:
+                    json_str = json_match.group(1)
+                    try:
+                        # Clean up the JSON (remove comments)
+                        cleaned_json = self._clean_json_comments(json_str)
+                        json_obj = json.loads(cleaned_json)
+                        
+                        # Generate JSON schema from the example
+                        builder = SchemaBuilder()
+                        builder.add_object(json_obj)
+                        schema = builder.to_schema()
+                        
+                        schemas[current_object] = schema
+                    except (json.JSONDecodeError, Exception) as e:
+                        print(f"Warning: Could not parse JSON for {current_object}: {e}")
+                        continue
+        
+        return schemas
+    
+    def _clean_json_comments(self, json_str: str) -> str:
+        # Remove JavaScript-style comments from JSON
+        lines = json_str.split('\n')
+        cleaned_lines = []
+        
+        for line in lines:
+            # Remove inline comments (// comment)
+            if '//' in line:
+                # Find the comment, but be careful about URLs
+                comment_pos = line.find('//')
+                # Check if it's actually a comment and not part of a URL
+                if comment_pos > 0 and line[comment_pos-1] not in [':', '"']:
+                    line = line[:comment_pos].rstrip()
+                elif comment_pos == 0 or (comment_pos > 0 and line[comment_pos-1] in [' ', '\t']):
+                    line = line[:comment_pos].rstrip()
+            
+            if line.strip():
+                cleaned_lines.append(line)
+        
+        return '\n'.join(cleaned_lines)
+    
+    def _parse_endpoint(self, content: str, match: re.Match, schemas: Dict[str, Dict[str, Any]] = None) -> Optional[Endpoint]:
         method = match.group(1)
         path = match.group(2).strip()
         
@@ -111,13 +179,17 @@ class CanvasMarkdownParser:
         # Extract parameters
         parameters = self._extract_parameters(endpoint_content, path, method)
         
+        # Determine response schema based on endpoint description and available schemas
+        response_schema = self._determine_response_schema(endpoint_content, schemas or {})
+        
         return Endpoint(
             method=method,
             path=path,
             name=name,
             description=description,
             scope=scope,
-            parameters=parameters
+            parameters=parameters,
+            response_schema=response_schema
         )
     
     def _extract_endpoint_description(self, content: str) -> str:
@@ -228,6 +300,29 @@ class CanvasMarkdownParser:
                 ))
         
         return parameters
+    
+    def _determine_response_schema(self, endpoint_content: str, schemas: Dict[str, Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+        # Look for "Returns a list of [ObjectName]" or "Returns an [ObjectName]" patterns
+        returns_pattern = re.compile(r'Returns (?:a list of |an? )?(?:\[([^\]]+)\]|\*\*([^*]+)\*\*|([A-Z][a-zA-Z]+))')
+        
+        match = returns_pattern.search(endpoint_content)
+        if match:
+            # Get the object name from any of the capture groups
+            object_name = match.group(1) or match.group(2) or match.group(3)
+            
+            if object_name in schemas:
+                schema = schemas[object_name].copy()
+                
+                # If it's a list, wrap in array schema
+                if 'list of' in endpoint_content.lower():
+                    return {
+                        "type": "array",
+                        "items": schema
+                    }
+                else:
+                    return schema
+        
+        return None
 
 
 def parse_all_resources(resources_dir: Path) -> Dict[str, Resource]:
