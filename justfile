@@ -32,3 +32,20 @@ docs-serve:
 
 docs-build:
     uv pip install -e ".[dev]" && mkdocs build
+
+# OpenAPI and SDK generation
+openapi:
+    python generate_openapi.py
+
+openapi-validate:
+    python generate_openapi.py --validate
+
+sdk:
+    python generate_sdk.py
+
+sdk-clean:
+    python generate_sdk.py --clean --regenerate-spec
+
+# Full workflow
+generate-all: fetch-docs collection openapi sdk
+    @echo "🎉 Generated Postman collection, OpenAPI spec, and Python SDK!"

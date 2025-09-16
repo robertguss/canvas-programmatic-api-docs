@@ -106,3 +106,6 @@ logs/
 *.temp
 .tmp/
 .temp/
+
+output/
+sdk/

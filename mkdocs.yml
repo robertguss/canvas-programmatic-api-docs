@@ -1,5 +1,5 @@
-site_name: Canvas API Postman Collection Generator
-site_description: Generate comprehensive Postman collections from Canvas API documentation
+site_name: Canvas API Postman Collection & Python SDK Generator
+site_description: Generate comprehensive Postman collections, OpenAPI specifications, and Python SDKs from Canvas API documentation
 
 theme:
   name: material
@@ -19,6 +19,8 @@ nav:
   - Overview: index.md
   - Installation: installation.md
   - Usage: usage.md
+  - Python SDK: python_sdk.md
+  - OpenAPI Specification: openapi.md
   - Development: development.md
   - CLI Reference: cli_reference.md
 

@@ -1,10 +1,12 @@
 # Usage Guide
 
-This guide covers how to generate and use Canvas API Postman collections.
+This guide covers how to generate and use Canvas API Postman collections, OpenAPI specifications, and Python SDKs.
 
-## Generated Collection
+## What Gets Generated
 
-The generated collection includes:
+This project generates three main outputs:
+
+### 1. Postman Collection
 - **1,018 API endpoints** across **128 resource categories**
 - Proper OAuth2 Bearer token authentication
 - Path variables for dynamic URLs (e.g., `:course_id`, `:user_id`)
@@ -12,34 +14,119 @@ The generated collection includes:
 - Request body parameters for POST/PUT/PATCH requests
 - OAuth scopes documented in request descriptions
 
+### 2. OpenAPI Specification
+- **OpenAPI 3.1 compliant** specification
+- **234+ data schemas** with JSON Schema validation
+- Complete parameter documentation
+- OAuth2 security schemes
+- Available in both YAML and JSON formats
+
+### 3. Python SDK
+- **Modern Python SDK** with full type hints
+- **Async/sync support** for all endpoints
+- **Pydantic models** for automatic validation
+- **Bearer token authentication** built-in
+- **IDE autocomplete** support
+
 ## Quick Start
 
-### 1. Generate the Collection
+### Option 1: Generate Everything
 
 ```bash
 # Install dependencies
 uv sync
 
-# Generate the Postman collection
-python create_postman_collection.py
+# Generate everything: Postman + OpenAPI + Python SDK
+just generate-all
 ```
 
-This creates `output/canvas_api.postman_collection.json`
+This creates:
+- `output/canvas_api.postman_collection.json` - Postman collection
+- `output/canvas_api.openapi.yaml` - OpenAPI specification
+- `sdk/canvas_lms_api_client/` - Python SDK
 
-### 2. Import into Postman
+### Option 2: Generate Individual Components
 
-1. Open Postman
-2. Click **Import** button
-3. Select the generated `canvas_api.postman_collection.json` file
-4. The collection will be imported with all 128 resource folders
+```bash
+# Generate only Postman collection
+just collection
 
-### 3. Configure Authentication
+# Generate only OpenAPI specification
+just openapi
 
-After importing, set up your Canvas credentials:
+# Generate only Python SDK
+just sdk
+```
 
-1. Go to the collection's **Variables** tab
-2. Set `base_url` to your Canvas instance (e.g., `https://your-school.instructure.com`)
-3. Set `access_token` to your Canvas API token
+## Using the Generated Tools
+
+### Postman Collection
+
+1. **Import into Postman**
+   - Open Postman
+   - Click **Import** button
+   - Select the generated `canvas_api.postman_collection.json` file
+   - The collection will be imported with all 128 resource folders
+
+2. **Configure Authentication**
+   - Go to the collection's **Variables** tab
+   - Set `base_url` to your Canvas instance (e.g., `https://your-school.instructure.com`)
+   - Set `access_token` to your Canvas API token
+
+### Python SDK
+
+1. **Install the SDK**
+   ```bash
+   cd sdk
+   pip install -e .
+   ```
+
+2. **Basic Usage**
+   ```python
+   from canvas_lms_api_client import AuthenticatedClient
+   from canvas_lms_api_client.api.courses import get_courses
+   
+   # Initialize client
+   client = AuthenticatedClient(
+       base_url="https://yourschool.instructure.com/api/v1",
+       token="your-canvas-access-token"
+   )
+   
+   # Get all courses
+   courses = get_courses.sync(client=client)
+   print(f"Found {len(courses)} courses")
+   ```
+
+3. **Async Usage**
+   ```python
+   import asyncio
+   
+   async def main():
+       courses = await get_courses.asyncio(client=client)
+       print(f"Found {len(courses)} courses")
+   
+   asyncio.run(main())
+   ```
+
+### OpenAPI Specification
+
+1. **Generate Documentation**
+   ```bash
+   # Using Swagger UI
+   npx swagger-ui-serve output/canvas_api.openapi.yaml
+   
+   # Using Redoc
+   npx redoc-cli serve output/canvas_api.openapi.yaml
+   ```
+
+2. **Generate Other Language Clients**
+   ```bash
+   # Generate JavaScript client
+   openapi-generator-cli generate \
+     -i output/canvas_api.openapi.yaml \
+     -g javascript \
+     -o clients/javascript
+   ```
 
 ## Collection Structure
 
