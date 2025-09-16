@@ -4,3 +4,6 @@ fetch-docs:
 update-docs: fetch-docs
 
 sync-docs: fetch-docs
+
+format-docs:
+    npx prettier --write "canvas_api_resources/*.md"
