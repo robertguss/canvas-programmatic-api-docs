@@ -16,4 +16,24 @@ dependencies = [
 dev = [
     "mkdocs-material>=9.5.0",
     "mkdocstrings[python]>=0.24.0",
+    "pytest",
+    "pytest-cov",
+    "requests-mock",
+    "freezegun",
+    "ruff",
+]
+test = [
+    "pytest",
+    "pytest-cov",
+    "requests-mock",
+    "freezegun",
+    "ruff",
+]
+
+[tool.setuptools]
+py-modules = [
+    "create_postman_collection",
+    "get_api_docs_in_markdown", 
+    "parse_canvas_markdown",
+    "test_collection"
 ]

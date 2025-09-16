@@ -5,6 +5,23 @@ collection:
     python create_postman_collection.py
 
 test:
+    uv pip install -e ".[test]"
+    pytest -q
+
+test-file *args:
+    uv pip install -e ".[test]"
+    pytest -q {{args}}
+
+cov:
+    uv pip install -e ".[test]"
+    pytest --cov --cov-report=term-missing
+
+cov-html:
+    uv pip install -e ".[test]"
+    pytest --cov --cov-report=term-missing --cov-report=html
+    open htmlcov/index.html
+
+postman-test:
     python test_collection.py
 
 format-md:
