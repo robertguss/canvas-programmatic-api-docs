@@ -1,12 +1,32 @@
 # CLI Reference
 
-This page documents all command-line interfaces and available commands for the Canvas API Postman Collection Generator.
+This page documents all command-line interfaces and available commands for the Canvas API Postman Collection & Python SDK Generator.
 
 ## Just Commands
 
 The project uses [just](https://github.com/casey/just) for task automation. All commands should be run from the project root directory.
 
-### Core Commands
+### Core Workflow Commands
+
+#### `just generate-all`
+Complete generation pipeline: fetch docs → Postman collection → OpenAPI spec → Python SDK.
+
+```bash
+just generate-all
+```
+
+**What it does:**
+- Runs `just fetch-docs`
+- Runs `just collection` 
+- Runs `just openapi`
+- Runs `just sdk`
+- Complete end-to-end generation
+
+**Output:**
+- `canvas_api_resources/` - Latest Canvas API docs (128+ files)
+- `output/canvas_api.postman_collection.json` - Postman collection
+- `output/canvas_api.openapi.yaml` - OpenAPI 3.1 specification
+- `sdk/canvas_lms_api_client/` - Complete Python SDK
 
 #### `just fetch-docs`
 Download the latest Canvas API documentation from the official Canvas API docs site.
@@ -41,6 +61,57 @@ just collection
 **Output:**
 - `output/canvas_api.postman_collection.json` - Ready for Postman import
 - Console output showing parsing progress and statistics
+
+#### `just openapi`
+Generate OpenAPI 3.1 specification from Canvas API markdown documentation.
+
+```bash
+just openapi
+```
+
+**What it does:**
+- Runs `python generate_openapi.py`
+- Parses all markdown files with enhanced schema extraction
+- Generates OpenAPI 3.1 compliant specification
+- Creates both YAML and JSON formats
+
+**Output:**
+- `output/canvas_api.openapi.yaml` - OpenAPI specification (YAML)
+- `output/canvas_api.openapi.json` - OpenAPI specification (JSON)
+- Console output showing generation progress and statistics
+
+#### `just sdk`
+Generate Python SDK from OpenAPI specification.
+
+```bash
+just sdk
+```
+
+**What it does:**
+- Runs `python generate_sdk.py`
+- Uses `openapi-python-client` to generate modern Python SDK
+- Creates complete package with type hints and async support
+- Generates Pydantic models for all Canvas objects
+
+**Output:**
+- `sdk/canvas_lms_api_client/` - Complete Python SDK package
+- `sdk/pyproject.toml` - SDK project configuration
+- `sdk/README.md` - SDK usage documentation
+
+#### `just sdk-clean`
+Clean regenerate Python SDK (removes existing SDK first).
+
+```bash
+just sdk-clean
+```
+
+**What it does:**
+- Removes existing `sdk/` directory
+- Runs `just sdk` to generate fresh SDK
+- Ensures clean regeneration without conflicts
+
+**Output:**
+- Fresh `sdk/` directory with latest SDK code
 
 #### `just test`
 Validate the generated Postman collection.
@@ -113,6 +184,66 @@ python create_postman_collection.py [options]
 ```bash
 python create_postman_collection.py
 ```
+
+### `generate_openapi.py`
+
+OpenAPI 3.1 specification generator.
+
+```bash
+python generate_openapi.py [options]
+```
+
+**Options:**
+- `--output-dir` - Override output directory (default: `output/`)
+- `--format` - Output format: `yaml`, `json`, or `both` (default: `both`)
+- `--validate` - Validate generated specification (default: `true`)
+
+**Examples:**
+```bash
+# Generate both YAML and JSON formats
+python generate_openapi.py
+
+# Generate only YAML format
+python generate_openapi.py --format yaml
+
+# Generate to custom directory
+python generate_openapi.py --output-dir ./my-output/
+```
+
+**Output:**
+- `output/canvas_api.openapi.yaml` - OpenAPI specification (YAML)
+- `output/canvas_api.openapi.json` - OpenAPI specification (JSON)
+- Validation results and generation statistics
+
+### `generate_sdk.py`
+
+Python SDK generator using openapi-python-client.
+
+```bash
+python generate_sdk.py [options]
+```
+
+**Options:**
+- `--openapi-file` - Path to OpenAPI specification (default: `output/canvas_api.openapi.yaml`)
+- `--output-dir` - SDK output directory (default: `sdk/`)
+- `--clean` - Remove existing SDK before generation (default: `false`)
+
+**Examples:**
+```bash
+# Generate SDK from default OpenAPI file
+python generate_sdk.py
+
+# Generate with clean rebuild
+python generate_sdk.py --clean
+
+# Use custom OpenAPI file
+python generate_sdk.py --openapi-file ./my-spec.yaml
+```
+
+**Output:**
+- `sdk/canvas_lms_api_client/` - Complete Python SDK package
+- `sdk/pyproject.toml` - SDK project configuration
+- `sdk/README.md` - SDK usage documentation
 
 ### `parse_canvas_markdown.py`
 
