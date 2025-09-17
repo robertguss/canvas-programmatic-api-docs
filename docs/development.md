@@ -5,6 +5,7 @@ This guide covers development workflow, testing, and contributing to the Canvas 
 ## Development Setup
 
 ### Prerequisites
+
 - Python ≥3.13 (recommended) or ≥3.10 (minimum)
 - uv (recommended) or pip
 - Git
@@ -80,6 +81,7 @@ python test_collection.py
 ### 2. Testing
 
 #### Manual Testing
+
 ```bash
 # Generate collection and check output
 python create_postman_collection.py
@@ -93,7 +95,9 @@ python parse_canvas_markdown.py
 ```
 
 #### Collection Validation
+
 The `test_collection.py` script validates:
+
 - JSON structure integrity
 - Required fields presence
 - Authentication configuration
@@ -103,6 +107,7 @@ The `test_collection.py` script validates:
 ### 3. Documentation
 
 #### Local Documentation Server
+
 ```bash
 # Serve docs locally (auto-reload on changes)
 just docs-serve
@@ -111,6 +116,7 @@ just docs-serve
 ```
 
 #### Documentation Structure
+
 - `docs/index.md` - Project overview
 - `docs/installation.md` - Setup instructions
 - `docs/usage.md` - Usage guide
@@ -122,6 +128,7 @@ just docs-serve
 ### Core Components
 
 #### `parse_canvas_markdown.py`
+
 - **Purpose**: Parse Canvas API markdown files
 - **Key Functions**:
   - `parse_markdown_file()` - Parse individual markdown files
@@ -130,6 +137,7 @@ just docs-serve
   - `extract_oauth_scopes()` - Extract OAuth scope information
 
 #### `create_postman_collection.py`
+
 - **Purpose**: Generate Postman collection JSON
 - **Key Functions**:
   - `create_collection()` - Main collection creation
@@ -138,6 +146,7 @@ just docs-serve
   - `setup_auth()` - Configure authentication
 
 #### `get_api_docs_in_markdown.py`
+
 - **Purpose**: Fetch latest Canvas API documentation
 - **Key Functions**:
   - `fetch_api_docs()` - Download documentation
@@ -164,6 +173,7 @@ graph TD
 If Canvas introduces new endpoint patterns:
 
 1. **Update Regex Patterns** in `parse_canvas_markdown.py`:
+
    ```python
    ENDPOINT_PATTERN = re.compile(
        r'\*\*`(GET|POST|PUT|DELETE|PATCH)\s+([^`]+)`\*\*',
@@ -249,6 +259,7 @@ touch tests/test_collection.py
 ### Common Issues
 
 #### Parsing Errors
+
 ```bash
 # Debug markdown parsing
 python parse_canvas_markdown.py > debug_output.txt
@@ -256,12 +267,14 @@ python parse_canvas_markdown.py > debug_output.txt
 ```
 
 #### Collection Generation Errors
+
 ```bash
 # Run with verbose output
 python -v create_postman_collection.py
 ```
 
 #### Missing Endpoints
+
 1. Check if markdown files are up to date: `just fetch-docs`
 2. Verify regex patterns in `parse_canvas_markdown.py`
 3. Check for new endpoint formats in Canvas docs

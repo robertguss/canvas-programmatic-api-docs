@@ -7,6 +7,7 @@ This guide covers how to generate and use Canvas API Postman collections, OpenAP
 This project generates three main outputs:
 
 ### 1. Postman Collection
+
 - **1,018 API endpoints** across **128 resource categories**
 - Proper OAuth2 Bearer token authentication
 - Path variables for dynamic URLs (e.g., `:course_id`, `:user_id`)
@@ -15,6 +16,7 @@ This project generates three main outputs:
 - OAuth scopes documented in request descriptions
 
 ### 2. OpenAPI Specification
+
 - **OpenAPI 3.1 compliant** specification
 - **234+ data schemas** with JSON Schema validation
 - Complete parameter documentation
@@ -22,6 +24,7 @@ This project generates three main outputs:
 - Available in both YAML and JSON formats
 
 ### 3. Python SDK
+
 - **Modern Python SDK** with full type hints
 - **Async/sync support** for all endpoints
 - **Pydantic models** for automatic validation
@@ -41,6 +44,7 @@ just generate-all
 ```
 
 This creates:
+
 - `output/canvas_api.postman_collection.json` - Postman collection
 - `output/canvas_api.openapi.yaml` - OpenAPI specification
 - `sdk/canvas_lms_api_client/` - Python SDK
@@ -76,45 +80,49 @@ just sdk
 ### Python SDK
 
 1. **Install the SDK**
+
    ```bash
    cd sdk
    pip install -e .
    ```
 
 2. **Basic Usage**
+
    ```python
    from canvas_lms_api_client import AuthenticatedClient
    from canvas_lms_api_client.api.courses import get_courses
-   
+
    # Initialize client
    client = AuthenticatedClient(
        base_url="https://yourschool.instructure.com/api/v1",
        token="your-canvas-access-token"
    )
-   
+
    # Get all courses
    courses = get_courses.sync(client=client)
    print(f"Found {len(courses)} courses")
    ```
 
 3. **Async Usage**
+
    ```python
    import asyncio
-   
+
    async def main():
        courses = await get_courses.asyncio(client=client)
        print(f"Found {len(courses)} courses")
-   
+
    asyncio.run(main())
    ```
 
 ### OpenAPI Specification
 
 1. **Generate Documentation**
+
    ```bash
    # Using Swagger UI
    npx swagger-ui-serve output/canvas_api.openapi.yaml
-   
+
    # Using Redoc
    npx redoc-cli serve output/canvas_api.openapi.yaml
    ```
@@ -146,21 +154,25 @@ Canvas API (Generated from Markdown)
 ## Features
 
 ### Authentication
+
 - Collection-level OAuth2 Bearer token authentication
 - All requests inherit authentication from the collection
 - Easy token management through collection variables
 
 ### Path Variables
+
 - Canvas path parameters like `:course_id` are automatically detected
 - Postman variables are created for each path parameter
 - Example values provided for easy testing
 
 ### Query Parameters
+
 - Query parameters extracted from documentation tables
 - Optional parameters are disabled by default
 - Parameter descriptions included for reference
 
 ### Request Bodies
+
 - POST/PUT/PATCH requests include form-data bodies
 - Parameters extracted from documentation
 - Required vs optional parameters properly marked
@@ -168,16 +180,19 @@ Canvas API (Generated from Markdown)
 ## Scripts Overview
 
 ### `parse_canvas_markdown.py`
+
 - Parses 128 markdown files in `data/canvas_api_resources/`
 - Extracts endpoints, parameters, scopes, and descriptions
 - Uses popular Python libraries: `markdown`, `beautifulsoup4`, `pydantic`
 
 ### `create_postman_collection.py`
+
 - Generates Postman v2.1 collection format
 - Creates proper folder structure and request objects
 - Handles authentication and variable setup
 
 ### `test_collection.py`
+
 - Validates the generated collection
 - Provides statistics and sample data
 - Useful for debugging and verification
@@ -197,17 +212,21 @@ python create_postman_collection.py
 ## Troubleshooting
 
 ### Missing Endpoints
+
 If you notice missing endpoints, check:
+
 1. The markdown files in `data/canvas_api_resources/`
 2. The endpoint regex pattern in `parse_canvas_markdown.py`
 3. Run `python parse_canvas_markdown.py` to see parsing results
 
 ### Authentication Issues
+
 - Ensure your Canvas token has appropriate scopes
 - Check that `base_url` points to your Canvas instance
 - Verify the token is set in collection variables, not individual requests
 
 ### Parameter Issues
+
 - Parameters are extracted from markdown tables
 - Path parameters are auto-detected from URL patterns
 - Body parameters are included for POST/PUT/PATCH requests
@@ -243,13 +262,13 @@ Use Postman's Collection Runner to test multiple endpoints:
 
 Common variables you might want to set:
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `base_url` | Canvas instance URL | `https://school.instructure.com` |
-| `access_token` | Canvas API token | `12345~abcdef...` |
-| `course_id` | Course ID for testing | `123456` |
-| `user_id` | User ID for testing | `789012` |
-| `assignment_id` | Assignment ID for testing | `345678` |
+| Variable        | Description               | Example                          |
+| --------------- | ------------------------- | -------------------------------- |
+| `base_url`      | Canvas instance URL       | `https://school.instructure.com` |
+| `access_token`  | Canvas API token          | `12345~abcdef...`                |
+| `course_id`     | Course ID for testing     | `123456`                         |
+| `user_id`       | User ID for testing       | `789012`                         |
+| `assignment_id` | Assignment ID for testing | `345678`                         |
 
 ### Request Customization
 

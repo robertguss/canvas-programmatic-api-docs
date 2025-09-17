@@ -8,6 +8,6 @@ Some random text without proper formatting.
 
 Random content that should not be parsed as an API endpoint.
 
-| Invalid | Table | Format |
-|---------|-------|--------|
-| No | Proper | Headers |
+| Invalid | Table  | Format  |
+| ------- | ------ | ------- |
+| No      | Proper | Headers |

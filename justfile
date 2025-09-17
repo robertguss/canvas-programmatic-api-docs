@@ -42,6 +42,7 @@ sdk:
 sdk-clean:
     python generate_sdk.py --clean --regenerate-spec
 
+
 # Full workflow
-generate-all: fetch-docs collection openapi sdk
+generate-all: fetch-docs format-md collection openapi sdk
     @echo "🎉 Generated Postman collection, OpenAPI spec, and Python SDK!"

@@ -180,8 +180,8 @@ assignment_data = {
     "due_at": "2024-12-31T23:59:59Z"
 }
 assignment = create_assignment.sync(
-    client=client, 
-    course_id=12345, 
+    client=client,
+    course_id=12345,
     json_body=assignment_data
 )
 ```
@@ -213,9 +213,9 @@ async def fetch_data():
     # Run multiple API calls concurrently
     courses_task = get_courses.asyncio(client=client)
     users_task = get_users.asyncio(client=client, account_id=1)
-    
+
     courses, users = await asyncio.gather(courses_task, users_task)
-    
+
     return courses, users
 
 # Run the async function
@@ -227,12 +227,14 @@ courses, users = asyncio.run(fetch_data())
 The SDK organizes endpoints by Canvas resource type. Here are some key modules:
 
 ### Core Resources
+
 - `canvas_lms_api_client.api.accounts` - Account management
 - `canvas_lms_api_client.api.courses` - Course operations
 - `canvas_lms_api_client.api.users` - User management
 - `canvas_lms_api_client.api.enrollments` - Enrollment management
 
 ### Content & Assessment
+
 - `canvas_lms_api_client.api.assignments` - Assignment operations
 - `canvas_lms_api_client.api.quizzes` - Quiz management
 - `canvas_lms_api_client.api.discussion_topics` - Discussion forums
@@ -240,17 +242,20 @@ The SDK organizes endpoints by Canvas resource type. Here are some key modules:
 - `canvas_lms_api_client.api.files` - File management
 
 ### Gradebook & Analytics
+
 - `canvas_lms_api_client.api.submissions` - Assignment submissions
 - `canvas_lms_api_client.api.grades` - Grade management
 - `canvas_lms_api_client.api.analytics` - Course analytics
 - `canvas_lms_api_client.api.gradebook_history` - Grade change history
 
 ### Communication
+
 - `canvas_lms_api_client.api.conversations` - Messaging system
 - `canvas_lms_api_client.api.announcements` - Course announcements
 - `canvas_lms_api_client.api.calendar_events` - Calendar integration
 
 ### Administration
+
 - `canvas_lms_api_client.api.admins` - Admin user management
 - `canvas_lms_api_client.api.authentication_providers` - SSO configuration
 - `canvas_lms_api_client.api.developer_keys` - API key management
@@ -261,7 +266,7 @@ All Canvas API objects are available as Pydantic models in `canvas_lms_api_clien
 
 ```python
 from canvas_lms_api_client.models import (
-    Course, User, Assignment, Submission, 
+    Course, User, Assignment, Submission,
     Enrollment, Account, DiscussionTopic
 )
 

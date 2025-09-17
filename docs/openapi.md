@@ -5,6 +5,7 @@ The Canvas LMS API OpenAPI specification provides a machine-readable description
 ## Overview
 
 The OpenAPI specification is generated in two formats:
+
 - `output/canvas_api.openapi.yaml` - YAML format (recommended)
 - `output/canvas_api.openapi.json` - JSON format
 
@@ -38,6 +39,7 @@ python generate_openapi.py
 ### Comprehensive Endpoint Coverage
 
 Every Canvas API endpoint is documented with:
+
 - HTTP method and path
 - Parameter definitions (path, query, body)
 - Response schemas
@@ -47,12 +49,14 @@ Every Canvas API endpoint is documented with:
 ### Rich Schema Definitions
 
 The specification includes detailed schemas for:
+
 - Request parameters
 - Request bodies
 - Response objects
 - Error responses
 
 Example schema for a Course object:
+
 ```yaml
 Course:
   type: object
@@ -190,14 +194,14 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        "200":
           description: List of accounts
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Account'
+                  $ref: "#/components/schemas/Account"
 ```
 
 ### Components
@@ -215,7 +219,7 @@ components:
         name:
           type: string
         # ... additional properties
-    
+
     Course:
       type: object
       properties:
@@ -224,7 +228,7 @@ components:
         name:
           type: string
         # ... additional properties
-  
+
   parameters:
     CourseId:
       name: course_id
@@ -337,20 +341,20 @@ spec:
         app: canvas-api-docs
     spec:
       containers:
-      - name: swagger-ui
-        image: swaggerapi/swagger-ui
-        ports:
-        - containerPort: 8080
-        env:
-        - name: SWAGGER_JSON
-          value: /app/canvas_api.openapi.yaml
-        volumeMounts:
-        - name: openapi-spec
-          mountPath: /app
+        - name: swagger-ui
+          image: swaggerapi/swagger-ui
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SWAGGER_JSON
+              value: /app/canvas_api.openapi.yaml
+          volumeMounts:
+            - name: openapi-spec
+              mountPath: /app
       volumes:
-      - name: openapi-spec
-        configMap:
-          name: canvas-openapi-spec
+        - name: openapi-spec
+          configMap:
+            name: canvas-openapi-spec
 ```
 
 ## Troubleshooting

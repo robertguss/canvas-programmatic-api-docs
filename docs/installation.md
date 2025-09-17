@@ -11,19 +11,19 @@
 uv is a fast Python package installer and resolver. Install it using:
 
 === "macOS/Linux"
-    ```bash
+`bash
     curl -LsSf https://astral.sh/uv/install.sh | sh
-    ```
+    `
 
 === "Windows"
-    ```powershell
+`powershell
     powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-    ```
+    `
 
 === "pip"
-    ```bash
+`bash
     pip install uv
-    ```
+    `
 
 ## Installation Methods
 
@@ -93,12 +93,14 @@ python test_collection.py
 The project uses these main dependencies:
 
 ### Core Dependencies
+
 - **requests** ≥2.32.5 - HTTP library for API calls
 - **beautifulsoup4** ≥4.12.0 - HTML/XML parsing
 - **markdown** ≥3.7 - Markdown processing
 - **python-frontmatter** ≥1.1.0 - YAML frontmatter parsing
 
 ### Development Dependencies
+
 - **mkdocs-material** ≥9.5.0 - Documentation generator
 - **mkdocstrings[python]** ≥0.24.0 - API documentation
 
@@ -107,21 +109,27 @@ The project uses these main dependencies:
 ### Common Issues
 
 **Python Version Error**
+
 ```
 ERROR: This package requires Python >=3.10
 ```
+
 **Solution**: Upgrade Python or use pyenv/conda to manage Python versions.
 
 **uv Not Found**
+
 ```
 command not found: uv
 ```
+
 **Solution**: Install uv using the installation script above, or use pip instead.
 
 **Permission Errors**
+
 ```
 PermissionError: [Errno 13] Permission denied
 ```
+
 **Solution**: Use virtual environments or install with `--user` flag.
 
 ### Getting Help

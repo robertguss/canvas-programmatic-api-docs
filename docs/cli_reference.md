@@ -9,6 +9,7 @@ The project uses [just](https://github.com/casey/just) for task automation. All 
 ### Core Workflow Commands
 
 #### `just generate-all`
+
 Complete generation pipeline: fetch docs → Postman collection → OpenAPI spec → Python SDK.
 
 ```bash
@@ -16,19 +17,22 @@ just generate-all
 ```
 
 **What it does:**
+
 - Runs `just fetch-docs`
-- Runs `just collection` 
+- Runs `just collection`
 - Runs `just openapi`
 - Runs `just sdk`
 - Complete end-to-end generation
 
 **Output:**
+
 - `canvas_api_resources/` - Latest Canvas API docs (128+ files)
 - `output/canvas_api.postman_collection.json` - Postman collection
 - `output/canvas_api.openapi.yaml` - OpenAPI 3.1 specification
 - `sdk/canvas_lms_api_client/` - Complete Python SDK
 
 #### `just fetch-docs`
+
 Download the latest Canvas API documentation from the official Canvas API docs site.
 
 ```bash
@@ -36,16 +40,19 @@ just fetch-docs
 ```
 
 **What it does:**
+
 - Runs `python get_api_docs_in_markdown.py`
 - Downloads all Canvas API resource documentation
 - Saves markdown files to `canvas_api_resources/`
 - Overwrites existing files with latest versions
 
 **Output:**
+
 - Creates/updates 128+ markdown files in `canvas_api_resources/`
 - Prints progress for each downloaded resource
 
 #### `just collection`
+
 Generate the Postman collection from Canvas API markdown documentation.
 
 ```bash
@@ -53,16 +60,19 @@ just collection
 ```
 
 **What it does:**
+
 - Runs `python create_postman_collection.py`
 - Parses all markdown files in `canvas_api_resources/`
 - Generates `output/canvas_api.postman_collection.json`
 - Creates organized folder structure with 1,018+ endpoints
 
 **Output:**
+
 - `output/canvas_api.postman_collection.json` - Ready for Postman import
 - Console output showing parsing progress and statistics
 
 #### `just openapi`
+
 Generate OpenAPI 3.1 specification from Canvas API markdown documentation.
 
 ```bash
@@ -70,17 +80,20 @@ just openapi
 ```
 
 **What it does:**
+
 - Runs `python generate_openapi.py`
 - Parses all markdown files with enhanced schema extraction
 - Generates OpenAPI 3.1 compliant specification
 - Creates both YAML and JSON formats
 
 **Output:**
+
 - `output/canvas_api.openapi.yaml` - OpenAPI specification (YAML)
 - `output/canvas_api.openapi.json` - OpenAPI specification (JSON)
 - Console output showing generation progress and statistics
 
 #### `just sdk`
+
 Generate Python SDK from OpenAPI specification.
 
 ```bash
@@ -88,17 +101,20 @@ just sdk
 ```
 
 **What it does:**
+
 - Runs `python generate_sdk.py`
 - Uses `openapi-python-client` to generate modern Python SDK
 - Creates complete package with type hints and async support
 - Generates Pydantic models for all Canvas objects
 
 **Output:**
+
 - `sdk/canvas_lms_api_client/` - Complete Python SDK package
 - `sdk/pyproject.toml` - SDK project configuration
 - `sdk/README.md` - SDK usage documentation
 
 #### `just sdk-clean`
+
 Clean regenerate Python SDK (removes existing SDK first).
 
 ```bash
@@ -106,14 +122,17 @@ just sdk-clean
 ```
 
 **What it does:**
+
 - Removes existing `sdk/` directory
 - Runs `just sdk` to generate fresh SDK
 - Ensures clean regeneration without conflicts
 
 **Output:**
+
 - Fresh `sdk/` directory with latest SDK code
 
 #### `just test`
+
 Validate the generated Postman collection.
 
 ```bash
@@ -121,12 +140,14 @@ just test
 ```
 
 **What it does:**
+
 - Runs `python test_collection.py`
 - Validates JSON structure and format
 - Checks authentication configuration
 - Verifies endpoint counts and organization
 
 **Output:**
+
 - Collection validation results
 - Statistics about endpoints, folders, and parameters
 - Error messages if validation fails
@@ -134,6 +155,7 @@ just test
 ### Documentation Commands
 
 #### `just docs-serve`
+
 Start a local documentation server with auto-reload.
 
 ```bash
@@ -141,15 +163,18 @@ just docs-serve
 ```
 
 **What it does:**
+
 - Installs documentation dependencies if needed
 - Starts MkDocs development server
 - Serves documentation at `http://localhost:8000`
 - Auto-reloads when documentation files change
 
 **Requirements:**
+
 - MkDocs and dependencies installed (`uv pip install -e ".[dev]"`)
 
 #### `just format-docs`
+
 Format markdown documentation files using Prettier.
 
 ```bash
@@ -157,11 +182,13 @@ just format-docs
 ```
 
 **What it does:**
+
 - Runs `npx prettier --write "**/*.md"`
 - Formats all markdown files in the project
 - Ensures consistent markdown formatting
 
 **Requirements:**
+
 - Node.js and npm installed
 - Prettier available via npx
 
@@ -176,11 +203,13 @@ python create_postman_collection.py [options]
 ```
 
 **Options:**
+
 - Currently no command-line options (uses defaults)
 - Reads from `canvas_api_resources/` directory
 - Outputs to `output/canvas_api.postman_collection.json`
 
 **Example:**
+
 ```bash
 python create_postman_collection.py
 ```
@@ -194,11 +223,13 @@ python generate_openapi.py [options]
 ```
 
 **Options:**
+
 - `--output-dir` - Override output directory (default: `output/`)
 - `--format` - Output format: `yaml`, `json`, or `both` (default: `both`)
 - `--validate` - Validate generated specification (default: `true`)
 
 **Examples:**
+
 ```bash
 # Generate both YAML and JSON formats
 python generate_openapi.py
@@ -211,6 +242,7 @@ python generate_openapi.py --output-dir ./my-output/
 ```
 
 **Output:**
+
 - `output/canvas_api.openapi.yaml` - OpenAPI specification (YAML)
 - `output/canvas_api.openapi.json` - OpenAPI specification (JSON)
 - Validation results and generation statistics
@@ -224,11 +256,13 @@ python generate_sdk.py [options]
 ```
 
 **Options:**
+
 - `--openapi-file` - Path to OpenAPI specification (default: `output/canvas_api.openapi.yaml`)
 - `--output-dir` - SDK output directory (default: `sdk/`)
 - `--clean` - Remove existing SDK before generation (default: `false`)
 
 **Examples:**
+
 ```bash
 # Generate SDK from default OpenAPI file
 python generate_sdk.py
@@ -241,6 +275,7 @@ python generate_sdk.py --openapi-file ./my-spec.yaml
 ```
 
 **Output:**
+
 - `sdk/canvas_lms_api_client/` - Complete Python SDK package
 - `sdk/pyproject.toml` - SDK project configuration
 - `sdk/README.md` - SDK usage documentation
@@ -254,10 +289,12 @@ python parse_canvas_markdown.py [file_path]
 ```
 
 **Arguments:**
+
 - `file_path` (optional) - Specific markdown file to parse
 - If no file specified, parses all files in `canvas_api_resources/`
 
 **Examples:**
+
 ```bash
 # Parse all files
 python parse_canvas_markdown.py
@@ -267,6 +304,7 @@ python parse_canvas_markdown.py canvas_api_resources/courses.md
 ```
 
 **Output:**
+
 - Parsed endpoint information
 - Parameter details
 - OAuth scopes
@@ -281,11 +319,13 @@ python get_api_docs_in_markdown.py [options]
 ```
 
 **Options:**
+
 - Currently no command-line options
 - Downloads all available Canvas API resources
 - Saves to `canvas_api_resources/` directory
 
 **Example:**
+
 ```bash
 python get_api_docs_in_markdown.py
 ```
@@ -299,10 +339,12 @@ python test_collection.py [collection_file]
 ```
 
 **Arguments:**
+
 - `collection_file` (optional) - Path to collection JSON file
 - Defaults to `output/canvas_api.postman_collection.json`
 
 **Examples:**
+
 ```bash
 # Test default collection
 python test_collection.py
@@ -312,6 +354,7 @@ python test_collection.py my_collection.json
 ```
 
 **Output:**
+
 - Validation results
 - Collection statistics
 - Error details if validation fails
@@ -321,6 +364,7 @@ python test_collection.py my_collection.json
 ### Optional Environment Variables
 
 #### `CANVAS_API_BASE_URL`
+
 Override the default Canvas API documentation URL.
 
 ```bash
@@ -329,6 +373,7 @@ python get_api_docs_in_markdown.py
 ```
 
 #### `OUTPUT_DIR`
+
 Override the default output directory.
 
 ```bash
@@ -350,6 +395,7 @@ All scripts use standard exit codes:
 ## Common Usage Patterns
 
 ### Full Workflow
+
 ```bash
 # 1. Fetch latest documentation
 just fetch-docs
@@ -364,6 +410,7 @@ just test
 ```
 
 ### Development Workflow
+
 ```bash
 # Start documentation server
 just docs-serve &
@@ -380,6 +427,7 @@ just format-docs
 ```
 
 ### Debugging Workflow
+
 ```bash
 # Parse specific file for debugging
 python parse_canvas_markdown.py canvas_api_resources/courses.md
@@ -394,6 +442,7 @@ python test_collection.py
 ## Troubleshooting Commands
 
 ### Check Dependencies
+
 ```bash
 # Check Python version
 python --version
@@ -409,6 +458,7 @@ uv pip list
 ```
 
 ### Clean and Rebuild
+
 ```bash
 # Remove generated files
 rm -rf output/
@@ -422,6 +472,7 @@ just collection
 ```
 
 ### Debug Parsing Issues
+
 ```bash
 # Parse with Python verbose mode
 python -v parse_canvas_markdown.py > debug.log 2>&1

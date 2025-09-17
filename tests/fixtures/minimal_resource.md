@@ -10,8 +10,8 @@ Get details for a single user.
 
 **Request Parameters:**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter | Type   | Description                    |
+| --------- | ------ | ------------------------------ |
 | include[] | string | Include additional information |
 
 **`POST /api/v1/accounts/:account_id/users`**
@@ -22,8 +22,8 @@ Create a new user in the specified account.
 
 **Request Parameters:**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| user[name] | string | The full name of the user |
-| user[email] | string | The email address of the user |
-| user[login_id] | string | The login ID for the user |
+| Parameter      | Type   | Description                   |
+| -------------- | ------ | ----------------------------- |
+| user[name]     | string | The full name of the user     |
+| user[email]    | string | The email address of the user |
+| user[login_id] | string | The login ID for the user     |

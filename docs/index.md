@@ -7,6 +7,7 @@ This project generates comprehensive **Postman collections** and **modern Python
 ## Key Features
 
 ### Postman Collection Generation
+
 - **🚀 Comprehensive Coverage**: 1,018+ endpoints across 128 Canvas API resource types
 - **📚 Always Up-to-Date**: Generated from official Canvas API markdown documentation
 - **🔐 Authentication Ready**: Pre-configured OAuth2 Bearer token authentication
@@ -15,6 +16,7 @@ This project generates comprehensive **Postman collections** and **modern Python
 - **⚡ Dynamic Variables**: Path variables like `:course_id` and `:user_id` for easy testing
 
 ### Python SDK Generation
+
 - **🐍 Modern Python SDK**: Full type hints with IDE autocomplete support
 - **⚡ Async/Sync Support**: Use `asyncio()` or `sync()` methods as needed
 - **🔒 Built-in Authentication**: Bearer token authentication pre-configured
@@ -23,6 +25,7 @@ This project generates comprehensive **Postman collections** and **modern Python
 - **🚀 Python 3.13+ Ready**: Uses latest language features
 
 ### OpenAPI Specification
+
 - **📋 OpenAPI 3.1 Compliant**: Industry-standard API specification
 - **🔍 JSON Schema Validation**: Complete request/response validation
 - **📖 Rich Documentation**: Parameter descriptions extracted from markdown
@@ -100,35 +103,38 @@ graph LR
 ## Quick Start
 
 1. **Install Dependencies**
+
    ```bash
    uv venv && uv pip install -e .
    ```
 
 2. **Generate Everything**
+
    ```bash
    just generate-all  # Generates Postman collection, OpenAPI spec, and Python SDK
    ```
 
 3. **Use the Generated Tools**
-   
+
    **Postman Collection:**
    - Import `output/canvas_api.postman_collection.json`
    - Set `base_url` and `canvas_token` environment variables
-   
+
    **Python SDK:**
+
    ```python
    from canvas_lms_api_client import AuthenticatedClient
    from canvas_lms_api_client.api.courses import get_courses
-   
+
    client = AuthenticatedClient(
-       base_url="https://yourschool.instructure.com/api/v1", 
+       base_url="https://yourschool.instructure.com/api/v1",
        token="your-access-token"
    )
-   
+
    # Get all courses
    courses = get_courses.sync(client=client)
    ```
-   
+
    **OpenAPI Specification:**
    - Use `output/canvas_api.openapi.yaml` with any OpenAPI-compatible tool
    - Generate clients in other languages using OpenAPI generators

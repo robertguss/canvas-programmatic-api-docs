@@ -12,14 +12,14 @@ from canvas_lms_api_client.api.courses import get_courses
 
 # Initialize client
 client = AuthenticatedClient(
-    base_url="https://yourschool.instructure.com/api/v1", 
+    base_url="https://yourschool.instructure.com/api/v1",
     token="your-access-token"
 )
 
 # Sync usage
 courses = get_courses.sync(client=client)
 
-# Async usage  
+# Async usage
 courses = await get_courses.asyncio(client=client)
 ```
 
@@ -38,8 +38,9 @@ just generate-all
 ```
 
 This creates:
+
 - `output/canvas_api.postman_collection.json` - Postman collection
-- `output/canvas_api.openapi.yaml` - OpenAPI 3.1 specification  
+- `output/canvas_api.openapi.yaml` - OpenAPI 3.1 specification
 - `sdk/` - Complete Python SDK with type hints
 
 ## Import into Postman
@@ -48,14 +49,15 @@ This creates:
 2. Select `output/canvas_api.postman_collection.json`
 3. Set environment variables:
 
-| Variable | Example Value |
-|----------|---------------|
-| `base_url` | `https://yourschool.instructure.com` |
-| `canvas_token` | `12345~abcdefg...789` |
+| Variable       | Example Value                        |
+| -------------- | ------------------------------------ |
+| `base_url`     | `https://yourschool.instructure.com` |
+| `canvas_token` | `12345~abcdefg...789`                |
 
 ## Features
 
 ### Postman Collection
+
 - ✅ **1,018+ Canvas API endpoints** organized by resource type
 - ✅ **OAuth2 Bearer authentication** pre-configured
 - ✅ **Dynamic path variables** (`:course_id`, `:user_id`, etc.)
@@ -64,6 +66,7 @@ This creates:
 - ✅ **OAuth scopes** documented in request descriptions
 
 ### Python SDK
+
 - ✅ **Modern Python SDK** with full type hints and IDE autocomplete
 - ✅ **Async/sync support** - use `asyncio()` or `sync()` methods
 - ✅ **Pydantic models** for automatic serialization/deserialization
@@ -72,6 +75,7 @@ This creates:
 - ✅ **Python 3.13+ support** with latest language features
 
 ### OpenAPI Specification
+
 - ✅ **OpenAPI 3.1 compliant** specification
 - ✅ **JSON Schema validation** for all request/response models
 - ✅ **Complete parameter documentation** extracted from markdown
