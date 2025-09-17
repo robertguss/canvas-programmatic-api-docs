@@ -8,10 +8,6 @@ test:
     uv pip install -e ".[test]"
     pytest -q
 
-test-file *args:
-    uv pip install -e ".[test]"
-    pytest -q {{args}}
-
 cov:
     uv pip install -e ".[test]"
     pytest --cov --cov-report=term-missing
